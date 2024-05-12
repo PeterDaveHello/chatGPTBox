@@ -29,19 +29,19 @@ import brave from './brave'
  * @type {Object.<string,SiteConfig>}
  */
 export const config = {
-  google: {
+  Google: {
     inputQuery: ["input[name='q']", "textarea[name='q']"],
     sidebarContainerQuery: ['#rhs'],
     appendContainerQuery: ['#rcnt'],
     resultsContainerQuery: ['#rso'],
   },
-  bing: {
+  Bing: {
     inputQuery: ["[name='q']"],
     sidebarContainerQuery: ['#b_context'],
     appendContainerQuery: [],
     resultsContainerQuery: ['#b_results'],
   },
-  yahoo: {
+  Yahoo: {
     inputQuery: ["input[name='p']"],
     sidebarContainerQuery: ['#right', '.Contents__inner.Contents__inner--sub'],
     appendContainerQuery: ['#cols', '#contents__wrap'],
@@ -52,7 +52,7 @@ export const config = {
       '#contentsInner',
     ],
   },
-  duckduckgo: {
+  DuckDuckGo: {
     inputQuery: ["input[name='q']"],
     sidebarContainerQuery: ['.js-react-sidebar', '.react-results--sidebar'],
     appendContainerQuery: ['#links_wrapper'],
@@ -61,13 +61,13 @@ export const config = {
       init: duckduckgo.init,
     },
   },
-  startpage: {
+  Startpage: {
     inputQuery: ["input[name='query']"],
     sidebarContainerQuery: ['.layout-web__sidebar.layout-web__sidebar--web'],
     appendContainerQuery: ['.layout-web__body.layout-web__body--desktop'],
     resultsContainerQuery: ['.mainline-results'],
   },
-  baidu: {
+  Baidu: {
     inputQuery: ["input[id='kw']"],
     sidebarContainerQuery: ['#content_right'],
     appendContainerQuery: ['#container'],
@@ -76,25 +76,25 @@ export const config = {
       init: baidu.init,
     },
   },
-  kagi: {
+  Kagi: {
     inputQuery: ["textarea[name='q']"],
     sidebarContainerQuery: ['.right-content-box'],
     appendContainerQuery: ['#_0_app_content'],
     resultsContainerQuery: ['#main', '#app'],
   },
-  yandex: {
+  Yandex: {
     inputQuery: ["input[name='text']"],
     sidebarContainerQuery: ['#search-result-aside'],
     appendContainerQuery: [],
     resultsContainerQuery: ['#search-result'],
   },
-  naver: {
+  Naver: {
     inputQuery: ["input[name='query']"],
     sidebarContainerQuery: ['#sub_pack'],
     appendContainerQuery: ['#content'],
     resultsContainerQuery: ['#main_pack', '#ct'],
   },
-  brave: {
+  Brave: {
     inputQuery: ["input[name='q']"],
     sidebarContainerQuery: ['.sidebar'],
     appendContainerQuery: [],
@@ -103,25 +103,25 @@ export const config = {
       init: brave.init,
     },
   },
-  searx: {
+  Searx: {
     inputQuery: ["input[name='q']"],
     sidebarContainerQuery: ['#sidebar_results', '#sidebar'],
     appendContainerQuery: [],
     resultsContainerQuery: ['#urls', '#main_results', '#results'],
   },
-  ecosia: {
+  Ecosia: {
     inputQuery: ["input[name='q']"],
     sidebarContainerQuery: ['.sidebar.web__sidebar'],
     appendContainerQuery: ['#main'],
     resultsContainerQuery: ['.mainline'],
   },
-  neeva: {
+  Neeva: {
     inputQuery: ["input[name='q']"],
     sidebarContainerQuery: ['.result-group-layout__stickyContainer-iDIO8'],
     appendContainerQuery: ['.search-index__searchHeaderContainer-2JD6q'],
     resultsContainerQuery: ['.result-group-layout__component-1jzTe', '#search'],
   },
-  presearch: {
+  Presearch: {
     inputQuery: ["input[name='q']"],
     sidebarContainerQuery: [
       'div.w-full.\\32 lg\\:flex.\\32 lg\\:flex-row-reverse.\\32 lg\\:justify-end > div.flex.flex-col > div.z-1',
@@ -129,7 +129,7 @@ export const config = {
     appendContainerQuery: [],
     resultsContainerQuery: ['div.text-gray-300.relative.z-1'],
   },
-  bilibili: {
+  Bilibili: {
     inputQuery: bilibili.inputQuery,
     sidebarContainerQuery: ['#danmukuBox'],
     appendContainerQuery: [],
@@ -138,7 +138,7 @@ export const config = {
       init: bilibili.init,
     },
   },
-  youtube: {
+  YouTube: {
     inputQuery: youtube.inputQuery,
     sidebarContainerQuery: [
       '#secondary:not([style*="display: none"]):not(.ytd-two-column-browse-results-renderer)',
@@ -151,7 +151,7 @@ export const config = {
       init: youtube.init,
     },
   },
-  github: {
+  GitHub: {
     inputQuery: github.inputQuery,
     sidebarContainerQuery: ['#diff', '.commit', '.Layout-main'],
     appendContainerQuery: [],
@@ -160,49 +160,49 @@ export const config = {
       init: github.init,
     },
   },
-  gitlab: {
+  GitLab: {
     inputQuery: gitlab.inputQuery,
     sidebarContainerQuery: ['.info-well', '.js-commit-box-info'],
     appendContainerQuery: [],
     resultsContainerQuery: ['.info-well', '.js-commit-box-info'],
   },
-  zhihu: {
+  Zhihu: {
     inputQuery: zhihu.inputQuery,
     sidebarContainerQuery: ['.Question-sideColumn', '.Post-Header', '.Question-main'],
     appendContainerQuery: [],
     resultsContainerQuery: ['.Question-sideColumn', '.Post-Header', '.Question-main'],
   },
-  reddit: {
+  Reddit: {
     inputQuery: reddit.inputQuery,
     sidebarContainerQuery: ['aside > div'],
     appendContainerQuery: [],
     resultsContainerQuery: ['aside > div'],
   },
-  quora: {
+  Quora: {
     inputQuery: quora.inputQuery,
     sidebarContainerQuery: ['.q-box.PageContentsLayout___StyledBox-d2uxks-0'],
     appendContainerQuery: [],
     resultsContainerQuery: ['.q-box.PageContentsLayout___StyledBox-d2uxks-0'],
   },
-  stackoverflow: {
+  StackOverflow: {
     inputQuery: stackoverflow.inputQuery,
     sidebarContainerQuery: ['#sidebar'],
     appendContainerQuery: [],
     resultsContainerQuery: ['#sidebar'],
   },
-  juejin: {
+  Juejin: {
     inputQuery: juejin.inputQuery,
     sidebarContainerQuery: ['div.sidebar'],
     appendContainerQuery: [],
     resultsContainerQuery: ['div.main-area.article-area > article > div.article-content'],
   },
-  'mp.weixin.qq': {
+  Weixin: {
     inputQuery: weixin.inputQuery,
     sidebarContainerQuery: ['.qr_code_pc', '#js_content'],
     appendContainerQuery: [],
     resultsContainerQuery: ['#js_content'],
   },
-  followin: {
+  Followin: {
     inputQuery: followin.inputQuery,
     sidebarContainerQuery: [],
     appendContainerQuery: [],
