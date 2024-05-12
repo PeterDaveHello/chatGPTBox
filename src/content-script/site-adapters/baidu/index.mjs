@@ -12,9 +12,9 @@ export default {
               [...record.addedNodes].some((node) => node.id === 'container'),
           )
         ) {
-          const searchValue = await getInput(config.baidu.inputQuery)
+          const searchValue = await getInput(config.Baidu.inputQuery)
           if (searchValue) {
-            mountComponent(config.baidu, userConfig)
+            mountComponent(config.Baidu, userConfig)
           }
         }
       })

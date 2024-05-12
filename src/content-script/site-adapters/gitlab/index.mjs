@@ -32,7 +32,7 @@ export default {
         if (!patchData) return
 
         return await cropText(
-          `Analyze the contents of a git commit,provide a suitable commit message,and summarize the contents of the commit.` +
+          `Analyze the contents of a GitLab commit, provide a suitable commit message, and summarize the contents of the commit.` +
             `The patch contents of this commit are as follows:\n${patchData}`,
         )
       }

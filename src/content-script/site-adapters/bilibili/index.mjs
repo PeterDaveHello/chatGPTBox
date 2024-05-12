@@ -5,7 +5,7 @@ export default {
   init: async (hostname, userConfig, getInput, mountComponent) => {
     if (location.pathname.includes('/bangumi')) return false
     try {
-      // B站页面是SSR的，如果插入过早，页面 js 检测到实际 Dom 和期望 Dom 不一致，会导致重新渲染
+      // Bilibili 页面是SSR的，如果插入过早，页面 js 检测到实际 Dom 和期望 Dom 不一致，会导致重新渲染
       await waitForElementToExistAndSelect('img.bili-avatar-img')
       const getVideoPath = () =>
         location.pathname + `?p=${new URLSearchParams(location.search).get('p') || 1}`
@@ -14,7 +14,7 @@ export default {
         const newPath = getVideoPath()
         if (newPath !== oldPath) {
           oldPath = newPath
-          mountComponent(config.bilibili, userConfig)
+          mountComponent(config.Bilibili, userConfig)
         }
       }
       window.setInterval(checkPathChange, 500)

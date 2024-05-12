@@ -124,13 +124,13 @@ export default {
         if (location.href !== oldUrl) {
           oldUrl = location.href
           if (isPull() || isIssue()) {
-            mountComponent(config.github, userConfig)
+            mountComponent(config.GitHub, userConfig)
             return
           }
 
           const patchUrl = await getPatchUrl()
           if (patchUrl) {
-            mountComponent(config.github, userConfig)
+            mountComponent(config.GitHub, userConfig)
           }
         }
       }
