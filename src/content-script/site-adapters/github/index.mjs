@@ -24,6 +24,10 @@ const isIssue = () => {
   return location.href.match(/\/issues\/\d+$/)
 }
 
+const isDiscussion = () => {
+  return location.href.match(/\/discussions\/\d+$/)
+}
+
 function parseGitHubIssueData() {
   // Function to parse a single comment
   function parseComment(commentElement) {
@@ -80,19 +84,26 @@ function parseGitHubIssueData() {
   }
 }
 
-function createChatGPtSummaryPrompt(issueData, isIssue = true) {
+function createChatGPtSummaryPrompt(issueData, contentType = 'issue') {
   // Destructure the issueData object into messages and commentBoxContent
   const { title, messages, commentBoxContent } = issueData
 
   // Start crafting the prompt
   let prompt = ''
 
-  if (isIssue) {
-    prompt =
-      'Please summarize the following GitHub issue thread.\nWhat is the main issue and key points discussed in this thread?\n\n'
-  } else {
-    prompt =
-      'Please summarize the following GitHub pull request thread.\nWhat is the main issue this pull request is trying to solve?\n\n'
+  switch (contentType) {
+    case 'issue':
+      prompt =
+        'Please summarize the following GitHub issue thread.\nWhat is the main issue and key points discussed in this thread?\n\n'
+      break
+    case 'pull':
+      prompt =
+        'Please summarize the following GitHub pull request thread.\nWhat is the main issue this pull request is trying to solve?\n\n'
+      break
+    case 'discussion':
+      prompt =
+        'Please summarize the following GitHub discussion thread.\nWhat are the main points and conclusions reached in this discussion?\n\n'
+      break
   }
 
   prompt += '---\n\n'
@@ -110,9 +121,6 @@ function createChatGPtSummaryPrompt(issueData, isIssue = true) {
     prompt += `Draft message in comment box:\n${commentBoxContent}\n\n`
   }
 
-  // Add a request for summary at the end of the prompt
-  // prompt += 'What is the main issue and key points discussed in this thread?'
-
   return prompt
 }
 
@@ -123,7 +131,7 @@ export default {
       const checkUrlChange = async () => {
         if (location.href !== oldUrl) {
           oldUrl = location.href
-          if (isPull() || isIssue()) {
+          if (isPull() || isIssue() || isDiscussion()) {
             mountComponent(config.github, userConfig)
             return
           }
@@ -138,13 +146,23 @@ export default {
     } catch (e) {
       /* empty */
     }
-    return (await getPatchUrl()) || isPull() || isIssue()
+    return (await getPatchUrl()) || isPull() || isIssue() || isDiscussion()
   },
   inputQuery: async () => {
     try {
-      if (isPull() || isIssue()) {
+      if (isPull()) {
         const issueData = parseGitHubIssueData()
-        const summaryPrompt = createChatGPtSummaryPrompt(issueData, isIssue())
+        const summaryPrompt = createChatGPtSummaryPrompt(issueData, 'pull')
+
+        return await cropText(summaryPrompt)
+      } else if (isIssue()) {
+        const issueData = parseGitHubIssueData()
+        const summaryPrompt = createChatGPtSummaryPrompt(issueData, 'issue')
+
+        return await cropText(summaryPrompt)
+      } else if (isDiscussion()) {
+        const issueData = parseGitHubIssueData()
+        const summaryPrompt = createChatGPtSummaryPrompt(issueData, 'discussion')
 
         return await cropText(summaryPrompt)
       }

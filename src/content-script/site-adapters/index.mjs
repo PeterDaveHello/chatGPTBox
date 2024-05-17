@@ -152,7 +152,7 @@ export const config = {
     },
   },
   github: {
-    inputQuery: github.inputQuery,
+    inputQuery: github.inputQuery.concat(["input[name='q'][value*='in:discussion']"]),
     sidebarContainerQuery: ['#diff', '.commit', '.Layout-main'],
     appendContainerQuery: [],
     resultsContainerQuery: ['#diff', '.commit', '.Layout-main'],
