@@ -146,5 +146,7 @@
   "Always display floating window, disable sidebar for all site adapters": "Selalu tampilkan jendela mengambang, nonaktifkan sidebar untuk semua adapter situs",
   "Allow ESC to close all floating windows": "Izinkan ESC untuk menutup semua jendela mengambang",
   "Export All Data": "Ekspor Semua Data",
-  "Import All Data": "Impor Semua Data"
+  "Import All Data": "Impor Semua Data",
+  "Presence Penalty": "Penalti Kehadiran",
+  "Frequency Penalty": "Penalti Frekuensi"
 }

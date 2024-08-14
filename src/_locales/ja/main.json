@@ -146,5 +146,7 @@
   "Always display floating window, disable sidebar for all site adapters": "常にフローティングウィンドウを表示し、すべてのサイトアダプターでサイドバーを無効にします",
   "Allow ESC to close all floating windows": "ESCキーですべてのフローティングウィンドウを閉じる",
   "Export All Data": "すべてのデータをエクスポート",
-  "Import All Data": "すべてのデータをインポート"
+  "Import All Data": "すべてのデータをインポート",
+  "Presence Penalty": "存在ペナルティ",
+  "Frequency Penalty": "頻度ペナルティ"
 }

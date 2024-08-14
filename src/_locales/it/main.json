@@ -146,5 +146,7 @@
   "Always display floating window, disable sidebar for all site adapters": "Mostra sempre la finestra flottante, disabilita la barra laterale per tutti gli adattatori del sito",
   "Allow ESC to close all floating windows": "Consenti ESC per chiudere tutte le finestre flottanti",
   "Export All Data": "Esporta tutti i dati",
-  "Import All Data": "Importa tutti i dati"
+  "Import All Data": "Importa tutti i dati",
+  "Presence Penalty": "Penalità di presenza",
+  "Frequency Penalty": "Penalità di frequenza"
 }

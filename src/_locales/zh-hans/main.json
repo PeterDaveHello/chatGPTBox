@@ -152,5 +152,7 @@
   "keep-alive Time": "保活时间",
   "5m": "5分钟",
   "30m": "半小时",
-  "Forever": "永久"
+  "Forever": "永久",
+  "Presence Penalty": "存在惩罚",
+  "Frequency Penalty": "频率惩罚"
 }
