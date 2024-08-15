@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "独立した会話ページに保存",
   "Keep Conversation Window in Background": "会話ウィンドウをバックグラウンドで保持して、任意のプログラムでショートカットキーを使用できます",
   "Max Response Token Length": "最大応答トークン長",
+  "Model Max Response Token Length": "モデル最大応答トークン長",
   "Max Conversation Length": "最大会話長",
   "Always pin the floating window": "常にフローティングウィンドウをピン留め",
   "Export": "エクスポート",

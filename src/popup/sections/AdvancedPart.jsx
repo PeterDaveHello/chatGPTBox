@@ -29,6 +29,20 @@ function ApiParams({ config, updateConfig }) {
         />
       </label>
       <label>
+        {t('Model Max Response Token Length') + `: ${config.modelMaxResponseTokenLength}`}
+        <input
+          type="range"
+          min="100"
+          max="40000"
+          step="100"
+          value={config.modelMaxResponseTokenLength}
+          onChange={(e) => {
+            const value = parseIntWithClamp(e.target.value, 1000, 100, 40000)
+            updateConfig({ modelMaxResponseTokenLength: value })
+          }}
+        />
+      </label>
+      <label>
         {t('Max Conversation Length') + `: ${config.maxConversationContextLength}`}
         <input
           type="range"

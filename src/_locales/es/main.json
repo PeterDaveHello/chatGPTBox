@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "Guardar en página de conversación independiente",
   "Keep Conversation Window in Background": "Mantener la ventana de conversación en segundo plano para poder acceder a ella desde cualquier aplicación mediante accesos directos.",
   "Max Response Token Length": "Longitud máxima de tokens de respuesta",
+  "Model Max Response Token Length": "Longitud máxima de tokens de respuesta del modelo",
   "Max Conversation Length": "Longitud máxima de conversación",
   "Always pin the floating window": "Siempre fijar la ventana flotante",
   "Export": "Exportar",

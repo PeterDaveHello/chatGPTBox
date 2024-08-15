@@ -159,111 +159,121 @@ export const ModelGroups = {
  * @typedef {object} Model
  * @property {string} value
  * @property {string} desc
+ * @property {number} [maxCompletionToken]
  */
 /**
  * @type {Object.<string,Model>}
  */
 export const Models = {
-  chatgptFree35: { value: 'text-davinci-002-render-sha', desc: 'ChatGPT (Web)' },
+  chatgptFree35: { value: 'text-davinci-002-render-sha', desc: 'ChatGPT (Web)', maxCompletionToken: 4096 },
 
-  chatgptFree4o: { value: 'gpt-4o', desc: 'ChatGPT (Web, GPT-4o)' },
-  chatgptFree4oMini: { value: 'gpt-4o-mini', desc: 'ChatGPT (Web, GPT-4o mini)' },
+  chatgptFree4o: { value: 'gpt-4o', desc: 'ChatGPT (Web, GPT-4o)', maxCompletionToken: 8192 },
+  chatgptFree4oMini: { value: 'gpt-4o-mini', desc: 'ChatGPT (Web, GPT-4o mini)', maxCompletionToken: 4096 },
 
-  chatgptPlus4: { value: 'gpt-4', desc: 'ChatGPT (Web, GPT-4)' },
-  chatgptPlus4Browsing: { value: 'gpt-4', desc: 'ChatGPT (Web, GPT-4)' }, // for compatibility
+  chatgptPlus4: { value: 'gpt-4', desc: 'ChatGPT (Web, GPT-4)', maxCompletionToken: 8192 },
+  chatgptPlus4Browsing: { value: 'gpt-4', desc: 'ChatGPT (Web, GPT-4)', maxCompletionToken: 8192 }, // for compatibility
 
-  chatgptApi35: { value: 'gpt-3.5-turbo', desc: 'ChatGPT (GPT-3.5-turbo)' },
-  chatgptApi35_16k: { value: 'gpt-3.5-turbo-16k', desc: 'ChatGPT (GPT-3.5-turbo-16k)' },
+  chatgptApi35: { value: 'gpt-3.5-turbo', desc: 'ChatGPT (GPT-3.5-turbo)', maxCompletionToken: 4096 },
+  chatgptApi35_16k: { value: 'gpt-3.5-turbo-16k', desc: 'ChatGPT (GPT-3.5-turbo-16k)', maxCompletionToken: 16000 },
 
-  chatgptApi4o_128k: { value: 'gpt-4o', desc: 'ChatGPT (GPT-4o, 128k)' },
-  chatgptApi4oMini: { value: 'gpt-4o-mini', desc: 'ChatGPT (GPT-4o mini)' },
-  chatgptApi4_8k: { value: 'gpt-4', desc: 'ChatGPT (GPT-4-8k)' },
-  chatgptApi4_32k: { value: 'gpt-4-32k', desc: 'ChatGPT (GPT-4-32k)' },
+  chatgptApi4o_128k: { value: 'gpt-4o', desc: 'ChatGPT (GPT-4o, 128k)', maxCompletionToken: 128000 },
+  chatgptApi4oMini: { value: 'gpt-4o-mini', desc: 'ChatGPT (GPT-4o mini)', maxCompletionToken: 4096 },
+  chatgptApi4_8k: { value: 'gpt-4', desc: 'ChatGPT (GPT-4-8k)', maxCompletionToken: 8192 },
+  chatgptApi4_32k: { value: 'gpt-4-32k', desc: 'ChatGPT (GPT-4-32k)', maxCompletionToken: 32000 },
   chatgptApi4_128k: {
     value: 'gpt-4-turbo',
     desc: 'ChatGPT (GPT-4-Turbo 128k)',
+    maxCompletionToken: 128000,
   },
   chatgptApi4_128k_preview: {
     value: 'gpt-4-turbo-preview',
     desc: 'ChatGPT (GPT-4-Turbo 128k Preview)',
+    maxCompletionToken: 128000,
   },
   chatgptApi4_128k_1106_preview: {
     value: 'gpt-4-1106-preview',
     desc: 'ChatGPT (GPT-4-Turbo 128k 1106 Preview)',
+    maxCompletionToken: 128000,
   },
   chatgptApi4_128k_0125_preview: {
     value: 'gpt-4-0125-preview',
     desc: 'ChatGPT (GPT-4-Turbo 128k 0125 Preview)',
+    maxCompletionToken: 128000,
   },
 
-  claude2WebFree: { value: '', desc: 'Claude.ai (Web)' },
-  claude12Api: { value: 'claude-instant-1.2', desc: 'Claude.ai (API, Claude Instant 1.2)' },
-  claude2Api: { value: 'claude-2.0', desc: 'Claude.ai (API, Claude 2)' },
-  claude21Api: { value: 'claude-2.1', desc: 'Claude.ai (API, Claude 2.1)' },
+  claude2WebFree: { value: '', desc: 'Claude.ai (Web)', maxCompletionToken: 100000 },
+  claude12Api: { value: 'claude-instant-1.2', desc: 'Claude.ai (API, Claude Instant 1.2)', maxCompletionToken: 100000 },
+  claude2Api: { value: 'claude-2.0', desc: 'Claude.ai (API, Claude 2)', maxCompletionToken: 100000 },
+  claude21Api: { value: 'claude-2.1', desc: 'Claude.ai (API, Claude 2.1)', maxCompletionToken: 100000 },
   claude3HaikuApi: {
     value: 'claude-3-haiku-20240307',
     desc: 'Claude.ai (API, Claude 3 Haiku)',
+    maxCompletionToken: 100000,
   },
-  claude3SonnetApi: { value: 'claude-3-sonnet-20240229', desc: 'Claude.ai (API, Claude 3 Sonnet)' },
-  claude3OpusApi: { value: 'claude-3-opus-20240229', desc: 'Claude.ai (API, Claude 3 Opus)' },
+  claude3SonnetApi: { value: 'claude-3-sonnet-20240229', desc: 'Claude.ai (API, Claude 3 Sonnet)', maxCompletionToken: 100000 },
+  claude3OpusApi: { value: 'claude-3-opus-20240229', desc: 'Claude.ai (API, Claude 3 Opus)', maxCompletionToken: 100000 },
   claude35SonnetApi: {
     value: 'claude-3-5-sonnet-20240620',
     desc: 'Claude.ai (API, Claude 3.5 Sonnet)',
+    maxCompletionToken: 100000,
   },
 
-  bingFree4: { value: '', desc: 'Bing (Web, GPT-4)' },
-  bingFreeSydney: { value: '', desc: 'Bing (Web, GPT-4, Sydney)' },
+  bingFree4: { value: '', desc: 'Bing (Web, GPT-4)', maxCompletionToken: 8000 },
+  bingFreeSydney: { value: '', desc: 'Bing (Web, GPT-4, Sydney)', maxCompletionToken: 8000 },
 
-  moonshotWebFree: { value: '', desc: 'Kimi.Moonshot (Web, 100k)' },
+  moonshotWebFree: { value: '', desc: 'Kimi.Moonshot (Web, 100k)', maxCompletionToken: 100000 },
 
-  bardWebFree: { value: '', desc: 'Gemini (Web)' },
+  bardWebFree: { value: '', desc: 'Gemini (Web)', maxCompletionToken: 8000 },
 
-  chatglmTurbo: { value: 'GLM-4-Air', desc: 'ChatGLM (GLM-4-Air, 128k)' },
-  chatglm4: { value: 'GLM-4-0520', desc: 'ChatGLM (GLM-4-0520, 128k)' },
-  chatglmEmohaa: { value: 'Emohaa', desc: 'ChatGLM (Emohaa)' },
-  chatglmCharGLM3: { value: 'CharGLM-3', desc: 'ChatGLM (CharGLM-3)' },
+  chatglmTurbo: { value: 'GLM-4-Air', desc: 'ChatGLM (GLM-4-Air, 128k)', maxCompletionToken: 128000 },
+  chatglm4: { value: 'GLM-4-0520', desc: 'ChatGLM (GLM-4-0520, 128k)', maxCompletionToken: 128000 },
+  chatglmEmohaa: { value: 'Emohaa', desc: 'ChatGLM (Emohaa)', maxCompletionToken: 100000 },
+  chatglmCharGLM3: { value: 'CharGLM-3', desc: 'ChatGLM (CharGLM-3)', maxCompletionToken: 100000 },
 
-  chatgptFree35Mobile: { value: 'text-davinci-002-render-sha-mobile', desc: 'ChatGPT (Mobile)' },
-  chatgptPlus4Mobile: { value: 'gpt-4-mobile', desc: 'ChatGPT (Mobile, GPT-4)' },
+  chatgptFree35Mobile: { value: 'text-davinci-002-render-sha-mobile', desc: 'ChatGPT (Mobile)', maxCompletionToken: 4096 },
+  chatgptPlus4Mobile: { value: 'gpt-4-mobile', desc: 'ChatGPT (Mobile, GPT-4)', maxCompletionToken: 8192 },
 
-  chatgptApi35_1106: { value: 'gpt-3.5-turbo-1106', desc: 'ChatGPT (GPT-3.5-turbo 1106)' },
-  chatgptApi35_0125: { value: 'gpt-3.5-turbo-0125', desc: 'ChatGPT (GPT-3.5-turbo 0125)' },
-  chatgptApi4_8k_0613: { value: 'gpt-4', desc: 'ChatGPT (GPT-4-8k 0613)' },
-  chatgptApi4_32k_0613: { value: 'gpt-4-32k', desc: 'ChatGPT (GPT-4-32k 0613)' },
+  chatgptApi35_1106: { value: 'gpt-3.5-turbo-1106', desc: 'ChatGPT (GPT-3.5-turbo 1106)', maxCompletionToken: 4096 },
+  chatgptApi35_0125: { value: 'gpt-3.5-turbo-0125', desc: 'ChatGPT (GPT-3.5-turbo 0125)', maxCompletionToken: 4096 },
+  chatgptApi4_8k_0613: { value: 'gpt-4', desc: 'ChatGPT (GPT-4-8k 0613)', maxCompletionToken: 8192 },
+  chatgptApi4_32k_0613: { value: 'gpt-4-32k', desc: 'ChatGPT (GPT-4-32k 0613)', maxCompletionToken: 32000 },
 
-  gptApiInstruct: { value: 'gpt-3.5-turbo-instruct', desc: 'GPT-3.5-turbo Instruct' },
-  gptApiDavinci: { value: 'text-davinci-003', desc: 'GPT-3.5' },
+  gptApiInstruct: { value: 'gpt-3.5-turbo-instruct', desc: 'GPT-3.5-turbo Instruct', maxCompletionToken: 4096 },
+  gptApiDavinci: { value: 'text-davinci-003', desc: 'GPT-3.5', maxCompletionToken: 4096 },
 
-  customModel: { value: '', desc: 'Custom Model' },
-  ollamaModel: { value: '', desc: 'Ollama API' },
-  azureOpenAi: { value: '', desc: 'ChatGPT (Azure)' },
-  waylaidwandererApi: { value: '', desc: 'Waylaidwanderer API (Github)' },
+  customModel: { value: '', desc: 'Custom Model', maxCompletionToken: 4096 },
+  ollamaModel: { value: '', desc: 'Ollama API', maxCompletionToken: 4096 },
+  azureOpenAi: { value: '', desc: 'ChatGPT (Azure)', maxCompletionToken: 4096 },
+  waylaidwandererApi: { value: '', desc: 'Waylaidwanderer API (Github)', maxCompletionToken: 4096 },
 
-  poeAiWebSage: { value: 'Assistant', desc: 'Poe AI (Web, Assistant)' },
-  poeAiWebGPT4: { value: 'gpt-4', desc: 'Poe AI (Web, GPT-4)' },
-  poeAiWebGPT4_32k: { value: 'gpt-4-32k', desc: 'Poe AI (Web, GPT-4-32k)' },
-  poeAiWebClaudePlus: { value: 'claude-2-100k', desc: 'Poe AI (Web, Claude 2 100k)' },
-  poeAiWebClaude: { value: 'claude-instant', desc: 'Poe AI (Web, Claude instant)' },
-  poeAiWebClaude100k: { value: 'claude-instant-100k', desc: 'Poe AI (Web, Claude instant 100k)' },
-  poeAiWebGooglePaLM: { value: 'Google-PaLM', desc: 'Poe AI (Web, Google-PaLM)' },
-  poeAiWeb_Llama_2_7b: { value: 'Llama-2-7b', desc: 'Poe AI (Web, Llama-2-7b)' },
-  poeAiWeb_Llama_2_13b: { value: 'Llama-2-13b', desc: 'Poe AI (Web, Llama-2-13b)' },
-  poeAiWeb_Llama_2_70b: { value: 'Llama-2-70b', desc: 'Poe AI (Web, Llama-2-70b)' },
-  poeAiWebChatGpt: { value: 'chatgpt', desc: 'Poe AI (Web, ChatGPT)' },
-  poeAiWebChatGpt_16k: { value: 'chatgpt-16k', desc: 'Poe AI (Web, ChatGPT-16k)' },
-  poeAiWebCustom: { value: '', desc: 'Poe AI (Web, Custom)' },
+  poeAiWebSage: { value: 'Assistant', desc: 'Poe AI (Web, Assistant)', maxCompletionToken: 4096 },
+  poeAiWebGPT4: { value: 'gpt-4', desc: 'Poe AI (Web, GPT-4)', maxCompletionToken: 8192 },
+  poeAiWebGPT4_32k: { value: 'gpt-4-32k', desc: 'Poe AI (Web, GPT-4-32k)', maxCompletionToken: 32000 },
+  poeAiWebClaudePlus: { value: 'claude-2-100k', desc: 'Poe AI (Web, Claude 2 100k)', maxCompletionToken: 100000 },
+  poeAiWebClaude: { value: 'claude-instant', desc: 'Poe AI (Web, Claude instant)', maxCompletionToken: 100000 },
+  poeAiWebClaude100k: { value: 'claude-instant-100k', desc: 'Poe AI (Web, Claude instant 100k)', maxCompletionToken: 100000 },
+  poeAiWebGooglePaLM: { value: 'Google-PaLM', desc: 'Poe AI (Web, Google-PaLM)', maxCompletionToken: 4096 },
+  poeAiWeb_Llama_2_7b: { value: 'Llama-2-7b', desc: 'Poe AI (Web, Llama-2-7b)', maxCompletionToken: 7000 },
+  poeAiWeb_Llama_2_13b: { value: 'Llama-2-13b', desc: 'Poe AI (Web, Llama-2-13b)', maxCompletionToken: 13000 },
+  poeAiWeb_Llama_2_70b: { value: 'Llama-2-70b', desc: 'Poe AI (Web, Llama-2-70b)', maxCompletionToken: 70000 },
+  poeAiWebChatGpt: { value: 'chatgpt', desc: 'Poe AI (Web, ChatGPT)', maxCompletionToken: 4096 },
+  poeAiWebChatGpt_16k: { value: 'chatgpt-16k', desc: 'Poe AI (Web, ChatGPT-16k)', maxCompletionToken: 16000 },
+  poeAiWebCustom: { value: '', desc: 'Poe AI (Web, Custom)', maxCompletionToken: 4096 },
 
   moonshot_v1_8k: {
     value: 'moonshot-v1-8k',
     desc: 'Kimi.Moonshot (8k)',
+    maxCompletionToken: 8000,
   },
   moonshot_v1_32k: {
     value: 'moonshot-v1-32k',
     desc: 'Kimi.Moonshot (32k)',
+    maxCompletionToken: 32000,
   },
   moonshot_v1_128k: {
     value: 'moonshot-v1-128k',
     desc: 'Kimi.Moonshot (128k)',
+    maxCompletionToken: 128000,
   },
 }
 
@@ -333,6 +343,7 @@ export const defaultConfig = {
   // advanced
 
   maxResponseTokenLength: 1000,
+  modelMaxResponseTokenLength: 4096,
   maxConversationContextLength: 9,
   temperature: 1,
   customChatGptWebApiUrl: 'https://chatgpt.com',
@@ -547,7 +558,16 @@ export async function getUserConfig() {
   const options = await Browser.storage.local.get(Object.keys(defaultConfig))
   if (options.customChatGptWebApiUrl === 'https://chat.openai.com')
     options.customChatGptWebApiUrl = 'https://chatgpt.com'
-  return defaults(options, defaultConfig)
+  const mergedOptions = defaults(options, defaultConfig)
+  for (const modelName in Models) {
+    if (Models[modelName].maxCompletionToken) {
+      mergedOptions.modelMaxResponseTokenLength = Math.min(
+        mergedOptions.modelMaxResponseTokenLength,
+        Models[modelName].maxCompletionToken,
+      )
+    }
+  }
+  return mergedOptions
 }
 
 /**

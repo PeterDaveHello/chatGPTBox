@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "收納到獨立對話頁面",
   "Keep Conversation Window in Background": "保持對話視窗在背景，以便在任何程序中使用快捷鍵呼叫",
   "Max Response Token Length": "回應的最大 token 長度",
+  "Model Max Response Token Length": "模型最大回應 token 長度",
   "Max Conversation Length": "對話處理的最大長度",
   "Always pin the floating window": "總是固定浮動視窗",
   "Export": "匯出",

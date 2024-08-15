@@ -1,5 +1,3 @@
-// api version
-
 import { getUserConfig } from '../../config/index.mjs'
 import { fetchSSE } from '../../utils/fetch-sse.mjs'
 import { getConversationPairs } from '../../utils/get-conversation-pairs.mjs'
@@ -7,12 +5,6 @@ import { isEmpty } from 'lodash-es'
 import { getCompletionPromptBase, pushRecord, setAbortController } from './shared.mjs'
 import { getModelValue } from '../../utils/model-name-convert.mjs'
 
-/**
- * @param {Browser.Runtime.Port} port
- * @param {string} question
- * @param {Session} session
- * @param {string} apiKey
- */
 export async function generateAnswersWithGptCompletionApi(port, question, session, apiKey) {
   const { controller, messageListener, disconnectListener } = setAbortController(port)
   const model = getModelValue(session)
@@ -46,7 +38,7 @@ export async function generateAnswersWithGptCompletionApi(port, question, sessio
       prompt: prompt,
       model,
       stream: true,
-      max_tokens: config.maxResponseTokenLength,
+      max_tokens: Math.min(config.maxResponseTokenLength, model.maxCompletionToken),
       temperature: config.temperature,
       stop: '\nHuman',
     }),
@@ -89,12 +81,6 @@ export async function generateAnswersWithGptCompletionApi(port, question, sessio
   })
 }
 
-/**
- * @param {Browser.Runtime.Port} port
- * @param {string} question
- * @param {Session} session
- * @param {string} apiKey
- */
 export async function generateAnswersWithChatgptApi(port, question, session, apiKey) {
   const config = await getUserConfig()
   return generateAnswersWithChatgptApiCompat(
@@ -143,7 +129,7 @@ export async function generateAnswersWithChatgptApiCompat(
       messages: prompt,
       model,
       stream: true,
-      max_tokens: config.maxResponseTokenLength,
+      max_tokens: Math.min(config.maxResponseTokenLength, model.maxCompletionToken),
       temperature: config.temperature,
       ...extraBody,
     }),

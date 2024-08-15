@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "Enregistrer sur une page de conversation indépendante",
   "Keep Conversation Window in Background": "Gardez la fenêtre de conversation en arrière-plan pour l'appeler avec des raccourcis dans n'importe quelle application",
   "Max Response Token Length": "Longueur maximale des jetons de réponse",
+  "Model Max Response Token Length": "Longueur maximale des jetons de réponse du modèle",
   "Max Conversation Length": "Longueur maximale de la conversation",
   "Always pin the floating window": "Épingler toujours la fenêtre flottante",
   "Export": "Exporter",

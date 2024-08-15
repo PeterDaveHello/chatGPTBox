@@ -38,7 +38,7 @@ export async function generateAnswersWithAzureOpenaiApi(port, question, session)
       body: JSON.stringify({
         messages: prompt,
         stream: true,
-        max_tokens: config.maxResponseTokenLength,
+        max_tokens: Math.min(config.maxResponseTokenLength, config.modelMaxResponseTokenLength),
         temperature: config.temperature,
       }),
       onMessage(message) {

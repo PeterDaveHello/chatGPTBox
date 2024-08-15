@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "독립적인 대화 페이지에 저장",
   "Keep Conversation Window in Background": "대화 창을 백그라운드로 유지하여 어떤 프로그램에서도 단축키로 호출할 수 있도록 합니다",
   "Max Response Token Length": "최대 응답 토큰 길이",
+  "Model Max Response Token Length": "모델 최대 응답 토큰 길이",
   "Max Conversation Length": "최대 대화 길이",
   "Always pin the floating window": "항상 떠다니는 창 고정",
   "Export": "내보내기",
