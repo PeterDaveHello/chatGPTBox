@@ -27,6 +27,7 @@ const defaultApiMode = {
   customName: '',
   customUrl: 'http://localhost:8000/v1/chat/completions',
   apiKey: '',
+  maxCompletionToken: 4096,
   active: true,
 }
 
@@ -159,6 +160,14 @@ export function ApiModes({ config, updateConfig }) {
             onChange={(e) => setEditingApiMode({ ...editingApiMode, apiKey: e.target.value })}
           />
         )}
+      {(editingApiMode.isCustom || AlwaysCustomGroups.includes(editingApiMode.groupName)) && (
+        <input
+          type="number"
+          value={editingApiMode.maxCompletionToken}
+          placeholder={t('Max Completion Token')}
+          onChange={(e) => setEditingApiMode({ ...editingApiMode, maxCompletionToken: e.target.value })}
+        />
+      )}
     </div>
   )
 

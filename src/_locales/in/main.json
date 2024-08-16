@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "Simpan ke Halaman Percakapan Independen",
   "Keep Conversation Window in Background": "Biarkan jendela percakapan di latar belakang, sehingga Anda dapat menggunakan pintasan keyboard untuk memanggilnya di program mana pun",
   "Max Response Token Length": "Panjang Token Respon Maksimum",
+  "Model Max Response Token Length": "Panjang Token Respon Maksimum Model",
   "Max Conversation Length": "Panjang Percakapan Maksimum",
   "Always pin the floating window": "Selalu selipkan jendela mengambang",
   "Export": "Ekspor",

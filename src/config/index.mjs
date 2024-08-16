@@ -333,6 +333,7 @@ export const defaultConfig = {
   // advanced
 
   maxResponseTokenLength: 1000,
+  modelMaxResponseTokenLength: 4096,
   maxConversationContextLength: 9,
   temperature: 1,
   customChatGptWebApiUrl: 'https://chatgpt.com',

@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "Bağımsız Konuşma Sayfasına Kaydet",
   "Keep Conversation Window in Background": "Konuşma penceresini arka planda tut, böylece herhangi bir programda çağırmak için kısayol tuşlarını kullanabilirsiniz",
   "Max Response Token Length": "Maksimum Cevap Jeton Uzunluğu",
+  "Model Max Response Token Length": "Model Maksimum Cevap Jeton Uzunluğu",
   "Max Conversation Length": "Maksimum Konuşma Uzunluğu",
   "Always pin the floating window": "Her zaman kayan pencereyi sabitle",
   "Export": "Dışa Aktar",

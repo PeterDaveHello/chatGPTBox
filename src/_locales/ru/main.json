@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "Хранить на странице независимых разговоров",
   "Keep Conversation Window in Background": "Держите окно разговора в фоновом режиме, чтобы вызвать его с помощью горячих клавиш из любой программы",
   "Max Response Token Length": "Максимальная длина токена в ответе",
+  "Model Max Response Token Length": "Максимальная длина токена ответа модели",
   "Max Conversation Length": "Максимальная длина разговора",
   "Always pin the floating window": "Всегда прикреплять плавающее окно",
   "Export": "Экспорт",

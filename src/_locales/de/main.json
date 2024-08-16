@@ -104,6 +104,7 @@
   "Store to Independent Conversation Page": "Auf unabhängiger Konversationsseite speichern",
   "Keep Conversation Window in Background": "Chatfenster im Hintergrund halten, um es mit Tastenkombinationen in jeder Anwendung aufzurufen",
   "Max Response Token Length": "Maximale Tokenlänge der Antwort",
+  "Model Max Response Token Length": "Modell Max Antwort Token Länge",
   "Max Conversation Length": "Maximale Gesprächslänge",
   "Always pin the floating window": "Immer das schwebende Fenster anheften",
   "Export": "Exportieren",

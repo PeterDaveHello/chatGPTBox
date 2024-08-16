@@ -35,7 +35,7 @@ export async function generateAnswersWithClaudeApi(port, question, session) {
       model,
       messages: prompt,
       stream: true,
-      max_tokens: config.maxResponseTokenLength,
+      max_tokens: Math.min(config.maxResponseTokenLength, config.modelMaxResponseTokenLength),
       temperature: config.temperature,
     }),
     onMessage(message) {
