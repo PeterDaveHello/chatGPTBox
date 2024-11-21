@@ -159,5 +159,6 @@
   "Gemini (Web)": "Gemini (Web)",
   "Type": "Tür",
   "Mode": "Mod",
-  "Custom": "Özel"
+  "Custom": "Özel",
+  "Custom Gemini API Url": "Özel Gemini API Url'si"
 }

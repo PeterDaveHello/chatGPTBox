@@ -159,5 +159,6 @@
   "Gemini (Web)": "Gemini (Web)",
   "Type": "Jenis",
   "Mode": "Mode",
-  "Custom": "Kustom"
+  "Custom": "Kustom",
+  "Custom Gemini API Url": "URL API Gemini Kustom"
 }

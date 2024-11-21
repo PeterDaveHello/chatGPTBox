@@ -87,6 +87,7 @@ export const poeWebModelKeys = [
   'poeAiWeb_Llama_2_70b',
 ]
 export const moonshotApiModelKeys = ['moonshot_v1_8k', 'moonshot_v1_32k', 'moonshot_v1_128k']
+export const geminiApiModelKeys = ['geminiApi']
 
 export const AlwaysCustomGroups = [
   'ollamaApiModelKeys',
@@ -152,6 +153,10 @@ export const ModelGroups = {
   customApiModelKeys: {
     value: customApiModelKeys,
     desc: 'Custom Model',
+  },
+  geminiApiModelKeys: {
+    value: geminiApiModelKeys,
+    desc: 'Gemini API',
   },
 }
 
@@ -265,6 +270,8 @@ export const Models = {
     value: 'moonshot-v1-128k',
     desc: 'Kimi.Moonshot (128k)',
   },
+
+  geminiApi: { value: 'gemini', desc: 'Gemini API' },
 }
 
 for (const modelName in Models) {
@@ -367,6 +374,7 @@ export const defaultConfig = {
     'chatglmTurbo',
     'customModel',
     'azureOpenAi',
+    'geminiApi',
   ],
   customApiModes: [
     {

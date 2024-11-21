@@ -159,5 +159,6 @@
   "Gemini (Web)": "Gemini (Web)",
   "Type": "タイプ",
   "Mode": "モード",
-  "Custom": "カスタム"
+  "Custom": "カスタム",
+  "Custom Gemini API Url": "カスタムGemini APIのURL"
 }

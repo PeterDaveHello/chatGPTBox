@@ -8,6 +8,7 @@ import { generateAnswersWithBingWebApi } from '../services/apis/bing-web.mjs'
 import {
   generateAnswersWithChatgptApi,
   generateAnswersWithGptCompletionApi,
+  generateAnswersWithGeminiApi,
 } from '../services/apis/openai-api'
 import { generateAnswersWithCustomApi } from '../services/apis/custom-api.mjs'
 import { generateAnswersWithOllamaApi } from '../services/apis/ollama-api.mjs'
@@ -150,6 +151,8 @@ async function executeApi(session, port, config) {
     await generateAnswersWithGptCompletionApi(port, session.question, session, config.apiKey)
   } else if (isUsingGithubThirdPartyApiModel(session)) {
     await generateAnswersWithWaylaidwandererApi(port, session.question, session)
+  } else if (isUsingGeminiWebModel(session)) {
+    await generateAnswersWithGeminiApi(port, session.question, session, config.apiKey)
   }
 }
 
