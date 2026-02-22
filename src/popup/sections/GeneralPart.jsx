@@ -291,7 +291,7 @@ export function GeneralPart({ config, updateConfig, setTabIndex }) {
               type="password"
               style="width: 50%;"
               value={config.claudeApiKey}
-              placeholder={t('Claude API Key')}
+              placeholder={t('Anthropic API Key')}
               onChange={(e) => {
                 const apiKey = e.target.value
                 updateConfig({ claudeApiKey: apiKey })

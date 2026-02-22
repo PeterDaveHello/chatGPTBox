@@ -104,7 +104,7 @@ function ApiUrl({ config, updateConfig }) {
         />
       </label>
       <label>
-        {t('Custom Claude API Url')}
+        {t('Custom Anthropic API Url')}
         <input
           type="text"
           value={config.customClaudeApiUrl}
