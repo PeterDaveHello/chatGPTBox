@@ -10,6 +10,7 @@
     "analyze": "node build.mjs --analyze",
     "lint": "eslint --ext .js,.mjs,.jsx .",
     "test": "node --import ./tests/setup/browser-shim.mjs --test",
+    "test:coverage": "node --import ./tests/setup/browser-shim.mjs --test --experimental-test-coverage --test-coverage-include='src/**/*.{mjs,jsx,js}'",
     "lint:fix": "eslint --ext .js,.mjs,.jsx . --fix",
     "pretty": "prettier --write ./**/*.{js,mjs,jsx,json,css,scss}",
     "stage": "run-script-os",
