@@ -529,9 +529,10 @@ export const defaultConfig = {
   // It allows the content of activeApiModes to change with version updates when the user has not customized ApiModes.
   // If it were directly written into customApiModes, the value would become fixed, even if the user has not made any customizations.
   activeApiModes: [
-    'chatgptFree35',
+    'chatgptFree4oMini',
     'claude2WebFree',
     'moonshotWebFree',
+    'deepseek_chat',
     'ollamaModel',
     'customModel',
     'azureOpenAi',
