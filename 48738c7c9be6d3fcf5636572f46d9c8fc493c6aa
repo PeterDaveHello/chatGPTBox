@@ -1,0 +1,50 @@
+src/background/index.mjs
+  s_77ab54a7a7fa8c::t_19924262c1e129 33
+  s_77ab54a7a7fa8c::t_f305f0a751806d 402
+src/config/index.mjs
+  s_77ab54a7a7fa8c::t_75d9517c6cad0b 930-933
+  s_77ab54a7a7fa8c::t_e0ebb291f0bfa7 258-261
+  s_77ab54a7a7fa8c::t_b339d07ea731fa 722
+  s_77ab54a7a7fa8c::t_a15490736b2873 132-137
+  s_77ab54a7a7fa8c::t_5bdf2762832fe3 428-444
+tests/unit/config/config-predicates.test.mjs
+  s_4608a70ce0e4e7::t_22f58b04597af1 239-240
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 12,28,234-238
+src/services/apis/provider-registry.mjs
+  s_77ab54a7a7fa8c::t_2b8febebfc1585 30-36
+  s_77ab54a7a7fa8c::t_e70dd479784cd1 121
+  s_4608a70ce0e4e7::t_b5ec1552e320c3 29
+src/config/openai-provider-mappings.mjs
+  s_77ab54a7a7fa8c::t_39a6dd2a2a08d1 26
+  s_77ab54a7a7fa8c::t_1dd87983f95217 4
+src/popup/sections/GeneralPart.jsx
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 65-66
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 66-72
+tests/unit/services/apis/provider-registry.test.mjs
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 49-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "48738c7c9be6d3fcf5636572f46d9c8fc493c6aa",
+  "prompts": {},
+  "sessions": {
+    "s_4608a70ce0e4e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c50-ee6c-7450-ac2a-dd516dbca0e4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_77ab54a7a7fa8c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_093a7df8affeGdH40jH0Ln3ZDF",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": null
+    }
+  }
+}
