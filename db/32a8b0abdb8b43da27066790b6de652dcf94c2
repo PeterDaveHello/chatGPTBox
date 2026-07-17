@@ -22,9 +22,9 @@ src/_locales/zh-hant/main.json
   s_dcf878facdd147::t_2f3da3407c626a 178-179
 tests/unit/services/handle-port-error.test.mjs
   s_dcf878facdd147::t_bc4969d497b444 169
-  s_dcf878facdd147::t_2f3da3407c626a 36-39,59
+  s_dcf878facdd147::t_2f3da3407c626a 36-39,59,130-131
   s_dcf878facdd147::t_108114e0fe7e7f 406-417
-  s_dcf878facdd147::t_cf70ac859b5f8b 40-56,60-82,87-88,136-154,173-188
+  s_dcf878facdd147::t_cf70ac859b5f8b 40-56,60-82,87-88,132-154,136-154,173-188
   s_dcf878facdd147::t_dbd706f8cd1ee1 189
   s_dcf878facdd147::t_07607393f95a37 97
   s_dcf878facdd147::t_ad0e8315c9dee5 286-287,289,292,295,394-405,429-438
@@ -46,7 +46,7 @@ src/services/wrappers.mjs
   s_dcf878facdd147::t_2f3da3407c626a 88-89
   s_dcf878facdd147::t_c8b5b92d331199 10
   s_dcf878facdd147::t_ad0e8315c9dee5 97,129,131,133,135,152
-  s_dcf878facdd147::t_cf70ac859b5f8b 120-121
+  s_dcf878facdd147::t_cf70ac859b5f8b 82-83,120-121
   s_dcf878facdd147::t_36cce64435f501 91-96
   s_dcf878facdd147::t_a4b32a99ab694b 119,142-144,151,156,235
   s_dcf878facdd147::t_108114e0fe7e7f 15,81,122,157
@@ -92,9 +92,9 @@ src/utils/fetch-sse.mjs
   s_dcf878facdd147::t_b1403bf70721c2 43,48-57,69
   s_dcf878facdd147::t_9c27418e71bd47 62
   s_dcf878facdd147::t_0a8b9274f93b81 106-116,118-124,131
-  s_dcf878facdd147::t_ba9a1cd37e23bf 17-19,21-25,27,29-30,32
+  s_dcf878facdd147::t_ba9a1cd37e23bf 17-19,21-25,21-23,24-25,27,29-30,32
   s_dcf878facdd147::t_9e9934c9f8c840 46
-  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28
+  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28,36,40-42
 src/_locales/es/main.json
   s_dcf878facdd147::t_2b0d5d9148f348 166-168
   s_dcf878facdd147::t_2f3da3407c626a 169-170
@@ -120,7 +120,7 @@ tests/unit/utils/fetch-sse.test.mjs
   s_dcf878facdd147::t_a645424899275b 111
   s_dcf878facdd147::t_c721e9829bd041 360,365,388-389
   s_dcf878facdd147::t_0418576492fabf 393-416,418-419,447-448
-  s_dcf878facdd147::t_cf70ac859b5f8b 105,108,121-124,217-219,222-233,236,366-368,371
+  s_dcf878facdd147::t_cf70ac859b5f8b 105,108,121-124,121-126,128-129,131-132,134-135,199-207,209,217-219,222-233,236,358-359,361,363,366-368,366-376,371,381-385,484
   s_dcf878facdd147::t_4575a326de893d 216,234,238-239,266-295
   s_dcf878facdd147::t_53d986408eba95 297
 src/_locales/ru/main.json
@@ -131,7 +131,7 @@ src/content-script/port-error.mjs
   s_dcf878facdd147::t_a21d4c64b774c8 17-18,22
   s_dcf878facdd147::t_108114e0fe7e7f 6,19-21
   s_dcf878facdd147::t_39b4a93daccadc 1-5,8-13,15
-  s_dcf878facdd147::t_cd448e81a37cb9 7,14,16
+  s_dcf878facdd147::t_cd448e81a37cb9 7,13-14,14,16
 src/_locales/zh-hans/main.json
   s_dcf878facdd147::t_8e74d75666504f 178-179
   s_dcf878facdd147::t_2b0d5d9148f348 180-182
