@@ -12,7 +12,7 @@ src/_locales/in/main.json
   s_dcf878facdd147::t_8e74d75666504f 164-165
 src/services/wrappers.mjs
   s_dcf878facdd147::t_c8b5b92d331199 10
-  s_dcf878facdd147::t_2f3da3407c626a 98-99
+  s_dcf878facdd147::t_2f3da3407c626a 92-93,98-99
   s_dcf878facdd147::t_693db65f2e3bd1 11-14,92-97,121-125
   s_dcf878facdd147::t_0a8b9274f93b81 107
   s_dcf878facdd147::t_a4b32a99ab694b 129,138,140,142,144,151-153,160,165,244
@@ -43,7 +43,7 @@ tests/unit/utils/fetch-sse.test.mjs
   s_dcf878facdd147::t_5ae45c13f81d50 355,358-384
   s_dcf878facdd147::t_22f05af55424fe 158-159,173,175
   s_dcf878facdd147::t_a645424899275b 111
-  s_dcf878facdd147::t_cf70ac859b5f8b 105,108,121-124,155-157,160-171,174,304-306,309
+  s_dcf878facdd147::t_cf70ac859b5f8b 105,108,121-124,121-126,155-157,160-171,174,296-297,299,301,304-306,304-314,309,319-323,422
   s_dcf878facdd147::t_b1403bf70721c2 127-153
   s_dcf878facdd147::t_edc8109935551c 3-8
   s_dcf878facdd147::t_4575a326de893d 154,172,176-177,204-233
@@ -64,7 +64,7 @@ src/_locales/pt/main.json
   s_dcf878facdd147::t_2f3da3407c626a 169-170
 src/content-script/port-error.mjs
   s_dcf878facdd147::t_39b4a93daccadc 1-5,7-12,14
-  s_dcf878facdd147::t_cd448e81a37cb9 6,13,15
+  s_dcf878facdd147::t_cd448e81a37cb9 6,12-13,13,15
   s_dcf878facdd147::t_a21d4c64b774c8 16-19
 src/_locales/es/main.json
   s_dcf878facdd147::t_2f3da3407c626a 169-170
@@ -72,11 +72,11 @@ src/_locales/es/main.json
   s_dcf878facdd147::t_2b0d5d9148f348 166-168
 tests/unit/services/handle-port-error.test.mjs
   s_dcf878facdd147::t_eff395969bbe33 58
-  s_dcf878facdd147::t_2f3da3407c626a 36-39,59
+  s_dcf878facdd147::t_2f3da3407c626a 36-39,59,130-131
   s_dcf878facdd147::t_a63e4a14da69bf 155-168,170-172
   s_dcf878facdd147::t_bc4969d497b444 169
   s_dcf878facdd147::t_2ad2c7aa54884d 89
-  s_dcf878facdd147::t_cf70ac859b5f8b 40-56,60-82,87-88,136-154,173-188
+  s_dcf878facdd147::t_cf70ac859b5f8b 40-56,60-82,87-88,132-154,136-154,173-188
   s_dcf878facdd147::t_dbd706f8cd1ee1 189
   s_dcf878facdd147::t_07607393f95a37 97
   s_dcf878facdd147::t_0a8b9274f93b81 85,114,119,131
@@ -105,8 +105,8 @@ src/utils/fetch-sse.mjs
   s_dcf878facdd147::t_3ab130ad7b8720 12
   s_dcf878facdd147::t_0418576492fabf 6-10
   s_dcf878facdd147::t_b1403bf70721c2 43-57,69
-  s_dcf878facdd147::t_287fe2b87c4c28 11,14-15,26,31,35-36,58-61,63-68,90
-  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28
+  s_dcf878facdd147::t_287fe2b87c4c28 11,14-15,26,31,35-36,58-61,63-68,63-67,68,90
+  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28,63-64,70-71
 tests/unit/services/apis/openai-api-compat.test.mjs
   s_dcf878facdd147::t_cf70ac859b5f8b 10,2080-2096
 tests/unit/services/wrappers-register.test.mjs
