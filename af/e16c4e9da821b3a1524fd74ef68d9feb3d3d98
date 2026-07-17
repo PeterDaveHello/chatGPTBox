@@ -1,0 +1,41 @@
+src/background/index.mjs
+  s_4608a70ce0e4e7::t_e73f5ef05dcc63 33,347
+src/services/apis/provider-registry.mjs
+  s_4608a70ce0e4e7::t_5c2b554e3df9c7 29
+  s_4608a70ce0e4e7::t_78659432842db0 30-36,121-122
+src/config/openai-provider-mappings.mjs
+  s_4608a70ce0e4e7::t_042f373ad4d9a5 10,26
+tests/unit/config/config-predicates.test.mjs
+  s_4608a70ce0e4e7::t_efa0f7efefc758 7,236-238,255-260
+  s_4608a70ce0e4e7::t_d12d6064533f99 262
+  s_4608a70ce0e4e7::t_78659432842db0 13,24,235,239-254,261
+tests/unit/services/apis/provider-registry.test.mjs
+  s_4608a70ce0e4e7::t_78659432842db0 49,51-62,64-74,76-77
+  s_4608a70ce0e4e7::t_efa0f7efefc758 50,63,75
+src/config/index.mjs
+  s_4608a70ce0e4e7::t_1aaa4e17356c83 447,451,455
+  s_4608a70ce0e4e7::t_efa0f7efefc758 126-130,445-446,449-450,453-454,776-778
+  s_4608a70ce0e4e7::t_78659432842db0 261-264,448,452,456-457,717,928-929
+  s_4608a70ce0e4e7::t_c0ed88c7776e9d 930-931
+src/popup/sections/GeneralPart.jsx
+  s_4608a70ce0e4e7::t_468d68250b80af 65-66
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_4608a70ce0e4e7::t_efa0f7efefc758 68
+  s_4608a70ce0e4e7::t_78659432842db0 66-67,69-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "afe16c4e9da821b3a1524fd74ef68d9feb3d3d98",
+  "prompts": {},
+  "sessions": {
+    "s_4608a70ce0e4e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c50-ee6c-7450-ac2a-dd516dbca0e4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
