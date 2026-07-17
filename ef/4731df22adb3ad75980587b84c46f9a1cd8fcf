@@ -1,0 +1,186 @@
+src/_locales/zh-hans/main.json
+  s_dcf878facdd147::t_2b0d5d9148f348 180-182
+  s_dcf878facdd147::t_2f3da3407c626a 183-184
+  s_dcf878facdd147::t_8e74d75666504f 178-179
+src/components/ConversationCard/index.jsx
+  s_dcf878facdd147::t_10a2a7b3386bb3 320
+  s_dcf878facdd147::t_3cddb1dd872028 43,255,261,265
+src/content-script/port-error.mjs
+  s_dcf878facdd147::t_39b4a93daccadc 1-5,8-13,15
+  s_dcf878facdd147::t_cd448e81a37cb9 7,14,16
+  s_dcf878facdd147::t_10a2a7b3386bb3 6,20
+  s_dcf878facdd147::t_a21d4c64b774c8 17-18,22
+  s_dcf878facdd147::t_108114e0fe7e7f 19,21
+tests/unit/utils/error-text.test.mjs
+  s_dcf878facdd147::t_3cddb1dd872028 6,32-37,51-57
+  s_dcf878facdd147::t_2d31b0ab4cb30b 7
+  s_dcf878facdd147::t_6de8ed9276290c 13-14,17-18,22,25-31
+  s_dcf878facdd147::t_9c04a8dc4329de 38-50
+  s_dcf878facdd147::t_10a2a7b3386bb3 1-5,8-12,15-16,19-21,23-24,58
+src/utils/error-text.mjs
+  s_dcf878facdd147::t_3cddb1dd872028 2,13-17
+  s_dcf878facdd147::t_10a2a7b3386bb3 4-5,8,11
+  s_dcf878facdd147::t_108114e0fe7e7f 18
+  s_dcf878facdd147::t_6de8ed9276290c 1,3,6-7,9-10,12
+src/_locales/ja/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+src/_locales/in/main.json
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/de/main.json
+  s_dcf878facdd147::t_8e74d75666504f 166-167
+  s_dcf878facdd147::t_2b0d5d9148f348 168-170
+  s_dcf878facdd147::t_2f3da3407c626a 171-172
+tests/unit/services/clients/bing.test.mjs
+  s_dcf878facdd147::t_bbd15fdaafdf28 197-200,205,208,222-223
+  s_dcf878facdd147::t_81296485815e1b 63-64
+  s_dcf878facdd147::t_1e9222b131e264 235-240
+  s_dcf878facdd147::t_6de8ed9276290c 62,65-87,90-98,100-109,131
+  s_dcf878facdd147::t_9c5c4ec1946a1c 226-234,241-250,252-260
+  s_dcf878facdd147::t_3cddb1dd872028 5-33,88-89,99,110-130
+  s_dcf878facdd147::t_108114e0fe7e7f 1-4,34-51,53-61
+  s_dcf878facdd147::t_45ac123efe8ed6 132-144,146-152,195-196,201-204,206-207,209-215,217-221,224-225,261-298
+  s_dcf878facdd147::t_c6585c4af836fd 52
+  s_dcf878facdd147::t_1fa4af78db6a30 145,153-194,216,251
+src/utils/fetch-sse.mjs
+  s_dcf878facdd147::t_b1403bf70721c2 43,48-57,69
+  s_dcf878facdd147::t_ba9a1cd37e23bf 17-19,21-25,27,29-30,32
+  s_dcf878facdd147::t_9c27418e71bd47 62
+  s_dcf878facdd147::t_3ab130ad7b8720 12
+  s_dcf878facdd147::t_287fe2b87c4c28 11,14-15,26,31,35-36,58-61,63-68,90
+  s_dcf878facdd147::t_ad0e8315c9dee5 44-45,47
+  s_dcf878facdd147::t_0418576492fabf 6-10
+  s_dcf878facdd147::t_9b284c6c08dda7 33-34,37-42,74-77
+  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28
+  s_dcf878facdd147::t_9e9934c9f8c840 46
+  s_dcf878facdd147::t_0a8b9274f93b81 106-116,118-124,131
+  s_dcf878facdd147::t_108114e0fe7e7f 20
+tests/unit/services/handle-port-error.test.mjs
+  s_dcf878facdd147::t_2ad2c7aa54884d 94
+  s_dcf878facdd147::t_0a8b9274f93b81 119,124
+  s_dcf878facdd147::t_a63e4a14da69bf 159-172,175-176
+  s_dcf878facdd147::t_ad0e8315c9dee5 300-301,303,306,409-415,417-418,442-447
+  s_dcf878facdd147::t_00ddf5061e62fc 448
+  s_dcf878facdd147::t_b7fbe9fa0a0a92 9-13,62,88
+  s_dcf878facdd147::t_0ab60569c7bcaf 91,95-101,103-118,120-123,125-134,137-140
+  s_dcf878facdd147::t_a5110033f38d90 309,353,472
+  s_dcf878facdd147::t_36cce64435f501 194-204,206-207
+  s_dcf878facdd147::t_10a2a7b3386bb3 14,174,205,298,405-407,416,427,438-440,460
+  s_dcf878facdd147::t_cf70ac859b5f8b 45-61,65-87,92-93,142-154,157-158,177-192
+  s_dcf878facdd147::t_2f3da3407c626a 37-40
+  s_dcf878facdd147::t_6de8ed9276290c 41-44,63-64,89-90,135-136,155-156,173,290-297
+  s_dcf878facdd147::t_07607393f95a37 102
+  s_dcf878facdd147::t_81296485815e1b 141,397,408,419,441
+  s_dcf878facdd147::t_dbd706f8cd1ee1 193
+  s_dcf878facdd147::t_98d146cb401570 299
+  s_dcf878facdd147::t_108114e0fe7e7f 420-426
+src/_locales/tr/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+tests/unit/services/apis/custom-api.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 4,437-442
+src/_locales/ko/main.json
+  s_dcf878facdd147::t_8e74d75666504f 168-169
+  s_dcf878facdd147::t_2f3da3407c626a 173-174
+  s_dcf878facdd147::t_2b0d5d9148f348 170-172
+src/content-script/index.jsx
+  s_dcf878facdd147::t_a21d4c64b774c8 33,912
+  s_dcf878facdd147::t_cd448e81a37cb9 908
+src/services/clients/bing/index.mjs
+  s_dcf878facdd147::t_9c5c4ec1946a1c 522-525
+  s_dcf878facdd147::t_3cddb1dd872028 14-19,26-28,30-33,157,170-171,173-178,180-183,185,187-188,190-191,193-198,202,204,208,223,247,395-398,403
+  s_dcf878facdd147::t_1fa4af78db6a30 20-25,29,172,179,184,186,189,192,199-201
+  s_dcf878facdd147::t_6de8ed9276290c 399,531-533,691
+  s_dcf878facdd147::t_45ac123efe8ed6 215,219,490-492,494-506,508-514,521,526-527,529-530,595,597,611,617,621,625,663,672,678
+src/_locales/ru/main.json
+  s_dcf878facdd147::t_8e74d75666504f 176-177
+  s_dcf878facdd147::t_2f3da3407c626a 181-182
+  s_dcf878facdd147::t_2b0d5d9148f348 178-180
+tests/unit/content-script/port-error.test.mjs
+  s_dcf878facdd147::t_cd448e81a37cb9 1-2,12,17-30,43
+  s_dcf878facdd147::t_a21d4c64b774c8 3-6,31-33,35-42
+  s_dcf878facdd147::t_ef37b15bd4e38f 7-11,13,15-16
+  s_dcf878facdd147::t_6de8ed9276290c 34,45,50,52-56
+  s_dcf878facdd147::t_c30dd1b0ed7992 14
+  s_dcf878facdd147::t_108114e0fe7e7f 44,46-49,51,57
+src/services/wrappers.mjs
+  s_dcf878facdd147::t_ad0e8315c9dee5 97
+  s_dcf878facdd147::t_2f3da3407c626a 88-89
+  s_dcf878facdd147::t_c8b5b92d331199 10
+  s_dcf878facdd147::t_693db65f2e3bd1 11-14,82-87,111-115
+  s_dcf878facdd147::t_36cce64435f501 91-96
+  s_dcf878facdd147::t_a4b32a99ab694b 119,142-144,151,156,235
+  s_dcf878facdd147::t_10a2a7b3386bb3 15,122,129,131,133,135,152,157
+  s_dcf878facdd147::t_c7dba274fcbb9e 9,80,90,116-118,212-214,221
+  s_dcf878facdd147::t_6de8ed9276290c 81
+  s_dcf878facdd147::t_cf70ac859b5f8b 120-121
+tests/unit/utils/fetch-sse.test.mjs
+  s_dcf878facdd147::t_5ae45c13f81d50 417,420-446
+  s_dcf878facdd147::t_a645424899275b 111
+  s_dcf878facdd147::t_6dee0f722e23ee 240-265
+  s_dcf878facdd147::t_f1299567e2a569 97-98
+  s_dcf878facdd147::t_22f05af55424fe 220-221,235,237
+  s_dcf878facdd147::t_cf70ac859b5f8b 105,108,121-124,217-219,222-233,236,366-368,371
+  s_dcf878facdd147::t_4575a326de893d 216,234,238-239,266-295
+  s_dcf878facdd147::t_c721e9829bd041 360,365,388-389
+  s_dcf878facdd147::t_0418576492fabf 393-416,418-419,447-448
+  s_dcf878facdd147::t_b1403bf70721c2 127-153
+  s_dcf878facdd147::t_edc8109935551c 3-8
+  s_dcf878facdd147::t_108114e0fe7e7f 183-215
+  s_dcf878facdd147::t_ad0e8315c9dee5 154-182
+  s_dcf878facdd147::t_53d986408eba95 297
+  s_dcf878facdd147::t_0a8b9274f93b81 296,298-359
+src/_locales/es/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+tests/unit/services/wrappers-register.test.mjs
+  s_dcf878facdd147::t_4f0b9ad1c0b1db 2,56,58-59,62-66,173
+  s_dcf878facdd147::t_597f72634553d3 50,440
+  s_dcf878facdd147::t_c7dba274fcbb9e 49,57,60-61,119,121,130-136,138-145,149,151-153,155-161,163-165,167,169-172
+  s_dcf878facdd147::t_21acc5fda9956c 3,120,122-129,137,146-148,154
+  s_dcf878facdd147::t_94df127c32ef72 73-82,150,162,166,168
+  s_dcf878facdd147::t_a8ca0bea4be50d 174
+src/_locales/it/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+src/_locales/zh-hant/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 178-179
+  s_dcf878facdd147::t_2b0d5d9148f348 175-177
+  s_dcf878facdd147::t_8e74d75666504f 173-174
+tests/unit/services/apis/openai-api-compat.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 10,2080-2096
+src/_locales/en/main.json
+  s_dcf878facdd147::t_2b0d5d9148f348 224-226
+  s_dcf878facdd147::t_2f3da3407c626a 227-228
+  s_dcf878facdd147::t_8e74d75666504f 222-223
+src/_locales/pt/main.json
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/fr/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 169-170
+  s_dcf878facdd147::t_2b0d5d9148f348 166-168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "ef4731df22adb3ad75980587b84c46f9a1cd8fcf",
+  "prompts": {},
+  "sessions": {
+    "s_dcf878facdd147": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c22-7ba9-7c70-a836-ebdda866834c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
