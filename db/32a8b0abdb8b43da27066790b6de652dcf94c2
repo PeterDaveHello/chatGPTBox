@@ -43,7 +43,7 @@ src/_locales/en/main.json
   s_dcf878facdd147::t_2f3da3407c626a 227-228
   s_dcf878facdd147::t_2b0d5d9148f348 224-226
 src/services/wrappers.mjs
-  s_dcf878facdd147::t_2f3da3407c626a 88-89
+  s_dcf878facdd147::t_2f3da3407c626a 82-83,88-89
   s_dcf878facdd147::t_c8b5b92d331199 10
   s_dcf878facdd147::t_ad0e8315c9dee5 97,129,131,133,135,152
   s_dcf878facdd147::t_cf70ac859b5f8b 82-83,120-121
@@ -83,7 +83,7 @@ src/_locales/it/main.json
   s_dcf878facdd147::t_2b0d5d9148f348 166-168
   s_dcf878facdd147::t_2f3da3407c626a 169-170
 src/utils/fetch-sse.mjs
-  s_dcf878facdd147::t_287fe2b87c4c28 11,14-15,26,31,35-36,58-61,63-68,90
+  s_dcf878facdd147::t_287fe2b87c4c28 11,14-15,26,31,35-36,58-61,63-68,63-67,68,90
   s_dcf878facdd147::t_ad0e8315c9dee5 44-45,47
   s_dcf878facdd147::t_0418576492fabf 6-10
   s_dcf878facdd147::t_9b284c6c08dda7 33-34,37-42,74-77
@@ -94,7 +94,7 @@ src/utils/fetch-sse.mjs
   s_dcf878facdd147::t_0a8b9274f93b81 106-116,118-124,131
   s_dcf878facdd147::t_ba9a1cd37e23bf 17-19,21-25,21-23,24-25,27,29-30,32
   s_dcf878facdd147::t_9e9934c9f8c840 46
-  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28,36,40-42
+  s_dcf878facdd147::t_cf70ac859b5f8b 13,16,28,36,40-42,63-64,70-71
 src/_locales/es/main.json
   s_dcf878facdd147::t_2b0d5d9148f348 166-168
   s_dcf878facdd147::t_2f3da3407c626a 169-170
@@ -111,7 +111,7 @@ tests/unit/utils/fetch-sse.test.mjs
   s_dcf878facdd147::t_ad0e8315c9dee5 154-182
   s_dcf878facdd147::t_22f05af55424fe 220-221,235,237
   s_dcf878facdd147::t_5ae45c13f81d50 417,420-446
-  s_dcf878facdd147::t_b1403bf70721c2 127-153
+  s_dcf878facdd147::t_b1403bf70721c2 127-153,127-144,174-182
   s_dcf878facdd147::t_f1299567e2a569 97-98
   s_dcf878facdd147::t_108114e0fe7e7f 183-215
   s_dcf878facdd147::t_6dee0f722e23ee 240-265
