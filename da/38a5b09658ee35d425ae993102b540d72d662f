@@ -1,0 +1,94 @@
+src/_locales/ja/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+src/utils/fetch-sse.mjs
+  s_dcf878facdd147::t_ba9a1cd37e23bf 11-19,23,25,27-31
+  s_dcf878facdd147::t_cf70ac859b5f8b 9-10,20-22,24,26,32-35,50
+tests/unit/utils/fetch-sse.test.mjs
+  s_dcf878facdd147::t_eeceea294dee5a 106
+  s_dcf878facdd147::t_cf70ac859b5f8b 3,100,103,116-143,145,147,150-160,165-169,212
+  s_dcf878facdd147::t_f1299567e2a569 92-93
+src/_locales/zh-hant/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 175-176
+  s_dcf878facdd147::t_8e74d75666504f 173-174
+src/_locales/in/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+src/_locales/zh-hans/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 180-181
+  s_dcf878facdd147::t_8e74d75666504f 178-179
+src/_locales/es/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/pt/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/ko/main.json
+  s_dcf878facdd147::t_8e74d75666504f 168-169
+  s_dcf878facdd147::t_2f3da3407c626a 170-171
+tests/unit/services/apis/openai-api-compat.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 10,2080-2096
+src/_locales/it/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/en/main.json
+  s_dcf878facdd147::t_8e74d75666504f 222-223
+  s_dcf878facdd147::t_2f3da3407c626a 224-225
+src/_locales/tr/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+tests/unit/content-script/port-error.test.mjs
+  s_dcf878facdd147::t_cd448e81a37cb9 1-2,7-24,37
+  s_dcf878facdd147::t_a21d4c64b774c8 3-6,25-36
+tests/unit/services/wrappers-register.test.mjs
+  s_dcf878facdd147::t_4f0b9ad1c0b1db 2,55,57-58,61-65,172
+  s_dcf878facdd147::t_c7dba274fcbb9e 49,56,59-60,118,120,129-135,137-144,148,150-152,154-160,162-164,166,168-171
+  s_dcf878facdd147::t_94df127c32ef72 72-81,149,161,165,167
+  s_dcf878facdd147::t_21acc5fda9956c 3,119,121-128,136,145-147,153
+  s_dcf878facdd147::t_a8ca0bea4be50d 173
+tests/unit/services/apis/custom-api.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 4,437-442
+src/content-script/port-error.mjs
+  s_dcf878facdd147::t_a21d4c64b774c8 6-9
+  s_dcf878facdd147::t_cd448e81a37cb9 1-5
+tests/unit/services/handle-port-error.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 9,36-52,55-77,80-102,121-136
+  s_dcf878facdd147::t_2f3da3407c626a 32-35,54,78-79
+  s_dcf878facdd147::t_eff395969bbe33 53
+  s_dcf878facdd147::t_bc4969d497b444 117
+  s_dcf878facdd147::t_a63e4a14da69bf 103-116,118-120
+  s_dcf878facdd147::t_dbd706f8cd1ee1 137
+src/_locales/de/main.json
+  s_dcf878facdd147::t_8e74d75666504f 166-167
+  s_dcf878facdd147::t_2f3da3407c626a 168-169
+src/_locales/ru/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 178-179
+  s_dcf878facdd147::t_8e74d75666504f 176-177
+src/_locales/fr/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+src/content-script/index.jsx
+  s_dcf878facdd147::t_a21d4c64b774c8 33,912
+  s_dcf878facdd147::t_cd448e81a37cb9 908
+src/services/wrappers.mjs
+  s_dcf878facdd147::t_2f3da3407c626a 88-89
+  s_dcf878facdd147::t_cf70ac859b5f8b 10,82,84-85,105,111-112
+  s_dcf878facdd147::t_eeceea294dee5a 83
+  s_dcf878facdd147::t_c7dba274fcbb9e 9,86-87,90,106-109,202-204,211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "da38a5b09658ee35d425ae993102b540d72d662f",
+  "prompts": {},
+  "sessions": {
+    "s_dcf878facdd147": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c22-7ba9-7c70-a836-ebdda866834c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
