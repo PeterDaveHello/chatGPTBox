@@ -1,0 +1,88 @@
+src/content-script/index.jsx
+  s_dcf878facdd147::t_a21d4c64b774c8 33,904
+  s_dcf878facdd147::t_cd448e81a37cb9 901
+tests/unit/services/handle-port-error.test.mjs
+  s_dcf878facdd147::t_bc4969d497b444 93
+  s_dcf878facdd147::t_cf70ac859b5f8b 5,12-28,31-53,56-78,97-112
+  s_dcf878facdd147::t_dbd706f8cd1ee1 113
+  s_dcf878facdd147::t_2f3da3407c626a 8-11,30,54-55
+  s_dcf878facdd147::t_eff395969bbe33 29
+  s_dcf878facdd147::t_a63e4a14da69bf 79-92,94-96
+src/_locales/tr/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+tests/unit/content-script/port-error.test.mjs
+  s_dcf878facdd147::t_a21d4c64b774c8 3-6,25-36
+  s_dcf878facdd147::t_cd448e81a37cb9 1-2,7-24,37
+src/_locales/in/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/ru/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 178-179
+  s_dcf878facdd147::t_8e74d75666504f 176-177
+tests/unit/services/apis/custom-api.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 4,437-442
+tests/unit/utils/fetch-sse.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 3,100,103,116-168
+  s_dcf878facdd147::t_f1299567e2a569 92-93
+  s_dcf878facdd147::t_eeceea294dee5a 106
+src/_locales/es/main.json
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+src/_locales/en/main.json
+  s_dcf878facdd147::t_8e74d75666504f 222-223
+  s_dcf878facdd147::t_2f3da3407c626a 224-225
+src/_locales/zh-hant/main.json
+  s_dcf878facdd147::t_8e74d75666504f 173-174
+  s_dcf878facdd147::t_2f3da3407c626a 175-176
+src/_locales/it/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+tests/unit/services/apis/openai-api-compat.test.mjs
+  s_dcf878facdd147::t_cf70ac859b5f8b 9,1867-1883
+src/_locales/zh-hans/main.json
+  s_dcf878facdd147::t_8e74d75666504f 178-179
+  s_dcf878facdd147::t_2f3da3407c626a 180-181
+src/_locales/fr/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/content-script/port-error.mjs
+  s_dcf878facdd147::t_cd448e81a37cb9 1-5
+  s_dcf878facdd147::t_a21d4c64b774c8 6-9
+src/_locales/pt/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/services/wrappers.mjs
+  s_dcf878facdd147::t_2f3da3407c626a 74,76-77,84-85
+  s_dcf878facdd147::t_a63e4a14da69bf 75
+  s_dcf878facdd147::t_cf70ac859b5f8b 10,70,72-73,82-83,86-88
+  s_dcf878facdd147::t_eeceea294dee5a 71
+src/_locales/ko/main.json
+  s_dcf878facdd147::t_8e74d75666504f 168-169
+  s_dcf878facdd147::t_2f3da3407c626a 170-171
+src/_locales/ja/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 166-167
+  s_dcf878facdd147::t_8e74d75666504f 164-165
+src/_locales/de/main.json
+  s_dcf878facdd147::t_2f3da3407c626a 168-169
+  s_dcf878facdd147::t_8e74d75666504f 166-167
+src/utils/fetch-sse.mjs
+  s_dcf878facdd147::t_ba9a1cd37e23bf 5-13,17,19,21-25
+  s_dcf878facdd147::t_cf70ac859b5f8b 3-4,14-16,18,20,26-29,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "e82dc96b315d0308228ee45a1f56d4f2ad907253",
+  "prompts": {},
+  "sessions": {
+    "s_dcf878facdd147": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c22-7ba9-7c70-a836-ebdda866834c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
