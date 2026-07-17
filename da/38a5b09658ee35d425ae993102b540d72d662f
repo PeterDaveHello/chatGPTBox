@@ -8,6 +8,7 @@ tests/unit/utils/fetch-sse.test.mjs
   s_dcf878facdd147::t_eeceea294dee5a 106
   s_dcf878facdd147::t_cf70ac859b5f8b 3,100,103,116-143,145,147,150-160,165-169,212
   s_dcf878facdd147::t_f1299567e2a569 92-93
+  s_dcf878facdd147::t_c721e9829bd041 144,149,172-173
 src/_locales/zh-hant/main.json
   s_dcf878facdd147::t_2f3da3407c626a 175-176
   s_dcf878facdd147::t_8e74d75666504f 173-174
@@ -75,6 +76,7 @@ src/services/wrappers.mjs
   s_dcf878facdd147::t_cf70ac859b5f8b 10,82,84-85,105,111-112
   s_dcf878facdd147::t_eeceea294dee5a 83
   s_dcf878facdd147::t_c7dba274fcbb9e 9,86-87,90,106-109,202-204,211
+  s_dcf878facdd147::t_a4b32a99ab694b 110,119,121,123,125,132-134,141,146,225
 ---
 {
   "schema_version": "authorship/3.0.0",
