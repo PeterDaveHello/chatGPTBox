@@ -1,0 +1,71 @@
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_4608a70ce0e4e7::t_90f0813af61b39 52
+  s_4608a70ce0e4e7::t_f07ef87cdfbf6f 57
+  s_4608a70ce0e4e7::t_6886dd4db61260 53-56,58
+src/config/index.mjs
+  s_4608a70ce0e4e7::t_d6b4d870cc5f37 11,799,1030-1051,1115-1124,1203-1210,1213-1214,1217-1218,1220-1226,1240-1241,1243-1250,1253-1255,1260-1277,1281-1288,1290-1291,1706,1719,1721-1722,1754-1756,1779-1782,1784-1787
+  s_4608a70ce0e4e7::t_633892e52450f7 40-42,135
+  s_4608a70ce0e4e7::t_efa0f7efefc758 130-134,781
+  s_4608a70ce0e4e7::t_98b02d4982b00e 444
+  s_4608a70ce0e4e7::t_78659432842db0 721,928-929
+  s_4608a70ce0e4e7::t_cef6ab1be905fb 242-245,432-443,930-931
+  s_4608a70ce0e4e7::t_fa16051615db6f 1227-1235,1239
+  s_4608a70ce0e4e7::t_27f36b24773284 1242,1251
+  s_4608a70ce0e4e7::t_93a19eec31039d 1215,1219,1289,1301,1783
+  s_4608a70ce0e4e7::t_49cfbde5b6e697 1236-1238
+src/popup/sections/GeneralPart.jsx
+  s_4608a70ce0e4e7::t_468d68250b80af 63-64
+src/background/index.mjs
+  s_4608a70ce0e4e7::t_cef6ab1be905fb 29,400
+tests/unit/config/config-predicates.test.mjs
+  s_4608a70ce0e4e7::t_6886dd4db61260 26,260-261
+  s_4608a70ce0e4e7::t_706a7a53e0316a 241-252
+  s_4608a70ce0e4e7::t_78659432842db0 228,232-240,253-259
+  s_4608a70ce0e4e7::t_efa0f7efefc758 229-231
+  s_4608a70ce0e4e7::t_8ff7918a8b3415 12
+src/config/openai-provider-mappings.mjs
+  s_4608a70ce0e4e7::t_cef6ab1be905fb 5
+  s_4608a70ce0e4e7::t_042f373ad4d9a5 25
+tests/unit/config/migrate-mistral-provider.test.mjs
+  s_4608a70ce0e4e7::t_633892e52450f7 1-3,5-34,45-47,49-54,61
+  s_4608a70ce0e4e7::t_7b1ae785f3870e 4,121-122,169-171,182
+  s_4608a70ce0e4e7::t_51e8d59b4e79c6 35-44,48,55-60,80-111,115-120,123-168,172-181
+  s_4608a70ce0e4e7::t_70a2eddb15ded5 112-114
+  s_4608a70ce0e4e7::t_991d586dc2a3c4 62-79,183
+src/services/apis/provider-registry.mjs
+  s_4608a70ce0e4e7::t_cef6ab1be905fb 39-41
+  s_403f6e7f29d44c::t_f1118f9df690c5 45
+  s_4608a70ce0e4e7::t_f07ef87cdfbf6f 122,124
+  s_4608a70ce0e4e7::t_78659432842db0 123
+  s_4608a70ce0e4e7::t_c05e072296daa4 38
+  s_4608a70ce0e4e7::t_481640d7025b2b 42-44
+tests/unit/services/apis/provider-registry.test.mjs
+  s_4608a70ce0e4e7::t_efa0f7efefc758 45,58,70
+  s_4608a70ce0e4e7::t_6886dd4db61260 71-72
+  s_4608a70ce0e4e7::t_78659432842db0 44,46-51,53-57,59-65,67-69
+  s_4608a70ce0e4e7::t_057a55bebbb915 52,66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "e553016e2e186a7cf9e9860d57fc757a37889583",
+  "prompts": {},
+  "sessions": {
+    "s_403f6e7f29d44c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f70d2-f895-7ed0-a43d-3d33f4e664eb",
+        "model": "unknown"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    },
+    "s_4608a70ce0e4e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c50-ee6c-7450-ac2a-dd516dbca0e4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

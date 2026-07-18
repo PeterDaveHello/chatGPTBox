@@ -1,0 +1,54 @@
+src/background/index.mjs
+  s_77ab54a7a7fa8c::t_f305f0a751806d 402
+  s_77ab54a7a7fa8c::t_19924262c1e129 33
+tests/unit/config/config-predicates.test.mjs
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 234-238
+  s_4608a70ce0e4e7::t_22f58b04597af1 239-240
+  s_4608a70ce0e4e7::t_76e9c401f5c1dc 22-23
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_4608a70ce0e4e7::t_ebe3129f78bdb9 45
+  s_4608a70ce0e4e7::t_76e9c401f5c1dc 46-51
+tests/unit/services/apis/provider-registry.test.mjs
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 49-74
+src/config/index.mjs
+  s_77ab54a7a7fa8c::t_75d9517c6cad0b 925-928
+  s_77ab54a7a7fa8c::t_b339d07ea731fa 717
+  s_77ab54a7a7fa8c::t_a15490736b2873 132-136,132-134,135-136
+  s_77ab54a7a7fa8c::t_e0ebb291f0bfa7 257-260
+  s_4608a70ce0e4e7::t_cd26486f6d09b7 445-456,445-452,453-456
+  s_4608a70ce0e4e7::t_574522affe7763 457
+src/popup/sections/GeneralPart.jsx
+  s_4608a70ce0e4e7::t_76e9c401f5c1dc 61
+  s_4608a70ce0e4e7::t_a836edc644c6f7 62
+src/config/openai-provider-mappings.mjs
+  s_77ab54a7a7fa8c::t_1dd87983f95217 4
+  s_77ab54a7a7fa8c::t_39a6dd2a2a08d1 26
+src/services/apis/provider-registry.mjs
+  s_4608a70ce0e4e7::t_b5ec1552e320c3 29
+  s_77ab54a7a7fa8c::t_e70dd479784cd1 121
+  s_77ab54a7a7fa8c::t_2b8febebfc1585 30-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "88095051cf86e5c0609c6462ef7f873adc5309ce",
+  "prompts": {},
+  "sessions": {
+    "s_4608a70ce0e4e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c50-ee6c-7450-ac2a-dd516dbca0e4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_77ab54a7a7fa8c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_093a7df8affeGdH40jH0Ln3ZDF",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": null
+    }
+  }
+}
