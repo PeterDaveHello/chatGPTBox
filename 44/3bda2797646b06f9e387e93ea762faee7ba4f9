@@ -20,15 +20,15 @@ src/config/index.mjs
   s_4608a70ce0e4e7::t_98b02d4982b00e 439
   s_4608a70ce0e4e7::t_c0ed88c7776e9d 926-927
 tests/unit/services/apis/provider-registry.test.mjs
-  s_4608a70ce0e4e7::t_78659432842db0 44,46-57,59-69,76-77
+  s_4608a70ce0e4e7::t_78659432842db0 44,46-57,59-69,71-72,76-77
   s_4608a70ce0e4e7::t_6886dd4db61260 71-72
   s_4608a70ce0e4e7::t_efa0f7efefc758 45,58,70
 tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_efa0f7efefc758 7,230-232,249-254
-  s_4608a70ce0e4e7::t_78659432842db0 13,229,233-248,233-249
+  s_4608a70ce0e4e7::t_78659432842db0 13,229,233-248,233-249,255
   s_4608a70ce0e4e7::t_8ff7918a8b3415 13
   s_4608a70ce0e4e7::t_6886dd4db61260 27,255-256
-  s_4608a70ce0e4e7::t_d12d6064533f99 250
+  s_4608a70ce0e4e7::t_d12d6064533f99 250,256
 src/background/index.mjs
   s_4608a70ce0e4e7::t_cef6ab1be905fb 29,400
 ---
