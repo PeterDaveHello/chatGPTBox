@@ -5,7 +5,7 @@ src/config/openai-provider-mappings.mjs
   s_4608a70ce0e4e7::t_538282a08a38a1 10,32
 tests/unit/services/apis/thin-adapters.test.mjs
   s_4608a70ce0e4e7::t_ac7e109c7150b9 66-71
-  s_4608a70ce0e4e7::t_54c91de6a16306 72
+  s_4608a70ce0e4e7::t_54c91de6a16306 66-72,72
 src/config/index.mjs
   s_4608a70ce0e4e7::t_ad86e742210a83 190,930-931
   s_4608a70ce0e4e7::t_54c91de6a16306 269-272,649-656,726,928-929
