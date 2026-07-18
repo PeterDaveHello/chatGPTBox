@@ -1,0 +1,21 @@
+src/utils/fetch-bg.mjs
+  s_9abb713dcdc6b6::t_db39c2e0dfd5c6 30
+tests/unit/utils/fetch-bg.test.mjs
+  s_9abb713dcdc6b6::t_db39c2e0dfd5c6 1-87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "fc33991a57a90856d72bb558e31cb3a2f9581362",
+  "prompts": {},
+  "sessions": {
+    "s_9abb713dcdc6b6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f76e4-3ea2-7440-8347-342c8c97670b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
