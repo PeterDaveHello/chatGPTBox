@@ -1,0 +1,111 @@
+tests/unit/config/config-predicates.test.mjs
+  s_4608a70ce0e4e7::t_30bfc2a3cee951 247,251-252
+  s_4608a70ce0e4e7::t_22f58b04597af1 255-256
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 235-238
+  s_4608a70ce0e4e7::t_706a7a53e0316a 241-246,248-250,253-254
+  s_4608a70ce0e4e7::t_76e9c401f5c1dc 22-23
+  s_4608a70ce0e4e7::t_6690d54018405a 234
+  s_4608a70ce0e4e7::t_a2e6393b1e5ce1 239-240
+src/services/apis/provider-registry.mjs
+  s_4608a70ce0e4e7::t_b5ec1552e320c3 29
+  s_77ab54a7a7fa8c::t_2b8febebfc1585 30-36
+  s_77ab54a7a7fa8c::t_e70dd479784cd1 121
+tests/unit/services/apis/provider-registry.test.mjs
+  s_4608a70ce0e4e7::t_763e219ce1ac2c 49-74
+src/config/index.mjs
+  s_4608a70ce0e4e7::t_b8e0394d03ce4b 1066-1067,1080,1222,1378,1558,1652,1803-1808,1853-1855,1901-1905
+  s_77ab54a7a7fa8c::t_e0ebb291f0bfa7 266-269
+  s_4608a70ce0e4e7::t_f10b94914151a3 1295-1297
+  s_4608a70ce0e4e7::t_428825108ab945 1219,1305
+  s_4608a70ce0e4e7::t_633892e52450f7 40-42,145
+  s_4608a70ce0e4e7::t_8a0212b549c242 1223-1229,1231-1236,1238-1240,1653-1655
+  s_4608a70ce0e4e7::t_93a19eec31039d 1285,1376,1388,1882
+  s_4608a70ce0e4e7::t_27f36b24773284 1320,1330
+  s_77ab54a7a7fa8c::t_b339d07ea731fa 742
+  s_77ab54a7a7fa8c::t_a15490736b2873 136,138-139,144
+  s_4608a70ce0e4e7::t_aeef8f701bdc36 1149,1270,1280,1300,1309-1313,1321,1339-1340,1349-1358,1906
+  s_4608a70ce0e4e7::t_e394fbcace94a1 1289-1294,1314-1318
+  s_4608a70ce0e4e7::t_290d52085b087b 1018-1021,1023-1024,1031-1033,1230,1237
+  s_4608a70ce0e4e7::t_cd26486f6d09b7 457-464
+  s_4608a70ce0e4e7::t_574522affe7763 482
+  s_77ab54a7a7fa8c::t_75d9517c6cad0b 952-955
+  s_4608a70ce0e4e7::t_8024f69ad6c51e 1068-1079,1081-1093,1302-1303,1306-1308,1883,1907
+  s_4608a70ce0e4e7::t_a2e6393b1e5ce1 140,143,465-468,477-481,803
+  s_4608a70ce0e4e7::t_f1089920679d2f 1504-1508,1609-1619
+  s_4608a70ce0e4e7::t_057a55bebbb915 137,141-142,454-456,469-476
+  s_4608a70ce0e4e7::t_5192b9af94e24e 1218,1220-1221,1284,1304
+  s_4608a70ce0e4e7::t_7dac45fda844eb 1022,1025-1030
+  s_4608a70ce0e4e7::t_d6b4d870cc5f37 11,819,1158-1167,1269,1271-1275,1278-1279,1282-1283,1286-1288,1298-1299,1319,1322-1329,1331-1334,1341-1348,1359-1364,1368-1375,1377,1878-1881
+tests/unit/config/migrate-nvidia-nim-provider.test.mjs
+  s_4608a70ce0e4e7::t_b91e8b3834cd75 318-331
+  s_4608a70ce0e4e7::t_70a2eddb15ded5 175-177
+  s_4608a70ce0e4e7::t_8a0212b549c242 350-351
+  s_4608a70ce0e4e7::t_7b1ae785f3870e 6,184,222
+  s_4608a70ce0e4e7::t_14d4e63629e87d 280,289,291,297-298,300-309,311-314,316-317,332-338,340-349,353-355
+  s_4608a70ce0e4e7::t_ce3ca1100fd1d5 299,352,430-438,455,459
+  s_4608a70ce0e4e7::t_bb467fdb309cad 400,405,439-454,476-479
+  s_4608a70ce0e4e7::t_633892e52450f7 1-2,4,7-31,33-36,58-60,62-67,80
+  s_4608a70ce0e4e7::t_7a6dfc5970922d 481-485
+  s_4608a70ce0e4e7::t_9b0848348f66ed 207,415,420-429
+  s_4608a70ce0e4e7::t_e167d8f0498e5a 3,5,185-206,208-221,223-224,248-270,356-387
+  s_4608a70ce0e4e7::t_f1089920679d2f 469-471,475
+  s_4608a70ce0e4e7::t_dce8e47c65bc43 339
+  s_4608a70ce0e4e7::t_e394fbcace94a1 225-247
+  s_4608a70ce0e4e7::t_083735682e23e6 32
+  s_4608a70ce0e4e7::t_5721d4abc62594 37-57,69-70,72,271-272
+  s_353efd63c376ad::t_09608174eeeddb 388-399,401-404,406-414,416-419,456-458,460-467,472-474,486
+  s_4608a70ce0e4e7::t_a8f47db255d37c 82-125
+  s_4608a70ce0e4e7::t_5192b9af94e24e 273-279,281-288,290,292-296
+  s_4608a70ce0e4e7::t_51e8d59b4e79c6 61,68,71,77-79,143-174,178-183
+  s_4608a70ce0e4e7::t_991d586dc2a3c4 81,126-142
+  s_4608a70ce0e4e7::t_32cb0312e0216a 73-76
+  s_4608a70ce0e4e7::t_290d52085b087b 310,315,468,480
+src/popup/sections/import-data-cleanup.mjs
+  s_4608a70ce0e4e7::t_aeef8f701bdc36 16-21
+src/background/index.mjs
+  s_77ab54a7a7fa8c::t_19924262c1e129 33
+  s_77ab54a7a7fa8c::t_f305f0a751806d 402
+tests/unit/popup/import-data-cleanup.test.mjs
+  s_4608a70ce0e4e7::t_aeef8f701bdc36 75-100
+src/config/openai-provider-mappings.mjs
+  s_77ab54a7a7fa8c::t_39a6dd2a2a08d1 26
+  s_77ab54a7a7fa8c::t_1dd87983f95217 4
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_4608a70ce0e4e7::t_76e9c401f5c1dc 46-51
+  s_4608a70ce0e4e7::t_ebe3129f78bdb9 45
+src/popup/sections/GeneralPart.jsx
+  s_4608a70ce0e4e7::t_76e9c401f5c1dc 61
+  s_4608a70ce0e4e7::t_a836edc644c6f7 62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "d02d04a4972c8f22d0e82e7b660076cbb8fb92a1",
+  "prompts": {},
+  "sessions": {
+    "s_353efd63c376ad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c345b665-5b47-46f4-8734-8713af8d56d0",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": null
+    },
+    "s_4608a70ce0e4e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c50-ee6c-7450-ac2a-dd516dbca0e4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_77ab54a7a7fa8c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_093a7df8affeGdH40jH0Ln3ZDF",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": null
+    }
+  }
+}
