@@ -19,7 +19,7 @@ src/config/index.mjs
   s_4608a70ce0e4e7::t_574522affe7763 457
   s_77ab54a7a7fa8c::t_a15490736b2873 132-136,132-134,135-136
   s_77ab54a7a7fa8c::t_b339d07ea731fa 717
-  s_4608a70ce0e4e7::t_cd26486f6d09b7 445-456
+  s_4608a70ce0e4e7::t_cd26486f6d09b7 445-456,445-452,453-456
   s_77ab54a7a7fa8c::t_75d9517c6cad0b 925-928
   s_77ab54a7a7fa8c::t_e0ebb291f0bfa7 257-260
 src/popup/sections/GeneralPart.jsx
