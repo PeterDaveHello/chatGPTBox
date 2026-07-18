@@ -1,0 +1,26 @@
+src/content-script/menu-tools/index.mjs
+  s_9abb713dcdc6b6::t_cca0e9a03039d4 1,4,91-97,101-103
+tests/unit/background/commands.test.mjs
+  s_9abb713dcdc6b6::t_788d019c1421ad 2
+  s_9abb713dcdc6b6::t_2f9e56a5f24516 47-60
+  s_9abb713dcdc6b6::t_cca0e9a03039d4 1,3-46,61-113
+tests/unit/content-script/menu-tools.test.mjs
+  s_9abb713dcdc6b6::t_cca0e9a03039d4 1,3-156
+  s_9abb713dcdc6b6::t_788d019c1421ad 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "6d8ba6a6e211c8966dfef6fe8e4259b01c2c457e",
+  "prompts": {},
+  "sessions": {
+    "s_9abb713dcdc6b6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f76e4-3ea2-7440-8347-342c8c97670b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
