@@ -17,7 +17,7 @@ tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_8ff7918a8b3415 12
   s_4608a70ce0e4e7::t_78659432842db0 12,228,232-240,253-259,253-260
   s_4608a70ce0e4e7::t_6886dd4db61260 26,260-261
-  s_4608a70ce0e4e7::t_efa0f7efefc758 229-231
+  s_4608a70ce0e4e7::t_efa0f7efefc758 229-231,260-261
   s_4608a70ce0e4e7::t_706a7a53e0316a 241-252
   s_4608a70ce0e4e7::t_d12d6064533f99 261
 tests/unit/services/apis/thin-adapters.test.mjs
@@ -31,7 +31,7 @@ src/config/index.mjs
   s_4608a70ce0e4e7::t_98b02d4982b00e 439
   s_4608a70ce0e4e7::t_c0ed88c7776e9d 924-925
 tests/unit/services/apis/provider-registry.test.mjs
-  s_4608a70ce0e4e7::t_78659432842db0 44,46-51,53-57,59-65,67-69,76-77
+  s_4608a70ce0e4e7::t_78659432842db0 44,46-51,53-57,59-65,67-69,71-72,76-77
   s_4608a70ce0e4e7::t_6886dd4db61260 71-72
   s_4608a70ce0e4e7::t_057a55bebbb915 52,66
   s_4608a70ce0e4e7::t_efa0f7efefc758 45,58,70
