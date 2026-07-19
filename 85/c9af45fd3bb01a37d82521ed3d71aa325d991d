@@ -1,13 +1,14 @@
 tests/unit/config/config-predicates.test.mjs
-  s_4608a70ce0e4e7::t_78659432842db0 229,233-248
+  s_4608a70ce0e4e7::t_78659432842db0 13,229,233-248,233-249,257
   s_4608a70ce0e4e7::t_efa0f7efefc758 7,230-232,249-250
   s_4608a70ce0e4e7::t_a2e6393b1e5ce1 251-256
   s_4608a70ce0e4e7::t_8ff7918a8b3415 13
   s_4608a70ce0e4e7::t_6886dd4db61260 27,257-258
+  s_4608a70ce0e4e7::t_d12d6064533f99 250,258
 src/popup/sections/GeneralPart.jsx
   s_4608a70ce0e4e7::t_468d68250b80af 63-64
 tests/unit/services/apis/provider-registry.test.mjs
-  s_4608a70ce0e4e7::t_78659432842db0 44,46-57,59-69
+  s_4608a70ce0e4e7::t_78659432842db0 44,46-57,59-69,71-72,76-77
   s_4608a70ce0e4e7::t_efa0f7efefc758 45,58,70
   s_4608a70ce0e4e7::t_6886dd4db61260 71-72
 tests/unit/services/apis/thin-adapters.test.mjs
@@ -18,6 +19,7 @@ src/config/index.mjs
   s_4608a70ce0e4e7::t_efa0f7efefc758 126-130,776
   s_4608a70ce0e4e7::t_cef6ab1be905fb 237-240,427-438,924-925
   s_4608a70ce0e4e7::t_98b02d4982b00e 439
+  s_4608a70ce0e4e7::t_c0ed88c7776e9d 924-925
 src/background/index.mjs
   s_4608a70ce0e4e7::t_cef6ab1be905fb 29,400
 src/config/openai-provider-mappings.mjs
@@ -27,8 +29,9 @@ src/services/apis/provider-registry.mjs
   s_4608a70ce0e4e7::t_cef6ab1be905fb 39-41
   s_403f6e7f29d44c::t_f1118f9df690c5 45
   s_4608a70ce0e4e7::t_c05e072296daa4 38
-  s_4608a70ce0e4e7::t_78659432842db0 122-123
+  s_4608a70ce0e4e7::t_78659432842db0 33,35-37,122-123
   s_4608a70ce0e4e7::t_481640d7025b2b 42-44
+  s_4608a70ce0e4e7::t_5c2b554e3df9c7 29
 ---
 {
   "schema_version": "authorship/3.0.0",
