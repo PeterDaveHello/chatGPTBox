@@ -1,0 +1,53 @@
+src/background/index.mjs
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 29,402
+src/config/index.mjs
+  s_4608a70ce0e4e7::t_f852cc040d03dd 126-130,492-494,496-498,500-502,834
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 247-250,983-984
+  s_4608a70ce0e4e7::t_78659432842db0 495,499,503-504,771,981-982
+src/config/openai-provider-mappings.mjs
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 6
+  s_4608a70ce0e4e7::t_042f373ad4d9a5 27
+src/popup/sections/GeneralPart.jsx
+  s_4608a70ce0e4e7::t_468d68250b80af 69-70
+tests/unit/services/apis/provider-registry.test.mjs
+  s_4608a70ce0e4e7::t_f852cc040d03dd 45
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 47-48
+  s_4608a70ce0e4e7::t_78659432842db0 44,46
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 63-68
+  s_4608a70ce0e4e7::t_a0badf57f64548 62
+tests/unit/config/config-predicates.test.mjs
+  s_4608a70ce0e4e7::t_78659432842db0 232-235
+  s_4608a70ce0e4e7::t_f852cc040d03dd 236
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 10,29,237-238
+src/services/apis/provider-registry.mjs
+  s_4608a70ce0e4e7::t_3a98bcb7290f61 47-49
+  s_4608a70ce0e4e7::t_78659432842db0 139-140
+  s_4608a70ce0e4e7::t_97175753d9425e 46
+  s_4608a70ce0e4e7::t_c00fc028b5b1b3 50-52
+  s_4a373b63d4dabe::t_7048410769e9e4 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "487d6eecfa1458a4f15061fb392fbd8ce2b9ca52",
+  "prompts": {},
+  "sessions": {
+    "s_4608a70ce0e4e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f6c50-ee6c-7450-ac2a-dd516dbca0e4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_4a373b63d4dabe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f796f-a031-7a73-b3d1-c2214f2560d3",
+        "model": "unknown"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
