@@ -2,7 +2,7 @@ tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_6690d54018405a 235
   s_4608a70ce0e4e7::t_763e219ce1ac2c 236-239
   s_4608a70ce0e4e7::t_a2e6393b1e5ce1 7,240-247
-  s_4608a70ce0e4e7::t_22f58b04597af1 248-249
+  s_4608a70ce0e4e7::t_22f58b04597af1 240-241,248-249
   s_4608a70ce0e4e7::t_76e9c401f5c1dc 23-24
 src/background/index.mjs
   s_77ab54a7a7fa8c::t_f305f0a751806d 402
@@ -21,11 +21,11 @@ tests/unit/services/apis/provider-registry.test.mjs
   s_4608a70ce0e4e7::t_763e219ce1ac2c 49-74
 src/config/index.mjs
   s_77ab54a7a7fa8c::t_75d9517c6cad0b 946-949
-  s_77ab54a7a7fa8c::t_a15490736b2873 132-135,140
+  s_77ab54a7a7fa8c::t_a15490736b2873 132-135,132-134,135,140
   s_77ab54a7a7fa8c::t_e0ebb291f0bfa7 261-264
   s_4608a70ce0e4e7::t_574522affe7763 477
   s_4608a70ce0e4e7::t_a2e6393b1e5ce1 136-139,461-476,798
-  s_4608a70ce0e4e7::t_cd26486f6d09b7 449-460
+  s_4608a70ce0e4e7::t_cd26486f6d09b7 449-460,449-456,457-460
   s_77ab54a7a7fa8c::t_b339d07ea731fa 737
 src/config/openai-provider-mappings.mjs
   s_77ab54a7a7fa8c::t_39a6dd2a2a08d1 26
