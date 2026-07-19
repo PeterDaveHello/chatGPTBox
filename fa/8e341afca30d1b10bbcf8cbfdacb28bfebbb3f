@@ -2,8 +2,8 @@ tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_731d3e715fc854 10,24,210-213
   s_4608a70ce0e4e7::t_6690d54018405a 209
   s_4608a70ce0e4e7::t_a2e6393b1e5ce1 214-215
-  s_4608a70ce0e4e7::t_0457086e8b839c 225-226
-  s_4608a70ce0e4e7::t_706a7a53e0316a 216-224
+  s_4608a70ce0e4e7::t_0457086e8b839c 214-215,225-226
+  s_4608a70ce0e4e7::t_706a7a53e0316a 216-224,216-226
 src/config/openai-provider-mappings.mjs
   s_4608a70ce0e4e7::t_538282a08a38a1 10,32
 src/config/index.mjs
