@@ -4,7 +4,7 @@ src/popup/sections/GeneralPart.jsx
   s_4608a70ce0e4e7::t_54c91de6a16306 65-66
 tests/unit/services/apis/thin-adapters.test.mjs
   s_4608a70ce0e4e7::t_ac7e109c7150b9 66-71
-  s_4608a70ce0e4e7::t_54c91de6a16306 72
+  s_4608a70ce0e4e7::t_54c91de6a16306 66-72,72
 src/background/index.mjs
   s_4608a70ce0e4e7::t_2adc0e3105af7f 34,406
 src/config/index.mjs
@@ -15,7 +15,7 @@ tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_731d3e715fc854 11,25,211-214
   s_4608a70ce0e4e7::t_a2e6393b1e5ce1 7,215-216,228-233
   s_4608a70ce0e4e7::t_706a7a53e0316a 217-227
-  s_4608a70ce0e4e7::t_0457086e8b839c 234-235
+  s_4608a70ce0e4e7::t_0457086e8b839c 215-216,234-235
   s_4608a70ce0e4e7::t_6690d54018405a 210
 tests/unit/services/apis/provider-registry.test.mjs
   s_4608a70ce0e4e7::t_6b266d3d443851 6
