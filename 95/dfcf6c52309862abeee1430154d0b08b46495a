@@ -1,0 +1,31 @@
+src/config/index.mjs
+  s_c65535362ead80::t_8be179d1f7d4e0 759
+  s_c65535362ead80::t_36c560ce9d2e4d 94
+  s_c65535362ead80::t_d7d7b366ed5e8e 368-371
+tests/unit/services/apis/claude-api.test.mjs
+  s_c65535362ead80::t_0053caef517b86 163
+  s_c65535362ead80::t_5ede2f35c9f9bd 128
+src/config/model-key-migrations.mjs
+  s_c65535362ead80::t_bbdfd6755fa419 67
+src/services/apis/claude-api.mjs
+  s_c65535362ead80::t_07cf1f9273bab2 18
+  s_c65535362ead80::t_962a301746bf55 9-14
+src/_locales/en/main.json
+  s_c65535362ead80::t_d5633652b75907 198
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "95dfcf6c52309862abeee1430154d0b08b46495a",
+  "prompts": {},
+  "sessions": {
+    "s_c65535362ead80": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0656a81a7ffeatAE7o5k83mnOa",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
