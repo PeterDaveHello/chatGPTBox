@@ -1,0 +1,74 @@
+src/_locales/ru/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 96-98
+src/_locales/zh-hant/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 91-93
+src/services/apis/claude-api.mjs
+  s_3038e8b886e0dc::t_4d815c6cddccd9 81
+  s_3038e8b886e0dc::t_6d3fc8a6dafb52 52
+  s_3038e8b886e0dc::t_00e414768737c0 109
+  s_3038e8b886e0dc::t_6c2ef52b83b4dd 76-77,83,87-88,94,106
+  s_3038e8b886e0dc::t_f147e69e3f08bb 3,121-131
+  s_3038e8b886e0dc::t_4ad31c11d170d0 55
+  s_3038e8b886e0dc::t_902b63d3b1f98d 79,84,86,90
+  s_3038e8b886e0dc::t_27e532f474d83b 56,120
+  s_3038e8b886e0dc::t_1741877198d786 53,85,89
+  s_3038e8b886e0dc::t_84c508f565d3d2 54
+  s_3038e8b886e0dc::t_65ff218f0ee227 78,82
+src/_locales/es/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+src/_locales/fr/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+tests/unit/services/apis/claude-api.test.mjs
+  s_3038e8b886e0dc::t_aea84d284cf802 305
+  s_3038e8b886e0dc::t_f2f5c36214e440 12-29,258,289,314,342,361,403
+  s_3038e8b886e0dc::t_4ad31c11d170d0 224,285,312-313,315-332,334,356,399-400
+  s_3038e8b886e0dc::t_9a9caaa4f391fa 287-288,290-303,306,436
+  s_3038e8b886e0dc::t_ba2cc79aa2d7cb 286
+  s_3038e8b886e0dc::t_bb4b1c876bfb69 225
+  s_3038e8b886e0dc::t_3a732872ebe5ae 355,435
+  s_3038e8b886e0dc::t_84c508f565d3d2 212,308-311,401-402,404-421,423-433
+  s_3038e8b886e0dc::t_f8c911faf7d5b5 304
+  s_3038e8b886e0dc::t_afdb9d627757ff 230-231,233-240,242-250,252-257,260-284
+  s_3038e8b886e0dc::t_a4a0c7357ffd0e 373
+  s_3038e8b886e0dc::t_1c4a4450a15201 434
+  s_3038e8b886e0dc::t_1243731fce1355 4,374-398,422
+  s_3038e8b886e0dc::t_6d3fc8a6dafb52 227-228
+  s_3038e8b886e0dc::t_1741877198d786 226,229,232,241,251
+  s_3038e8b886e0dc::t_f147e69e3f08bb 219-223,337-341,343-354,357-360,362-370,372
+  s_3038e8b886e0dc::t_aeef59d5acc666 259
+src/_locales/de/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 90-92
+src/_locales/en/main.json
+  s_3038e8b886e0dc::t_b50398f2336fbb 97-98
+  s_3038e8b886e0dc::t_f147e69e3f08bb 99
+src/_locales/zh-hans/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 91-93
+src/_locales/pt/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+src/_locales/ko/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+src/_locales/in/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+src/_locales/tr/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+src/_locales/ja/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+src/_locales/it/main.json
+  s_3038e8b886e0dc::t_c7605ea45816e7 88-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "71f40b55c7c7a11aedc3d19be268e49178c36248",
+  "prompts": {},
+  "sessions": {
+    "s_3038e8b886e0dc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f9ad5-8d19-7d11-a4ca-ef1f15ef0116",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
