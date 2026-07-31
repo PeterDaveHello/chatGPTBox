@@ -1,0 +1,19 @@
+package-lock.json
+  s_50000b7f5f3b3c::t_1868dfa86df454 4313-4315,12679-12681
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "1f3242c417b3015c6444e5651b379e5d928d10cc",
+  "prompts": {},
+  "sessions": {
+    "s_50000b7f5f3b3c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb9ae-94db-7f00-aef9-762610072d0f",
+        "model": "unknown"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
