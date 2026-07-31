@@ -1,0 +1,31 @@
+README.md
+  s_795fc1d2f0cf51::t_5028c847f84c1a 94
+  s_b4eca00b6cd1d6::t_d1711d1f5ee871 14
+  s_795fc1d2f0cf51::t_fe3af81a2ed7b3 28
+  s_b4eca00b6cd1d6::t_87203c1e097d52 100
+  s_795fc1d2f0cf51::t_d32f1117eb8ded 101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "6e80c6f2759d99c1974193142b4b17179085b617",
+  "prompts": {},
+  "sessions": {
+    "s_795fc1d2f0cf51": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "cfbbeeed-2bd7-4a9a-bc65-073c5813116a",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": null
+    },
+    "s_b4eca00b6cd1d6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7fe6-f59c-7a60-ad01-f3b690418f25",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": null
+    }
+  }
+}

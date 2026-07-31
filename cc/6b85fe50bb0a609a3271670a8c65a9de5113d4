@@ -2,9 +2,10 @@ src/services/apis/provider-registry.mjs
   s_4608a70ce0e4e7::t_cef6ab1be905fb 39-41
   s_4608a70ce0e4e7::t_c05e072296daa4 38
   s_403f6e7f29d44c::t_f1118f9df690c5 45
-  s_4608a70ce0e4e7::t_78659432842db0 123
+  s_4608a70ce0e4e7::t_78659432842db0 33,35-37,123
   s_4608a70ce0e4e7::t_f07ef87cdfbf6f 122,124
   s_4608a70ce0e4e7::t_481640d7025b2b 42-44
+  s_4608a70ce0e4e7::t_5c2b554e3df9c7 29
 src/background/index.mjs
   s_4608a70ce0e4e7::t_cef6ab1be905fb 29,400
 src/popup/sections/GeneralPart.jsx
@@ -14,10 +15,11 @@ src/config/openai-provider-mappings.mjs
   s_4608a70ce0e4e7::t_042f373ad4d9a5 25
 tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_8ff7918a8b3415 12
-  s_4608a70ce0e4e7::t_78659432842db0 228,232-240,253-259
+  s_4608a70ce0e4e7::t_78659432842db0 12,228,232-240,253-259,253-260
   s_4608a70ce0e4e7::t_6886dd4db61260 26,260-261
-  s_4608a70ce0e4e7::t_efa0f7efefc758 229-231
+  s_4608a70ce0e4e7::t_efa0f7efefc758 229-231,260-261
   s_4608a70ce0e4e7::t_706a7a53e0316a 241-252
+  s_4608a70ce0e4e7::t_d12d6064533f99 261
 tests/unit/services/apis/thin-adapters.test.mjs
   s_4608a70ce0e4e7::t_6886dd4db61260 53-56,58
   s_4608a70ce0e4e7::t_90f0813af61b39 52
@@ -27,8 +29,9 @@ src/config/index.mjs
   s_4608a70ce0e4e7::t_efa0f7efefc758 126-130,776
   s_4608a70ce0e4e7::t_cef6ab1be905fb 237-240,427-438,924-925
   s_4608a70ce0e4e7::t_98b02d4982b00e 439
+  s_4608a70ce0e4e7::t_c0ed88c7776e9d 924-925
 tests/unit/services/apis/provider-registry.test.mjs
-  s_4608a70ce0e4e7::t_78659432842db0 44,46-51,53-57,59-65,67-69
+  s_4608a70ce0e4e7::t_78659432842db0 44,46-51,53-57,59-65,67-69,71-72,76-77
   s_4608a70ce0e4e7::t_6886dd4db61260 71-72
   s_4608a70ce0e4e7::t_057a55bebbb915 52,66
   s_4608a70ce0e4e7::t_efa0f7efefc758 45,58,70

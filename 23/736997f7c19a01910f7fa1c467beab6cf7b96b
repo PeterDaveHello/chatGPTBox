@@ -1,0 +1,38 @@
+README_TR.md
+  s_414a0e41aafc92::t_9dcc9f5b149cfc 16,45-48
+README_JA.md
+  s_655fdfb3326537::t_15b843fe51f392 82
+  s_3a464c8a7c8de6::t_d0c2be5406cac5 15,44-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "23736997f7c19a01910f7fa1c467beab6cf7b96b",
+  "prompts": {},
+  "sessions": {
+    "s_3a464c8a7c8de6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7f08-4041-7f22-8ae9-d88a335ade31",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    },
+    "s_414a0e41aafc92": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7ee9-600f-7983-8124-b3d44e67b33b",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    },
+    "s_655fdfb3326537": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_080f521a8ffe9Tk5yy6X6ppZxh",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": null
+    }
+  }
+}

@@ -1,0 +1,36 @@
+README_JA.md
+  s_b4eca00b6cd1d6::t_5b81bc2556a06d 26
+  s_b4eca00b6cd1d6::t_808b9863f4769d 15
+  s_b4eca00b6cd1d6::t_04724aba30cd75 14
+  s_b4eca00b6cd1d6::t_3c0d7039a909da 44-47,82
+README_IN.md
+  s_b4eca00b6cd1d6::t_04724aba30cd75 14-15,28
+  s_b4eca00b6cd1d6::t_c2ebd07fb9a9e5 44-47,78-79
+  s_b4eca00b6cd1d6::t_5b81bc2556a06d 26
+README_TR.md
+  s_b4eca00b6cd1d6::t_8f123df61d2045 45-48
+  s_b4eca00b6cd1d6::t_37e29dde620f5a 29,101
+  s_b4eca00b6cd1d6::t_04724aba30cd75 15-16
+  s_b4eca00b6cd1d6::t_5b81bc2556a06d 27
+README_ZH.md
+  s_b4eca00b6cd1d6::t_13da583b0c7336 102
+  s_b4eca00b6cd1d6::t_04724aba30cd75 14-15,44-47,78-79
+  s_b4eca00b6cd1d6::t_5b81bc2556a06d 26
+  s_b4eca00b6cd1d6::t_37e29dde620f5a 28,141
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "2d9a7b9b1b629b0990c19d49a8b1e3a213ff3d85",
+  "prompts": {},
+  "sessions": {
+    "s_b4eca00b6cd1d6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7fe6-f59c-7a60-ad01-f3b690418f25",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": null
+    }
+  }
+}

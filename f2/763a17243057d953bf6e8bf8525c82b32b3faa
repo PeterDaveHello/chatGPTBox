@@ -1,0 +1,19 @@
+package-lock.json
+  s_3038e8b886e0dc::t_8db800076c7146 4317-4319,7121-7123,8245-8247,8984-8986,10899-10901,11574-11576,11594,12738-12740,14364-14366,14560-14562,14569
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.17",
+  "base_commit_sha": "f2763a17243057d953bf6e8bf8525c82b32b3faa",
+  "prompts": {},
+  "sessions": {
+    "s_3038e8b886e0dc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f9ad5-8d19-7d11-a4ca-ef1f15ef0116",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}

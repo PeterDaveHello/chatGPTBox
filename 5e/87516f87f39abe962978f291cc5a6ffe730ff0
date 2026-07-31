@@ -1,0 +1,19 @@
+README_TR.md
+  s_414a0e41aafc92::t_9dcc9f5b149cfc 16,45-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "5e87516f87f39abe962978f291cc5a6ffe730ff0",
+  "prompts": {},
+  "sessions": {
+    "s_414a0e41aafc92": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f7ee9-600f-7983-8124-b3d44e67b33b",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}

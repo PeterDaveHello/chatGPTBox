@@ -1,0 +1,49 @@
+tests/unit/config/migrate-user-config.test.mjs
+  s_3038e8b886e0dc::t_fd219872df4f1e 10,36,38-40
+  s_3038e8b886e0dc::t_44075c59070d7c 4
+  s_3038e8b886e0dc::t_9f503f7bbaf8e6 37
+src/_locales/en/main.json
+  s_c65535362ead80::t_d5633652b75907 198
+src/services/apis/claude-api.mjs
+  s_3038e8b886e0dc::t_6c2ef52b83b4dd 73-76,78-79,81-82
+  s_c65535362ead80::t_962a301746bf55 9-14
+  s_3038e8b886e0dc::t_6d3fc8a6dafb52 52,73-76,78-82
+  s_3038e8b886e0dc::t_afdb9d627757ff 80
+src/config/index.mjs
+  s_c65535362ead80::t_d7d7b366ed5e8e 368-371
+  s_c65535362ead80::t_8be179d1f7d4e0 758
+  s_c65535362ead80::t_36c560ce9d2e4d 94
+tests/unit/services/apis/claude-api.test.mjs
+  s_3038e8b886e0dc::t_1741877198d786 214
+  s_3038e8b886e0dc::t_9a9caaa4f391fa 224-232,234-236,238,240-241,244-245
+  s_3038e8b886e0dc::t_4ad31c11d170d0 233,242
+  s_c65535362ead80::t_5ede2f35c9f9bd 128
+  s_3038e8b886e0dc::t_6d3fc8a6dafb52 214-245,215-223
+  s_3038e8b886e0dc::t_6c0dee179e7c14 237
+  s_3038e8b886e0dc::t_048eac17d6a3b4 239
+  s_3038e8b886e0dc::t_d9bbc946804055 243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "a9fab79915006ce035fdc46ae3810854e2426a15",
+  "prompts": {},
+  "sessions": {
+    "s_3038e8b886e0dc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f9ad5-8d19-7d11-a4ca-ef1f15ef0116",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_c65535362ead80": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0656a81a7ffeatAE7o5k83mnOa",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": null
+    }
+  }
+}

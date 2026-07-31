@@ -7,8 +7,8 @@ src/config/openai-provider-mappings.mjs
   s_4608a70ce0e4e7::t_042f373ad4d9a5 10,26
 tests/unit/config/config-predicates.test.mjs
   s_4608a70ce0e4e7::t_efa0f7efefc758 7,236-238,255-260
-  s_4608a70ce0e4e7::t_d12d6064533f99 262
-  s_4608a70ce0e4e7::t_78659432842db0 13,24,235,239-254,261
+  s_4608a70ce0e4e7::t_d12d6064533f99 256,262
+  s_4608a70ce0e4e7::t_78659432842db0 13,24,235,239-254,239-255,261
 tests/unit/services/apis/provider-registry.test.mjs
   s_4608a70ce0e4e7::t_78659432842db0 49,51-62,64-74,76-77
   s_4608a70ce0e4e7::t_efa0f7efefc758 50,63,75

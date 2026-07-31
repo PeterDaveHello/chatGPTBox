@@ -16,7 +16,7 @@ src/services/apis/provider-registry.mjs
   s_4608a70ce0e4e7::t_93751ee7e2f911 81
   s_4608a70ce0e4e7::t_54c91de6a16306 82-88,131
 tests/unit/services/apis/thin-adapters.test.mjs
-  s_4608a70ce0e4e7::t_54c91de6a16306 72
+  s_4608a70ce0e4e7::t_54c91de6a16306 66-72,72
   s_4608a70ce0e4e7::t_ac7e109c7150b9 66-71
 src/popup/sections/GeneralPart.jsx
   s_4608a70ce0e4e7::t_54c91de6a16306 65-66
