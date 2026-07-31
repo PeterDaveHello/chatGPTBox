@@ -1,0 +1,19 @@
+AGENTS.md
+  s_cd6e8ba19c8f71::t_86e763dd82fca8 222
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "4b3a89ffae413e3a9dfccd45308b4b3391b099b8",
+  "prompts": {},
+  "sessions": {
+    "s_cd6e8ba19c8f71": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb95a-90bc-7ef3-8cfa-e8dbb8e90c6f",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
