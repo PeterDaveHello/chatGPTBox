@@ -1,0 +1,18 @@
+scripts/submit-stores.mjs
+  h_91c03fe45fa613 76
+src/popup/Popup.jsx
+  h_91c03fe45fa613 138-142
+tests/unit/release/submit-stores.test.mjs
+  h_91c03fe45fa613 114,168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "6e8dac0347c59f1a8f53482d2547302eae440efd",
+  "prompts": {},
+  "humans": {
+    "h_91c03fe45fa613": {
+      "author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
