@@ -1,0 +1,30 @@
+tests/unit/services/apis/thin-adapters.test.mjs
+  s_a73d42be16935b::t_2eb5f0d5bd02c9 71,75,120-122
+src/config/index.mjs
+  s_a73d42be16935b::t_d226a1070dd885 155,520-522
+  s_d4bf59c3208b7e::t_86dc4536b08854 523
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "e5afeb98d80a059b66562f5bb5e5be391ec182a1",
+  "prompts": {},
+  "sessions": {
+    "s_a73d42be16935b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04eb8-4ddf-7d90-8b95-4cf1816b4eab",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    },
+    "s_d4bf59c3208b7e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3b02a270-8e64-452a-8011-8efec6828e37",
+        "model": "unknown"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
