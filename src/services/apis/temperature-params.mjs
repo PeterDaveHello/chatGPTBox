@@ -3,13 +3,14 @@ const MODELS_WITHOUT_CUSTOM_TEMPERATURE = new Set([
   'claude-opus-4-8',
   'claude-sonnet-5',
   'claude-opus-5',
+  'gpt-6-astra',
 ])
 
 function normalizeModelId(model) {
   return String(model || '')
     .trim()
     .toLowerCase()
-    .replace(/^(?:anthropic|google)\//, '')
+    .replace(/^(?:anthropic|google|openai)\//, '')
     .replace(/\./g, '-')
 }
 

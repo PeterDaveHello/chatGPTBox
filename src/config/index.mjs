@@ -82,6 +82,7 @@ export const chatgptApiModelKeys = [
   'chatgptApi5_6Sol',
   'chatgptApi5_6Terra',
   'chatgptApi5_6Luna',
+  'chatgptApi6Astra',
   'chatgptApi4oMini',
   'chatgptApi4_1',
   'chatgptApi4_1_mini',
@@ -332,6 +333,7 @@ export const Models = {
   chatgptApi5_6Sol: { value: 'gpt-5.6-sol', desc: 'OpenAI (GPT-5.6 Sol)' },
   chatgptApi5_6Terra: { value: 'gpt-5.6-terra', desc: 'OpenAI (GPT-5.6 Terra)' },
   chatgptApi5_6Luna: { value: 'gpt-5.6-luna', desc: 'OpenAI (GPT-5.6 Luna)' },
+  chatgptApi6Astra: { value: 'gpt-6-astra', desc: 'OpenAI (GPT-6 Astra)' },
 
   chatgptApi4_1: { value: 'gpt-4.1', desc: 'OpenAI (GPT-4.1)' },
   chatgptApi4_1_mini: { value: 'gpt-4.1-mini', desc: 'OpenAI (GPT-4.1 mini)' },
@@ -749,6 +751,7 @@ export const defaultApiModeIds = [
   'chatgptApi5_6Sol',
   'chatgptApi5_6Terra',
   'chatgptApi5_6Luna',
+  'chatgptApi6Astra',
   'xaiGrok4_6',
   'xaiGrok4_5',
   'claudeOpus5Api',

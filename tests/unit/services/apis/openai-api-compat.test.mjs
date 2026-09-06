@@ -751,6 +751,44 @@ test('generateAnswersWithOpenAiApi uses max_completion_tokens for GPT-5.4 mini',
   assert.equal(Object.hasOwn(body, 'max_tokens'), false)
 })
 
+test('generateAnswersWithOpenAiApi uses max_completion_tokens for GPT-6 Astra and omits unsupported temperature', async (t) => {
+  t.mock.method(console, 'debug', () => {})
+  setStorage({
+    customOpenAiApiUrl: 'https://api.openai.example.com',
+    maxConversationContextLength: 3,
+    maxResponseTokenLength: 444,
+    temperatureOverrideEnabled: true,
+    temperature: 0.3,
+  })
+
+  const session = {
+    modelName: 'chatgptApi6Astra',
+    conversationRecords: [],
+    isRetry: false,
+  }
+  const port = createFakePort()
+
+  let capturedInput
+  let capturedInit
+  t.mock.method(globalThis, 'fetch', async (input, init) => {
+    capturedInput = input
+    capturedInit = init
+    return createMockSseResponse([
+      'data: {"choices":[{"delta":{"content":"OK"},"finish_reason":"stop"}]}\n\n',
+    ])
+  })
+
+  await generateAnswersWithOpenAiApi(port, 'CurrentQ', session, 'sk-test')
+
+  const body = JSON.parse(capturedInit.body)
+  assert.equal(capturedInput, 'https://api.openai.example.com/v1/chat/completions')
+  assert.equal(body.model, 'gpt-6-astra')
+  assert.equal(body.max_completion_tokens, 444)
+  assert.equal(Object.hasOwn(body, 'max_tokens'), false)
+  assert.equal(Object.hasOwn(body, 'temperature'), false)
+  assert.equal(session.conversationRecords.at(-1).answer, 'OK')
+})
+
 test('generateAnswersWithOpenAiApi uses max_completion_tokens for GPT-5.4 nano', async (t) => {
   t.mock.method(console, 'debug', () => {})
   setStorage({
