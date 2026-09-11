@@ -225,10 +225,13 @@ async function getInput(inputQuery) {
 }
 
 let toolbarContainer
+let toolbarCreationVersion = 0
 const deleteToolbar = () => {
+  toolbarCreationVersion += 1
   try {
     if (toolbarContainer && toolbarContainer.className === 'chatgptbox-toolbar-container') {
       console.debug('[content] Deleting toolbar:', toolbarContainer)
+      unmountComponentAtNode(toolbarContainer)
       toolbarContainer.remove()
       toolbarContainer = null
     }
@@ -237,7 +240,7 @@ const deleteToolbar = () => {
   }
 }
 
-const createSelectionTools = async (toolbarContainerElement, selection) => {
+const createSelectionTools = async (toolbarContainerElement, selection, creationVersion) => {
   console.debug(
     '[content] createSelectionTools called with selection:',
     selection,
@@ -247,6 +250,14 @@ const createSelectionTools = async (toolbarContainerElement, selection) => {
   try {
     toolbarContainerElement.className = 'chatgptbox-toolbar-container'
     const userConfig = await getUserConfig()
+    if (
+      creationVersion !== toolbarCreationVersion ||
+      toolbarContainerElement !== toolbarContainer ||
+      !toolbarContainerElement.isConnected
+    ) {
+      console.debug('[content] Selection tools creation was superseded, skipping render.')
+      return
+    }
     render(
       <FloatingToolbar
         session={initSession({
@@ -290,8 +301,10 @@ async function prepareForSelectionTools() {
       }
 
       deleteToolbar()
+      const creationVersion = toolbarCreationVersion
       setTimeout(async () => {
         try {
+          if (creationVersion !== toolbarCreationVersion) return
           const selection = window
             .getSelection()
             ?.toString()
@@ -302,6 +315,7 @@ async function prepareForSelectionTools() {
             let position
 
             const config = await getUserConfig()
+            if (creationVersion !== toolbarCreationVersion) return
             if (!config.selectionToolsNextToInputBox) {
               position = { x: e.pageX + 20, y: e.pageY + 20 }
             } else {
@@ -325,8 +339,9 @@ async function prepareForSelectionTools() {
               }
             }
             console.debug('[content] Toolbar position:', position)
-            toolbarContainer = createElementAtPosition(position.x, position.y)
-            await createSelectionTools(toolbarContainer, selection)
+            const container = createElementAtPosition(position.x, position.y)
+            toolbarContainer = container
+            await createSelectionTools(container, selection, creationVersion)
           } else {
             console.debug('[content] No text selected on mouseup.')
           }
@@ -346,7 +361,11 @@ async function prepareForSelectionTools() {
         return
       }
       console.debug('[content] Mousedown outside toolbar, removing existing toolbars.')
-      document.querySelectorAll('.chatgptbox-toolbar-container').forEach((el) => el.remove())
+      toolbarCreationVersion += 1
+      document.querySelectorAll('.chatgptbox-toolbar-container').forEach((el) => {
+        unmountComponentAtNode(el)
+        el.remove()
+      })
       toolbarContainer = null
     } catch (error) {
       console.error('[content] Error in mousedown listener for selection tools:', error)
@@ -402,8 +421,10 @@ async function prepareForSelectionToolsTouch() {
       }
 
       deleteToolbar()
+      const creationVersion = toolbarCreationVersion
       setTimeout(async () => {
         try {
+          if (creationVersion !== toolbarCreationVersion) return
           const selection = window
             .getSelection()
             ?.toString()
@@ -412,8 +433,9 @@ async function prepareForSelectionToolsTouch() {
           if (selection) {
             console.debug('[content] Text selected via touch:', selection)
             const touch = e.changedTouches[0]
-            toolbarContainer = createElementAtPosition(touch.pageX + 20, touch.pageY + 20)
-            await createSelectionTools(toolbarContainer, selection)
+            const container = createElementAtPosition(touch.pageX + 20, touch.pageY + 20)
+            toolbarContainer = container
+            await createSelectionTools(container, selection, creationVersion)
           } else {
             console.debug('[content] No text selected on touchend.')
           }
@@ -436,7 +458,11 @@ async function prepareForSelectionToolsTouch() {
         return
       }
       console.debug('[content] Touchstart outside toolbar, removing existing toolbars.')
-      document.querySelectorAll('.chatgptbox-toolbar-container').forEach((el) => el.remove())
+      toolbarCreationVersion += 1
+      document.querySelectorAll('.chatgptbox-toolbar-container').forEach((el) => {
+        unmountComponentAtNode(el)
+        el.remove()
+      })
       toolbarContainer = null
     } catch (error) {
       console.error('[content] Error in touchstart listener for touch selection tools:', error)

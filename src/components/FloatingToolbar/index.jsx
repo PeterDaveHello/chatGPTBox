@@ -1,4 +1,5 @@
 import { cloneElement, useCallback, useEffect, useState } from 'react'
+import { unmountComponentAtNode } from 'react-dom'
 import ConversationCard from '../ConversationCard'
 import PropTypes from 'prop-types'
 import { config as toolsConfig } from '../../content-script/selection-tools'
@@ -70,6 +71,7 @@ function FloatingToolbar(props) {
     }
 
     const onClose = useCallback(() => {
+      unmountComponentAtNode(props.container)
       props.container.remove()
     }, [])
 
