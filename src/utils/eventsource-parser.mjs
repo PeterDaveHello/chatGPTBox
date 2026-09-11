@@ -2,7 +2,7 @@
 
 function createParser(onParse) {
   let isFirstChunk
-  let bytes
+  let decoder
   let buffer
   let startingPosition
   let startingFieldLength
@@ -18,7 +18,7 @@ function createParser(onParse) {
   }
   function reset() {
     isFirstChunk = true
-    bytes = []
+    decoder = new TextDecoder()
     buffer = ''
     startingPosition = 0
     startingFieldLength = -1
@@ -29,8 +29,7 @@ function createParser(onParse) {
   }
 
   function feed(chunk) {
-    bytes = bytes.concat(Array.from(chunk))
-    buffer = new TextDecoder().decode(new Uint8Array(bytes))
+    buffer += decoder.decode(chunk, { stream: true })
     if (isFirstChunk && hasBom(buffer)) {
       buffer = buffer.slice(BOM.length)
     }
@@ -70,10 +69,8 @@ function createParser(onParse) {
       position += lineLength + 1
     }
     if (position === length) {
-      bytes = []
       buffer = ''
     } else if (position > 0) {
-      bytes = bytes.slice(new TextEncoder().encode(buffer.slice(0, position)).length)
       buffer = buffer.slice(position)
     }
   }

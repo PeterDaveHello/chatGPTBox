@@ -115,12 +115,82 @@ test('createParser preserves split CRLF state across empty chunks', () => {
 
 test('createParser produces the same events at every single chunk boundary', () => {
   const stream = toBytes('data: alpha\r\n\ndata: beta\ndata: gamma\r\r')
-  const expected = parseChunks(stream)
+  const expected = [
+    {
+      type: 'event',
+      id: undefined,
+      event: undefined,
+      data: 'alpha',
+      extra: undefined,
+    },
+    {
+      type: 'event',
+      id: undefined,
+      event: undefined,
+      data: 'beta\ngamma',
+      extra: undefined,
+    },
+  ]
 
   for (let split = 0; split <= stream.length; ++split) {
     const actual = parseChunks(stream.slice(0, split), stream.slice(split))
     assert.deepEqual(actual, expected, `split at byte ${split}`)
   }
+})
+
+test('createParser preserves UTF-8 data at every byte boundary', () => {
+  const stream = toBytes('data: 台灣🙂 café\n\n')
+  const expected = [
+    {
+      type: 'event',
+      id: undefined,
+      event: undefined,
+      data: '台灣🙂 café',
+      extra: undefined,
+    },
+  ]
+
+  for (let split = 0; split <= stream.length; ++split) {
+    const actual = parseChunks(stream.slice(0, split), stream.slice(split))
+    assert.deepEqual(actual, expected, `split at byte ${split}`)
+  }
+})
+
+test('createParser preserves pending data after a leading UTF-8 BOM', () => {
+  const parsed = parseChunks(toBytes('\uFEFFdata: a\n\ndata:'), toBytes(' b\n\n'))
+
+  assert.deepEqual(
+    parsed.map((event) => event.data),
+    ['a', 'b'],
+  )
+})
+
+test('createParser preserves pending data after invalid UTF-8 replacement', () => {
+  const firstChunk = new Uint8Array([
+    ...toBytes('data: '),
+    0xff,
+    ...toBytes('\n\ndata:'),
+  ])
+  const parsed = parseChunks(firstChunk, toBytes(' b\n\n'))
+
+  assert.deepEqual(
+    parsed.map((event) => event.data),
+    ['�', 'b'],
+  )
+})
+
+test('createParser reset discards pending decoder bytes', () => {
+  const parsed = []
+  const parser = createParser((event) => parsed.push(event))
+
+  parser.feed(toBytes('🙂').slice(0, 2))
+  parser.reset()
+  parser.feed(toBytes('data: clean\n\n'))
+
+  assert.deepEqual(
+    parsed.map((event) => event.data),
+    ['clean'],
+  )
 })
 
 test('createParser handles \\r only line endings', () => {
