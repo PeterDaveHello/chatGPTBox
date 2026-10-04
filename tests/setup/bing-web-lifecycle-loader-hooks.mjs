@@ -17,15 +17,11 @@ const sources = {
       }
     }
   `,
-  'test:bing-web-model': `
-    export const getModelValue = () => null
-  `,
 }
 
 const stubs = new Map([
   ['../../config/index.mjs', 'test:bing-web-config'],
   ['../clients/bing/index.mjs', 'test:bing-web-client'],
-  ['../../utils/model-name-convert.mjs', 'test:bing-web-model'],
 ])
 
 export async function resolve(specifier, context, nextResolve) {

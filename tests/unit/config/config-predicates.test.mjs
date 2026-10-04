@@ -28,7 +28,6 @@ import {
   isUsingMoonshotApiModel,
   isUsingMistralApiModel,
   isUsingMoonshotWebModel,
-  isUsingMultiModeModel,
   isUsingOllamaApiModel,
   isUsingOpenAiApiModel,
   isUsingGptCompletionApiModel,
@@ -199,11 +198,9 @@ test('isUsingCustomModel works with modelName and apiMode forms', () => {
   assert.equal(isUsingCustomModel({ apiMode }), true)
 })
 
-test('isUsingMultiModeModel currently follows Bing web group behavior', () => {
+test('isUsingBingWebModel detects Bing web models', () => {
   assert.equal(isUsingBingWebModel({ modelName: 'bingFree4' }), true)
-  assert.equal(isUsingMultiModeModel({ modelName: 'bingFree4' }), true)
   assert.equal(isUsingBingWebModel({ modelName: 'chatgptFree35' }), false)
-  assert.equal(isUsingMultiModeModel({ modelName: 'chatgptFree35' }), false)
 })
 
 // ── isUsing* predicate wrappers for remaining providers ──────────────

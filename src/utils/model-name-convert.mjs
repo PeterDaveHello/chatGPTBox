@@ -1,4 +1,4 @@
-import { AlwaysCustomGroups, ModelGroups, ModelMode, Models } from '../config/index.mjs'
+import { AlwaysCustomGroups, ModelGroups, Models } from '../config/index.mjs'
 
 function normalizeProviderId(value) {
   return String(value || '')
@@ -37,9 +37,7 @@ export function modelNameToDesc(modelName, t, extraCustomModelName = '') {
     const presetPart = modelNameToPresetPart(modelName)
     const customPart = modelNameToCustomPart(modelName)
     if (presetPart in Models) {
-      if (customPart in ModelMode)
-        desc = `${t(Models[presetPart].desc)} (${t(ModelMode[customPart])})`
-      else desc = `${t(Models[presetPart].desc)} (${customPart})`
+      desc = `${t(Models[presetPart].desc)} (${customPart})`
     } else if (presetPart in ModelGroups) {
       const baseDesc =
         presetPart === 'azureOpenAiApiModelKeys'
@@ -441,7 +439,7 @@ export function getUniquelySelectedApiModeIndex(
   return urlMatchedIndexes.length === 1 ? urlMatchedIndexes[0] : -1
 }
 
-// also match custom modelName, e.g. when modelName is bingFree4, configOrSession model is bingFree4-fast, it returns true
+// also match custom modelName, e.g. when modelName is chatgptFree35, configOrSession model is chatgptFree35-mySuffix, it returns true
 export function isUsingModelName(modelName, configOrSession) {
   let configOrSessionModelName = configOrSession.apiMode
     ? apiModeToModelName(configOrSession.apiMode)

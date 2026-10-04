@@ -31,7 +31,7 @@ before(async () => {
   globalThis.__BING_WEB_LIFECYCLE_TEST__ = {
     clientConstructCount: 0,
     sendMessageCount: 0,
-    getUserConfig: async () => ({ modelMode: 'balanced' }),
+    getUserConfig: async () => ({}),
     sendMessage: async () => {
       throw new Error('sendMessage should not run in this regression test')
     },
@@ -93,7 +93,7 @@ test('aborting while provider config is pending prevents Bing request startup', 
   port.emitDisconnect()
   assert.deepEqual(port.listenerCounts(), { onMessage: 1, onDisconnect: 0 })
 
-  pendingConfig.resolve({ modelMode: 'balanced' })
+  pendingConfig.resolve({})
   await generation
 
   assert.equal(state.clientConstructCount, 0)

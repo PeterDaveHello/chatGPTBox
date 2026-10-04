@@ -17,7 +17,25 @@ import {
   normalizeApiMode,
   reconcileMaterializedApiModeDefaults,
 } from '../../../src/utils/model-name-convert.mjs'
-import { ModelGroups } from '../../../src/config/index.mjs'
+import * as config from '../../../src/config/index.mjs'
+import { ModelGroups, Models } from '../../../src/config/index.mjs'
+
+test('ModelMode is fully removed from the config surface', () => {
+  assert.equal('ModelMode' in config, false)
+  assert.equal('isUsingMultiModeModel' in config, false)
+  assert.equal('modelMode' in config.defaultConfig, false)
+})
+
+test('ModelMode suffix variants are no longer generated for any model', () => {
+  for (const mode of ['balanced', 'creative', 'precise', 'fast']) {
+    const suffixed = Object.keys(Models).filter((modelName) => modelName.endsWith(`-${mode}`))
+    assert.deepEqual(suffixed, [], `expected no Models keys ending in -${mode}`)
+  }
+})
+
+test('modelNameToDesc shows a former tone suffix as the literal custom name', () => {
+  assert.equal(modelNameToDesc('bingFree4-fast'), 'Bing (Web, GPT-4) (fast)')
+})
 
 test('modelNameToApiMode and apiModeToModelName round-trip custom model names', () => {
   const modelName = 'bingFree4-fast'
@@ -804,7 +822,7 @@ test('modelNameToDesc returns plain desc for customModel without extra name', ()
   assert.equal(desc, 'Custom Model')
 })
 
-test('modelNameToDesc handles custom model with presetPart in Models, customPart not in ModelMode', () => {
+test('modelNameToDesc handles custom model with presetPart in Models', () => {
   const desc = modelNameToDesc('chatgptFree35-myCustomSuffix')
   assert.equal(desc, 'ChatGPT (Web) (myCustomSuffix)')
 })

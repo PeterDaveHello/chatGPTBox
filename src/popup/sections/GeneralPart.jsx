@@ -8,8 +8,6 @@ import {
   isUsingCustomModel,
   isUsingOllamaApiModel,
   isUsingGithubThirdPartyApiModel,
-  isUsingMultiModeModel,
-  ModelMode,
   ThemeMode,
   TriggerMode,
   Models,
@@ -490,7 +488,6 @@ export function GeneralPart({
           <select
             style={
               isUsingOpenAICompatibleProvider ||
-              isUsingMultiModeModel(config) ||
               isUsingSpecialCustomModel(config) ||
               isUsingAzureOpenAiApiModel(config) ||
               isUsingClaudeApiModel(config)
@@ -534,24 +531,6 @@ export function GeneralPart({
             })}
             <option value={-1}>{t(Models.customModel.desc)}</option>
           </select>
-          {isUsingMultiModeModel(config) && (
-            <select
-              style="width: 50%;"
-              required
-              onChange={(e) => {
-                const modelMode = e.target.value
-                updateConfig({ modelMode: modelMode })
-              }}
-            >
-              {Object.entries(ModelMode).map(([key, desc]) => {
-                return (
-                  <option value={key} key={key} selected={key === config.modelMode}>
-                    {t(desc)}
-                  </option>
-                )
-              })}
-            </select>
-          )}
           {isUsingOpenAICompatibleProvider && !isUsingSpecialCustomModel(config) && (
             <span style="width: 50%; display: flex; gap: 5px;">
               <input

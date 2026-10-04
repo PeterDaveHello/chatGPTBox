@@ -1,7 +1,6 @@
 import BingAIClient from '../clients/bing/index.mjs'
 import { getUserConfig } from '../../config/index.mjs'
 import { pushRecord, setAbortController } from './shared.mjs'
-import { getModelValue } from '../../utils/model-name-convert.mjs'
 
 /**
  * @param {Runtime.Port} port
@@ -19,9 +18,11 @@ export async function generateAnswersWithBingWebApi(
 ) {
   const { controller, cleanController, messageListener, disconnectListener } =
     setAbortController(port)
-  let config
+  // Kept as an await barrier so an abort during startup is observed before the
+  // client is constructed, and so a config read failure still cleans up the port
+  // listeners. Go away with the rest of the Bing provider once it is removed.
   try {
-    config = await getUserConfig()
+    await getUserConfig()
   } catch (error) {
     cleanController()
     throw error
@@ -30,11 +31,6 @@ export async function generateAnswersWithBingWebApi(
     cleanController()
     return
   }
-  let modelMode = getModelValue(session)
-  if (!modelMode) modelMode = config.modelMode
-
-  console.debug('mode', modelMode)
-
   const bingAIClient = new BingAIClient({ userToken: accessToken, features: { genImage: false } })
   if (session.bingWeb_jailbreakConversationCache)
     bingAIClient.conversationsCache.set(
@@ -46,7 +42,6 @@ export async function generateAnswersWithBingWebApi(
   const response = await bingAIClient
     .sendMessage(question, {
       abortController: controller,
-      toneStyle: modelMode,
       jailbreakConversationId: sydneyMode,
       onProgress: (message) => {
         answer = message

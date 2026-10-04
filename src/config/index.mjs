@@ -4,10 +4,8 @@ import { isMobile } from '../utils/is-mobile.mjs'
 import {
   getApiModesFromConfig,
   isInApiModeGroup,
-  modelNameToDesc,
   reconcileMaterializedApiModeDefaults,
 } from '../utils/model-name-convert.mjs'
-import { t } from 'i18next'
 import {
   LEGACY_API_KEY_FIELD_BY_PROVIDER_ID,
   LEGACY_SECRET_KEY_TO_PROVIDER_ID,
@@ -32,13 +30,6 @@ export const ThemeMode = {
   light: 'Light',
   dark: 'Dark',
   auto: 'Auto',
-}
-
-export const ModelMode = {
-  balanced: 'Balanced',
-  creative: 'Creative',
-  precise: 'Precise',
-  fast: 'Fast',
 }
 
 // Provider IDs added after custom providers became configurable need one-time secret migration.
@@ -749,17 +740,6 @@ export const Models = {
   },
 }
 
-for (const modelName in Models) {
-  if (isUsingMultiModeModel({ modelName }))
-    for (const mode in ModelMode) {
-      const key = `${modelName}-${mode}`
-      Models[key] = {
-        value: mode,
-        desc: modelNameToDesc(key, t),
-      }
-    }
-}
-
 /**
  * @typedef {typeof defaultConfig} UserConfig
  */
@@ -824,9 +804,6 @@ export const defaultConfig = {
   nvidiaNimApiKey: '',
 
   customApiKey: '',
-
-  /** @type {keyof ModelMode}*/
-  modelMode: 'balanced',
 
   customModelApiUrl: 'http://localhost:8000/v1/chat/completions',
   customModelName: 'gpt-4.1',
@@ -974,10 +951,6 @@ export function isUsingMoonshotWebModel(configOrSession) {
 }
 
 export function isUsingBingWebModel(configOrSession) {
-  return isInApiModeGroup(bingWebModelKeys, configOrSession)
-}
-
-export function isUsingMultiModeModel(configOrSession) {
   return isInApiModeGroup(bingWebModelKeys, configOrSession)
 }
 
