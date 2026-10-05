@@ -1,0 +1,22 @@
+src/services/apis/bing-web.mjs
+  h_91c03fe45fa613 21-23,25
+src/utils/model-name-convert.mjs
+  h_91c03fe45fa613 1,40,442
+tests/unit/config/config-predicates.test.mjs
+  h_91c03fe45fa613 201
+tests/unit/services/apis/bing-web-lifecycle.test.mjs
+  h_91c03fe45fa613 34,96
+tests/unit/utils/model-name-convert.test.mjs
+  h_91c03fe45fa613 20-38,825
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f3078644b126df6030a7571f52b3ecdc084e4da9",
+  "prompts": {},
+  "humans": {
+    "h_91c03fe45fa613": {
+      "author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
