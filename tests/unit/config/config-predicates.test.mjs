@@ -15,7 +15,6 @@ import {
   xaiApiModelKeys,
   isUsingAimlApiModel,
   isUsingAzureOpenAiApiModel,
-  isUsingBingWebModel,
   isUsingChatGLMApiModel,
   isUsingChatgptWebModel,
   isUsingChatgptApiModel,
@@ -196,11 +195,6 @@ test('isUsingCustomModel works with modelName and apiMode forms', () => {
     active: true,
   }
   assert.equal(isUsingCustomModel({ apiMode }), true)
-})
-
-test('isUsingBingWebModel detects Bing web models', () => {
-  assert.equal(isUsingBingWebModel({ modelName: 'bingFree4' }), true)
-  assert.equal(isUsingBingWebModel({ modelName: 'chatgptFree35' }), false)
 })
 
 // ── isUsing* predicate wrappers for remaining providers ──────────────

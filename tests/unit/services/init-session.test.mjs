@@ -78,17 +78,6 @@ test('all provider-specific fields default to null', () => {
   assert.equal(session.parentMessageId, null)
   assert.equal(session.wsRequestId, null)
 
-  // bing
-  assert.equal(session.bingWeb_encryptedConversationSignature, null)
-  assert.equal(session.bingWeb_conversationId, null)
-  assert.equal(session.bingWeb_clientId, null)
-  assert.equal(session.bingWeb_invocationId, null)
-
-  // bing sydney
-  assert.equal(session.bingWeb_jailbreakConversationId, null)
-  assert.equal(session.bingWeb_parentMessageId, null)
-  assert.equal(session.bingWeb_jailbreakConversationCache, null)
-
   // bard
   assert.equal(session.bard_conversationObj, null)
 

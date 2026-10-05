@@ -111,7 +111,6 @@ const createRuntimePort = () => {
 
 const resetState = () => {
   const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  state.foreground = false
   state.config = defaultConfig()
   state.ports = []
   state.inputBoxProps = null
@@ -119,11 +118,7 @@ const resetState = () => {
   state.configReadCount = 0
   state.getUserConfig = async () => {
     state.configReadCount += 1
-    return { bingAccessToken: 'token', allowEscToCloseAll: false }
-  }
-  state.generateAnswersCount = 0
-  state.generateAnswers = async () => {
-    state.generateAnswersCount += 1
+    return { allowEscToCloseAll: false }
   }
   state.runtimeOnMessage.clear()
 }
@@ -237,38 +232,24 @@ test('remote runtime Port disconnect reconnects and unmount cleans the replaceme
   assert.equal(state.ports.length, 2)
 })
 
-test('close button disposes foreground transport before onClose', async () => {
+test('close button disposes the runtime Port before onClose', async () => {
   const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
   const container = document.createElement('div')
   document.body.append(container)
   let closeCount = 0
   let disconnectedBeforeClose = false
-  let foregroundDisconnectCount = 0
-  state.foreground = true
-  state.generateAnswers = (fakePort) => {
-    state.generateAnswersCount += 1
-    return new Promise((resolve) => {
-      fakePort.onDisconnect.addListener(() => {
-        foregroundDisconnectCount += 1
-        resolve()
-      })
-    })
-  }
 
   mountCard(container, {
     closeable: true,
     onClose: () => {
       closeCount += 1
-      disconnectedBeforeClose = state.ports[0].disconnected && foregroundDisconnectCount === 1
+      disconnectedBeforeClose = state.ports[0].disconnected
     },
   })
   await waitFor(
     () => typeof state.inputBoxProps?.onSubmit === 'function',
     'InputBox did not render',
   )
-
-  const submit = state.inputBoxProps.onSubmit('question')
-  await waitFor(() => state.generateAnswersCount === 1, 'foreground provider did not start')
 
   const closeButton = Array.from(container.querySelectorAll('.gpt-util-icon')).find(
     (element) => element.title === 'Close the Window',
@@ -278,47 +259,33 @@ test('close button disposes foreground transport before onClose', async () => {
   act(() => {
     closeButton.dispatchEvent(new MouseEvent('click', { bubbles: true }))
   })
-  await waitFor(() => foregroundDisconnectCount === 1, 'foreground Port was not disconnected')
-  await submit
+  await waitFor(() => closeCount === 1, 'onClose did not run')
 
   const port = state.ports[0]
   assert.equal(disconnectedBeforeClose, true)
   assert.equal(closeCount, 1)
-  assert.equal(foregroundDisconnectCount, 1)
   assert.equal(port.disconnectCount, 1)
   assert.equal(state.ports.length, 1)
 
   act(() => render(null, container))
 
   assert.equal(closeCount, 1)
-  assert.equal(foregroundDisconnectCount, 1)
   assert.equal(port.disconnectCount, 1)
   assert.equal(state.ports.length, 1)
 })
 
-test('CLOSE_CHATS disposes foreground transport before onClose', async () => {
+test('CLOSE_CHATS disposes the runtime Port before onClose', async () => {
   const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
   const container = document.createElement('div')
   document.body.append(container)
   let closeCount = 0
   let disconnectedBeforeClose = false
-  let foregroundDisconnectCount = 0
-  state.foreground = true
-  state.generateAnswers = (fakePort) => {
-    state.generateAnswersCount += 1
-    return new Promise((resolve) => {
-      fakePort.onDisconnect.addListener(() => {
-        foregroundDisconnectCount += 1
-        resolve()
-      })
-    })
-  }
 
   mountCard(container, {
     closeable: true,
     onClose: () => {
       closeCount += 1
-      disconnectedBeforeClose = state.ports[0].disconnected && foregroundDisconnectCount === 1
+      disconnectedBeforeClose = state.ports[0].disconnected
     },
   })
   await waitFor(
@@ -326,24 +293,18 @@ test('CLOSE_CHATS disposes foreground transport before onClose', async () => {
     'InputBox did not render',
   )
 
-  const submit = state.inputBoxProps.onSubmit('question')
-  await waitFor(() => state.generateAnswersCount === 1, 'foreground provider did not start')
-
   act(() => state.runtimeOnMessage.trigger({ type: 'CLOSE_CHATS' }))
-  await waitFor(() => foregroundDisconnectCount === 1, 'foreground Port was not disconnected')
-  await submit
+  await waitFor(() => closeCount === 1, 'onClose did not run')
 
   const port = state.ports[0]
   assert.equal(disconnectedBeforeClose, true)
   assert.equal(closeCount, 1)
-  assert.equal(foregroundDisconnectCount, 1)
   assert.equal(port.disconnectCount, 1)
   assert.equal(state.ports.length, 1)
 
   act(() => render(null, container))
 
   assert.equal(closeCount, 1)
-  assert.equal(foregroundDisconnectCount, 1)
   assert.equal(port.disconnectCount, 1)
   assert.equal(state.ports.length, 1)
 })
@@ -433,300 +394,4 @@ test('clear continuation does not reconnect after unmount', async () => {
 
   assert.equal(state.ports.length, 1)
   assert.equal(state.ports[0].disconnectCount, 1)
-})
-
-test('Stop cancels a foreground request waiting for configuration', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  const pendingConfig = deferred()
-  state.foreground = true
-  state.getUserConfig = () => {
-    state.configReadCount += 1
-    return pendingConfig.promise
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container)
-  await waitFor(
-    () => typeof state.inputBoxProps?.onSubmit === 'function',
-    'InputBox did not render',
-  )
-
-  const submit = state.inputBoxProps.onSubmit('question')
-  await waitFor(() => state.configReadCount === 1, 'foreground configuration read did not start')
-  await waitFor(
-    () => state.inputBoxProps?.enabled === false,
-    'input did not enter generating state',
-  )
-
-  await act(async () => {
-    await state.inputBoxProps.postMessage({ stop: true })
-    await Promise.resolve()
-  })
-  await waitFor(() => state.inputBoxProps?.enabled === true, 'Stop did not restore input readiness')
-  assert.equal(state.generateAnswersCount, 0)
-
-  pendingConfig.resolve({ bingAccessToken: 'token' })
-  await submit
-  await nextTask()
-
-  assert.equal(state.generateAnswersCount, 0)
-  assert.equal(state.inputBoxProps.enabled, true)
-  assert.equal(state.ports.length, 1)
-})
-
-test('clear supersedes a foreground request waiting for configuration', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  const pendingConfig = deferred()
-  state.foreground = true
-  state.getUserConfig = () => {
-    state.configReadCount += 1
-    return pendingConfig.promise
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container)
-  await waitFor(
-    () => typeof state.inputBoxProps?.postMessage === 'function',
-    'InputBox did not render',
-  )
-  await waitFor(
-    () => typeof state.deleteButtonProps?.onConfirm === 'function',
-    'DeleteButton did not render',
-  )
-
-  const pendingRequest = state.inputBoxProps.postMessage({
-    session: { ...baseSession(), question: 'stale question' },
-  })
-  await waitFor(() => state.configReadCount === 1, 'foreground configuration read did not start')
-
-  await act(async () => {
-    await state.deleteButtonProps.onConfirm()
-    await Promise.resolve()
-  })
-  assert.equal(state.generateAnswersCount, 0)
-
-  pendingConfig.resolve({ bingAccessToken: 'token' })
-  await pendingRequest
-  await nextTask()
-
-  assert.equal(state.generateAnswersCount, 0)
-  assert.equal(state.ports.length, 1)
-})
-
-test('unmount while foreground config is pending prevents provider startup', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  const pendingConfig = deferred()
-  state.foreground = true
-  state.getUserConfig = () => {
-    state.configReadCount += 1
-    return pendingConfig.promise
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container, { question: 'question' })
-
-  await waitFor(() => state.configReadCount === 1, 'foreground configuration read did not start')
-  act(() => render(null, container))
-
-  pendingConfig.resolve({ bingAccessToken: 'token' })
-  await pendingConfig.promise
-  await nextTask()
-  await nextTask()
-
-  assert.equal(state.generateAnswersCount, 0)
-  assert.equal(state.ports.length, 1)
-  assert.equal(state.ports[0].disconnectCount, 1)
-})
-
-test('unmount emits foreground disconnect so an active request can abort', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  state.foreground = true
-  let disconnectCount = 0
-  state.generateAnswers = (fakePort) => {
-    state.generateAnswersCount += 1
-    return new Promise((resolve) => {
-      fakePort.onDisconnect.addListener(() => {
-        disconnectCount += 1
-        resolve()
-      })
-    })
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container, { question: 'question' })
-  await waitFor(() => state.generateAnswersCount === 1, 'foreground provider did not start')
-
-  assert.equal(state.generateAnswersCount, 1)
-  act(() => render(null, container))
-  await nextTask()
-
-  assert.equal(disconnectCount, 1)
-  assert.equal(state.ports.length, 1)
-  assert.equal(state.ports[0].disconnectCount, 1)
-})
-
-test('foreground disconnect cleanup survives a throwing listener', async (t) => {
-  t.mock.method(console, 'warn', () => {})
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  state.foreground = true
-  let survivingDisconnectCount = 0
-  state.generateAnswers = (fakePort) => {
-    state.generateAnswersCount += 1
-    return new Promise((resolve) => {
-      fakePort.onDisconnect.addListener(() => {
-        throw new Error('disconnect listener failed')
-      })
-      fakePort.onDisconnect.addListener(() => {
-        survivingDisconnectCount += 1
-        resolve()
-      })
-    })
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container, { question: 'question' })
-  await waitFor(() => state.generateAnswersCount === 1, 'foreground provider did not start')
-
-  const runtimePort = state.ports[0]
-  act(() => render(null, container))
-
-  await waitFor(() => survivingDisconnectCount === 1, 'later disconnect listener did not run')
-  assert.equal(runtimePort.disconnectCount, 1)
-  assert.equal(runtimePort.disconnected, true)
-})
-
-test('foreground stop reaches listeners that remove themselves during dispatch', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  state.foreground = true
-  const stoppedRequests = []
-  state.generateAnswers = (fakePort) => {
-    state.generateAnswersCount += 1
-    const requestNumber = state.generateAnswersCount
-    return new Promise((resolve) => {
-      const stopListener = (message) => {
-        if (!message.stop) return
-        fakePort.onMessage.removeListener(stopListener)
-        stoppedRequests.push(requestNumber)
-        resolve()
-      }
-      fakePort.onMessage.addListener(stopListener)
-    })
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container)
-  await waitFor(
-    () => typeof state.inputBoxProps?.postMessage === 'function',
-    'InputBox did not render',
-  )
-
-  let firstSettled = false
-  let secondSettled = false
-  state.inputBoxProps
-    .postMessage({ session: { ...baseSession(), question: 'first' } })
-    .finally(() => {
-      firstSettled = true
-    })
-  await waitFor(() => state.generateAnswersCount === 1, 'first foreground request did not start')
-
-  state.inputBoxProps
-    .postMessage({ session: { ...baseSession(), question: 'second' } })
-    .finally(() => {
-      secondSettled = true
-    })
-  await waitFor(() => state.generateAnswersCount === 2, 'second foreground request did not start')
-
-  await state.inputBoxProps.postMessage({ stop: true, stopGenerationId: 1 })
-  await waitFor(() => stoppedRequests.length === 2, 'stop did not reach every foreground request')
-  await waitFor(
-    () => firstSettled && secondSettled,
-    'foreground requests did not settle after stop',
-  )
-
-  assert.deepEqual(stoppedRequests, [1, 2])
-})
-
-test('foreground submit can settle safely after unmount', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  state.foreground = true
-  let disconnectCount = 0
-  state.generateAnswers = (fakePort) => {
-    state.generateAnswersCount += 1
-    return new Promise((resolve) => {
-      fakePort.onDisconnect.addListener(() => {
-        disconnectCount += 1
-        resolve()
-      })
-    })
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container)
-  await waitFor(
-    () => typeof state.inputBoxProps?.onSubmit === 'function',
-    'InputBox did not render',
-  )
-
-  let submitSettled = false
-  let submitError
-  const submit = state.inputBoxProps.onSubmit('question')
-  submit.then(
-    () => {
-      submitSettled = true
-    },
-    (error) => {
-      submitError = error
-      submitSettled = true
-    },
-  )
-  await waitFor(() => state.generateAnswersCount === 1, 'foreground provider did not start')
-  act(() => render(null, container))
-  await waitFor(() => submitSettled, 'foreground submit did not settle after unmount')
-  if (submitError) throw submitError
-
-  assert.equal(disconnectCount, 1)
-  assert.equal(state.generateAnswersCount, 1)
-  assert.equal(state.ports[0].disconnectCount, 1)
-})
-
-test('provider failure disconnects fake Port and removes stale listeners', async () => {
-  const state = globalThis.__CONVERSATION_LIFECYCLE_TEST__
-  state.foreground = true
-  let disconnectCount = 0
-  let staleMessageCount = 0
-  state.generateAnswers = async (fakePort) => {
-    state.generateAnswersCount += 1
-    fakePort.onMessage.addListener(() => {
-      staleMessageCount += 1
-    })
-    fakePort.onDisconnect.addListener(() => {
-      disconnectCount += 1
-    })
-    throw new Error('provider failed before cleanup')
-  }
-
-  const container = document.createElement('div')
-  document.body.append(container)
-  mountCard(container, { question: 'question' })
-
-  await waitFor(() => state.generateAnswersCount === 1, 'foreground provider did not start')
-  await waitFor(() => disconnectCount === 1, 'foreground fake Port was not disconnected')
-  await waitFor(
-    () => typeof state.inputBoxProps?.postMessage === 'function',
-    'InputBox did not render',
-  )
-
-  await state.inputBoxProps.postMessage({ stop: true, stopGenerationId: 1 })
-
-  assert.equal(staleMessageCount, 0)
-  assert.equal(disconnectCount, 1)
-
-  act(() => render(null, container))
 })

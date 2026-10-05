@@ -34,15 +34,15 @@ test('ModelMode suffix variants are no longer generated for any model', () => {
 })
 
 test('modelNameToDesc shows a former tone suffix as the literal custom name', () => {
-  assert.equal(modelNameToDesc('bingFree4-fast'), 'Bing (Web, GPT-4) (fast)')
+  assert.equal(modelNameToDesc('chatgptFree35-fast'), 'ChatGPT (Web) (fast)')
 })
 
 test('modelNameToApiMode and apiModeToModelName round-trip custom model names', () => {
-  const modelName = 'bingFree4-fast'
+  const modelName = 'chatgptFree35-fast'
   const apiMode = modelNameToApiMode(modelName)
 
-  assert.equal(apiMode.groupName, 'bingWebModelKeys')
-  assert.equal(apiMode.itemName, 'bingFree4')
+  assert.equal(apiMode.groupName, 'chatgptWebModelKeys')
+  assert.equal(apiMode.itemName, 'chatgptFree35')
   assert.equal(apiMode.isCustom, true)
   assert.equal(apiMode.customName, 'fast')
   assert.equal(apiModeToModelName(apiMode), modelName)
@@ -64,8 +64,8 @@ test('apiModeToModelName uses groupName prefix for AlwaysCustomGroups', () => {
 
 test('getApiModesFromConfig merges active and custom API modes correctly', () => {
   const activeCustomMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: true,
     customName: 'fast',
     customUrl: '',
@@ -74,8 +74,8 @@ test('getApiModesFromConfig merges active and custom API modes correctly', () =>
   }
 
   const inactiveCustomMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFreeSydney',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree4oMini',
     isCustom: true,
     customName: 'slow',
     customUrl: '',
@@ -104,16 +104,16 @@ test('getApiModesFromConfig merges active and custom API modes correctly', () =>
     true,
   )
   assert.equal(
-    onlyActive.some((mode) => mode.itemName === 'bingFree4' && mode.customName === 'fast'),
+    onlyActive.some((mode) => mode.itemName === 'chatgptFree35' && mode.customName === 'fast'),
     true,
   )
   assert.equal(
-    onlyActive.some((mode) => mode.itemName === 'bingFreeSydney' && mode.customName === 'slow'),
+    onlyActive.some((mode) => mode.itemName === 'chatgptFree4oMini' && mode.customName === 'slow'),
     false,
   )
 
   assert.equal(
-    allModes.some((mode) => mode.itemName === 'bingFreeSydney' && mode.customName === 'slow'),
+    allModes.some((mode) => mode.itemName === 'chatgptFree4oMini' && mode.customName === 'slow'),
     true,
   )
 })
@@ -776,19 +776,19 @@ test('getApiModesFromConfig does not synthesize undefined legacy Azure or Ollama
 })
 
 test('isUsingModelName matches base model for custom model names', () => {
-  assert.equal(isUsingModelName('bingFree4', { modelName: 'bingFree4-fast' }), true)
+  assert.equal(isUsingModelName('chatgptFree35', { modelName: 'chatgptFree35-fast' }), true)
   assert.equal(isUsingModelName('claude2WebFree', { modelName: 'chatgptFree35' }), false)
 
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: true,
     customName: 'fast',
     customUrl: '',
     apiKey: '',
     active: true,
   }
-  assert.equal(isUsingModelName('bingFree4', { apiMode }), true)
+  assert.equal(isUsingModelName('chatgptFree35', { apiMode }), true)
 })
 
 test('modelNameToDesc returns desc for a known model name without t function', () => {
@@ -828,8 +828,8 @@ test('modelNameToDesc handles custom model with presetPart in Models', () => {
 })
 
 test('modelNameToDesc handles custom model with presetPart in ModelGroups', () => {
-  const desc = modelNameToDesc('bingWebModelKeys-customVariant')
-  assert.equal(desc, 'Bing (Web) (customVariant)')
+  const desc = modelNameToDesc('chatgptWebModelKeys-customVariant')
+  assert.equal(desc, 'ChatGPT (Web) (customVariant)')
 })
 
 test('modelNameToDesc shows Azure OpenAI deployment without duplicate API label', () => {
@@ -885,8 +885,8 @@ test('getApiModesStringArrayFromConfig returns string model names', () => {
 
 test('isApiModeSelected matches via apiMode JSON comparison', () => {
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     customUrl: '',
@@ -896,41 +896,41 @@ test('isApiModeSelected matches via apiMode JSON comparison', () => {
   const configOrSession = { apiMode: { ...apiMode } }
   assert.equal(isApiModeSelected(apiMode, configOrSession), true)
 
-  const different = { ...apiMode, itemName: 'bingFreeSydney' }
+  const different = { ...apiMode, itemName: 'chatgptFree4oMini' }
   assert.equal(isApiModeSelected(different, configOrSession), false)
 })
 
 test('isApiModeSelected falls back to modelName when apiMode is absent', () => {
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     customUrl: '',
     apiKey: '',
     active: true,
   }
-  assert.equal(isApiModeSelected(apiMode, { modelName: 'bingFree4' }), true)
-  assert.equal(isApiModeSelected(apiMode, { modelName: 'chatgptFree35' }), false)
+  assert.equal(isApiModeSelected(apiMode, { modelName: 'chatgptFree35' }), true)
+  assert.equal(isApiModeSelected(apiMode, { modelName: 'chatgptFree4oMini' }), false)
 })
 
 test('isInApiModeGroup matches group via apiMode', () => {
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     customUrl: '',
     apiKey: '',
     active: true,
   }
-  const bingGroup = ModelGroups.bingWebModelKeys.value
-  assert.equal(isInApiModeGroup(bingGroup, { apiMode }), true)
+  const webGroup = ModelGroups.chatgptWebModelKeys.value
+  assert.equal(isInApiModeGroup(webGroup, { apiMode }), true)
 })
 
 test('isInApiModeGroup matches group via modelName', () => {
-  const bingGroup = ModelGroups.bingWebModelKeys.value
-  assert.equal(isInApiModeGroup(bingGroup, { modelName: 'bingFree4' }), true)
+  const webGroup = ModelGroups.chatgptWebModelKeys.value
+  assert.equal(isInApiModeGroup(webGroup, { modelName: 'chatgptFree35' }), true)
 })
 
 test('isInApiModeGroup returns false when group not found', () => {
@@ -950,13 +950,13 @@ test('modelNameToValue returns endpoint for latest chatgptApi models', () => {
 })
 
 test('modelNameToValue returns custom part for unknown model', () => {
-  assert.equal(modelNameToValue('bingFree4-fast'), 'fast')
+  assert.equal(modelNameToValue('chatgptFree35-fast'), 'fast')
 })
 
 test('getModelValue uses apiMode when present', () => {
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     customUrl: '',
@@ -964,7 +964,7 @@ test('getModelValue uses apiMode when present', () => {
     active: true,
   }
   const value = getModelValue({ apiMode })
-  assert.equal(value, '')
+  assert.equal(value, 'auto')
 })
 
 test('getModelValue uses custom segment for always-custom groups in apiMode', () => {
@@ -1000,7 +1000,7 @@ test('isUsingModelName returns true for exact apiMode match', () => {
 })
 
 test('isUsingModelName resolves ModelGroups presetPart to first value', () => {
-  assert.equal(isUsingModelName('bingFree4', { modelName: 'bingWebModelKeys-custom' }), true)
+  assert.equal(isUsingModelName('chatgptFree35', { modelName: 'chatgptWebModelKeys-custom' }), true)
 })
 
 test('normalizeApiMode trims providerId', () => {
@@ -1249,8 +1249,8 @@ test('isApiModeSelected matches legacy custom session missing itemName and isCus
 
 test('isApiModeSelected falls back to modelName when sessionCompat apiMode compare misses', () => {
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     active: true,
@@ -1263,7 +1263,7 @@ test('isApiModeSelected falls back to modelName when sessionCompat apiMode compa
       customName: 'different-mode',
       providerId: 'provider-b',
     },
-    modelName: 'bingFree4',
+    modelName: 'chatgptFree35',
   }
 
   assert.equal(isApiModeSelected(apiMode, session, { sessionCompat: true }), false)
@@ -1271,15 +1271,15 @@ test('isApiModeSelected falls back to modelName when sessionCompat apiMode compa
 
 test('isApiModeSelected falls back to modelName when session apiMode is a non-object string', () => {
   const apiMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     active: true,
   }
   const session = {
-    apiMode: 'bingFree4',
-    modelName: 'bingFree4',
+    apiMode: 'chatgptFree35',
+    modelName: 'chatgptFree35',
   }
 
   assert.equal(isApiModeSelected(apiMode, session), false)
@@ -1295,9 +1295,9 @@ test('isApiModeSelected does not double-match via legacy compat and modelName fa
     providerId: 'openai-2',
     active: true,
   }
-  const bingMode = {
-    groupName: 'bingWebModelKeys',
-    itemName: 'bingFree4',
+  const webMode = {
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
     isCustom: false,
     customName: '',
     active: true,
@@ -1309,11 +1309,11 @@ test('isApiModeSelected does not double-match via legacy compat and modelName fa
       customUrl: 'https://proxy.example.com/v1/chat/completions',
       apiKey: 'stale-session-key',
     },
-    modelName: 'bingFree4',
+    modelName: 'chatgptFree35',
   }
 
   assert.equal(isApiModeSelected(legacyCustomMode, session, { sessionCompat: true }), true)
-  assert.equal(isApiModeSelected(bingMode, session, { sessionCompat: true }), false)
+  assert.equal(isApiModeSelected(webMode, session, { sessionCompat: true }), false)
 })
 
 test('getUniquelySelectedApiModeIndex returns -1 when legacy session matches multiple custom modes', () => {
@@ -1358,8 +1358,8 @@ test('getUniquelySelectedApiModeIndex returns matching index for a unique legacy
       active: true,
     },
     {
-      groupName: 'bingWebModelKeys',
-      itemName: 'bingFree4',
+      groupName: 'chatgptWebModelKeys',
+      itemName: 'chatgptFree35',
       isCustom: false,
       customName: '',
       active: true,

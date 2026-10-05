@@ -1,6 +1,17 @@
 export const LEGACY_MODEL_KEY_MIGRATIONS = {
   chatgptFree4o: 'chatgptFree4oMini',
 
+  bingFree4: 'chatgptFree35',
+  'bingFree4-balanced': 'chatgptFree35',
+  'bingFree4-creative': 'chatgptFree35',
+  'bingFree4-precise': 'chatgptFree35',
+  'bingFree4-fast': 'chatgptFree35',
+  bingFreeSydney: 'chatgptFree35',
+  'bingFreeSydney-balanced': 'chatgptFree35',
+  'bingFreeSydney-creative': 'chatgptFree35',
+  'bingFreeSydney-precise': 'chatgptFree35',
+  'bingFreeSydney-fast': 'chatgptFree35',
+
   gptApiDavinci: 'gptApiInstruct',
 
   chatgptApi35: 'chatgptApi4oMini',
@@ -53,6 +64,7 @@ export const LEGACY_MODEL_KEY_MIGRATIONS = {
 
 const MODEL_KEY_GROUP_OVERRIDES = {
   chatgptFree4oMini: 'chatgptWebModelKeys',
+  chatgptFree35: 'chatgptWebModelKeys',
 
   gptApiInstruct: 'gptApiModelKeys',
 
@@ -98,8 +110,34 @@ export function getCanonicalModelKeyGroupName(modelKey, fallbackGroupName = '') 
   return MODEL_KEY_GROUP_OVERRIDES[canonicalModelKey] || normalizeLegacyGroupName(fallbackGroupName)
 }
 
+const RETIRED_MODEL_KEYS = new Set(['bingFree4', 'bingFreeSydney'])
+
+// A custom row keeps its variant in customName and leaves itemName as 'custom',
+// so nothing about it matches the model-key table. The retired group is then the
+// only remaining signal that the row points at a provider that no longer exists.
+const RETIRED_GROUP_TARGETS = new Map([
+  ['bingWebModelKeys', { groupName: 'chatgptWebModelKeys', itemName: 'chatgptFree35' }],
+])
+
+function getRetiredModelKeyBase(modelKey) {
+  const separatorIndex = typeof modelKey === 'string' ? modelKey.indexOf('-') : -1
+  const baseKey = separatorIndex === -1 ? modelKey : modelKey.slice(0, separatorIndex)
+  return RETIRED_MODEL_KEYS.has(baseKey) ? baseKey : ''
+}
+
 export function canonicalizeApiMode(apiMode) {
   if (!apiMode || typeof apiMode !== 'object') return apiMode
+
+  const retiredGroupTarget = RETIRED_GROUP_TARGETS.get(apiMode.groupName)
+  if (retiredGroupTarget) {
+    return {
+      ...apiMode,
+      groupName: retiredGroupTarget.groupName,
+      itemName: retiredGroupTarget.itemName,
+      customName: '',
+      isCustom: false,
+    }
+  }
 
   const canonicalItemName = canonicalizeModelKey(apiMode.itemName)
   const canonicalGroupName = getCanonicalModelKeyGroupName(canonicalItemName, apiMode.groupName)
@@ -108,10 +146,16 @@ export function canonicalizeApiMode(apiMode) {
 
   if (!hasItemNameChange && !hasGroupNameChange) return apiMode
 
+  // A stored row keeps the tone in customName rather than in itemName, so the
+  // suffix survives the remap as a custom name the target provider never had.
+  const dropsRetiredCustomName =
+    hasItemNameChange && Boolean(getRetiredModelKeyBase(apiMode.itemName))
+
   return {
     ...apiMode,
     itemName: canonicalItemName,
     groupName: canonicalGroupName,
+    ...(dropsRetiredCustomName ? { customName: '', isCustom: false } : {}),
   }
 }
 
@@ -136,18 +180,45 @@ export function canonicalizeModelKeyArray(modelKeys) {
   return changed ? result : modelKeys
 }
 
+// The GitHub third party backend continued a conversation through these fields.
+// They were renamed when the Bing provider was removed, so stored sessions still
+// carrying the old names need renaming or their next request loses the link.
+const LEGACY_THIRD_PARTY_SESSION_FIELDS = {
+  bingWeb_encryptedConversationSignature: 'thirdPartySignature',
+  bingWeb_conversationId: 'thirdPartyConversationId',
+  bingWeb_clientId: 'thirdPartyClientId',
+  bingWeb_invocationId: 'thirdPartyInvocationId',
+}
+
+function migrateSessionFields(session) {
+  let changed = false
+  const migrated = { ...session }
+  for (const [legacyField, currentField] of Object.entries(LEGACY_THIRD_PARTY_SESSION_FIELDS)) {
+    if (!(legacyField in migrated)) continue
+    if (!(currentField in migrated)) migrated[currentField] = migrated[legacyField]
+    delete migrated[legacyField]
+    changed = true
+  }
+  return changed ? migrated : session
+}
+
 export function canonicalizeSessionModelFields(session) {
   if (!session || typeof session !== 'object') return session
 
-  const canonicalModelName = canonicalizeModelKey(session.modelName)
-  const canonicalApiMode = canonicalizeApiMode(session.apiMode)
+  const canonicalSession = migrateSessionFields(session)
+  const canonicalModelName = canonicalizeModelKey(canonicalSession.modelName)
+  const canonicalApiMode = canonicalizeApiMode(canonicalSession.apiMode)
 
-  if (canonicalModelName === session.modelName && canonicalApiMode === session.apiMode) {
+  if (
+    canonicalSession === session &&
+    canonicalModelName === session.modelName &&
+    canonicalApiMode === session.apiMode
+  ) {
     return session
   }
 
   return {
-    ...session,
+    ...canonicalSession,
     modelName: canonicalModelName,
     apiMode: canonicalApiMode,
   }

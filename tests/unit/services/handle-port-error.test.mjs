@@ -293,20 +293,6 @@ test('handlePortError reports rate-limit messages', (t) => {
   assert.notEqual(port.postedMessages[0].error, rateMessage)
 })
 
-test('handlePortError reports Bing captcha challenge message', (t) => {
-  t.mock.method(console, 'error', () => {})
-  const port = createFakePort()
-  const message = 'CAPTCHA challenge required'
-
-  handlePortError({ modelName: 'bingFree4' }, port, {
-    message,
-  })
-
-  assert.equal(port.postedMessages.length, 1)
-  assert.equal(port.postedMessages[0].error.includes(message), true)
-  assert.notEqual(port.postedMessages[0].error, message)
-})
-
 test('handlePortError maps expired authentication token to UNAUTHORIZED', (t) => {
   t.mock.method(console, 'error', () => {})
   const port = createFakePort()
@@ -402,30 +388,6 @@ test('handlePortError reports Claude web authorization hint', (t) => {
   assert.notEqual(port.postedMessages[0].error, 'Invalid authorization')
 })
 
-test('handlePortError reports Bing login hint for turing parse-response failures', (t) => {
-  t.mock.method(console, 'error', () => {})
-  const port = createFakePort()
-  const message = '/turing/conversation/create: failed to parse response body.'
-
-  handlePortError({ modelName: 'bingFree4' }, port, { message })
-
-  assert.equal(port.postedMessages.length, 1)
-  assert.equal(port.postedMessages[0].error, translate('Please login at https://bing.com first'))
-  assert.notEqual(port.postedMessages[0].error, message)
-})
-
-test('handlePortError reports Bing login hint when trusted error has no message', (t) => {
-  t.mock.method(console, 'error', () => {})
-  const port = createFakePort()
-  const err = { isTrusted: true }
-
-  handlePortError({ modelName: 'bingFree4' }, port, err)
-
-  assert.equal(port.postedMessages.length, 1)
-  assert.equal(port.postedMessages[0].error, translate('Please login at https://bing.com first'))
-  assert.notEqual(port.postedMessages[0].error, JSON.stringify(err))
-})
-
 test('handlePortError preserves plain unknown message errors for display translation', (t) => {
   t.mock.method(console, 'error', () => {})
   const port = createFakePort()
@@ -459,7 +421,7 @@ test('handlePortError formats Markdown images as fenced code in non-transport er
   assert.equal(error.includes(formatErrorText(message)), true)
 })
 
-test('handlePortError stringifies non-message errors for non-Bing models', (t) => {
+test('handlePortError stringifies non-message errors for API models', (t) => {
   t.mock.method(console, 'error', () => {})
   const port = createFakePort()
   const err = { code: 'E_UNKNOWN', detail: 'network disconnected' }

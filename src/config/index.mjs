@@ -43,7 +43,6 @@ export const chatgptWebModelKeys = [
   'chatgptPlus4Browsing',
   'chatgptPlus4Mobile',
 ]
-export const bingWebModelKeys = ['bingFree4', 'bingFreeSydney']
 export const bardWebModelKeys = ['bardWebFree']
 export const claudeWebModelKeys = ['claude2WebFree']
 export const moonshotWebModelKeys = [
@@ -218,10 +217,6 @@ export const ModelGroups = {
     value: moonshotWebModelKeys,
     desc: 'Kimi.Moonshot (Web)',
   },
-  bingWebModelKeys: {
-    value: bingWebModelKeys,
-    desc: 'Bing (Web)',
-  },
   bardWebModelKeys: {
     value: bardWebModelKeys,
     desc: 'Gemini (Web)',
@@ -388,9 +383,6 @@ export const Models = {
     value: 'claude-haiku-4-5-20251001',
     desc: 'Anthropic (Claude Haiku 4.5)',
   },
-
-  bingFree4: { value: '', desc: 'Bing (Web, GPT-4)' },
-  bingFreeSydney: { value: '', desc: 'Bing (Web, GPT-4, Sydney)' },
 
   moonshotWebFree: { value: 'k2', desc: 'Kimi.Moonshot (Web k2, 128K)' },
   moonshotWebFreeK15: { value: 'k1.5', desc: 'Kimi.Moonshot (Web k1.5, 128k)' },
@@ -886,7 +878,6 @@ export const defaultConfig = {
   ],
   accessToken: '',
   tokenSavedOn: 0,
-  bingAccessToken: '',
   notificationJumpBackTabId: 0,
   chatgptTabId: 0,
   chatgptArkoseReqUrl: '',
@@ -948,10 +939,6 @@ export function isUsingClaudeWebModel(configOrSession) {
 
 export function isUsingMoonshotWebModel(configOrSession) {
   return isInApiModeGroup(moonshotWebModelKeys, configOrSession)
-}
-
-export function isUsingBingWebModel(configOrSession) {
-  return isInApiModeGroup(bingWebModelKeys, configOrSession)
 }
 
 export function isUsingGeminiWebModel(configOrSession) {

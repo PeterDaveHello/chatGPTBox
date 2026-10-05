@@ -1,7 +1,6 @@
 import {
   clearOldAccessToken,
   getUserConfig,
-  isUsingBingWebModel,
   isUsingClaudeWebModel,
   setAccessToken,
 } from '../config/index.mjs'
@@ -51,10 +50,6 @@ export async function getChatGptAccessToken() {
     await setAccessToken(data.accessToken)
     return data.accessToken
   }
-}
-
-export async function getBingAccessToken() {
-  return (await Browser.cookies.get({ url: 'https://bing.com/', name: '_U' }))?.value
 }
 
 export async function getBardCookies() {
@@ -130,8 +125,6 @@ export function handlePortError(session, port, err, translate = t) {
       )
     )
       postError(translate('Exceeded maximum context length') + '\n\n' + formattedMessage)
-    else if (['CaptchaChallenge', 'CAPTCHA'].some((m) => message.includes(m)))
-      postError(translate('Bing CaptchaChallenge') + '\n\n' + formattedMessage)
     else if (['exceeded your current quota'].some((m) => message.includes(m)))
       postError(translate('Exceeded quota') + '\n\n' + formattedMessage)
     else if (['Rate limit reached'].some((m) => message.includes(m)))
@@ -145,19 +138,10 @@ export function handlePortError(session, port, err, translate = t) {
       postError(
         translate('Please login at https://claude.ai first, and then click the retry button'),
       )
-    else if (
-      isUsingBingWebModel(session) &&
-      ['/turing/conversation/create: failed to parse response body.'].some((m) =>
-        message.includes(m),
-      )
-    )
-      postError(translate('Please login at https://bing.com first'))
     else postError(formattedMessage)
   } else {
     const errMsg = JSON.stringify(err) ?? 'unknown error'
-    if (isUsingBingWebModel(session) && errMsg.includes('isTrusted'))
-      postError(translate('Please login at https://bing.com first'))
-    else postError(formatErrorMessage(errMsg))
+    postError(formatErrorMessage(errMsg))
   }
 }
 

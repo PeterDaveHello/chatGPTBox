@@ -3,6 +3,7 @@ import { beforeEach, test } from 'node:test'
 import Browser from 'webextension-polyfill'
 import { defaultApiModeIds, getUserConfig } from '../../../src/config/index.mjs'
 import {
+  apiModeToModelName as modeNameToModelName,
   getApiModesFromConfig,
   modelNameToApiMode,
 } from '../../../src/utils/model-name-convert.mjs'
@@ -2059,4 +2060,81 @@ test('getUserConfig normalizes providerSecrets when legacy data is not a plain o
   const storage = globalThis.__TEST_BROWSER_SHIM__.getStorage()
 
   assert.deepEqual(storage.providerSecrets, {})
+})
+
+test('getUserConfig maps retired Bing web keys onto a surviving web model', async () => {
+  globalThis.__TEST_BROWSER_SHIM__.replaceStorage({
+    configSchemaVersion: 2,
+    modelName: 'bingFree4-creative',
+    activeApiModes: ['bingFree4', 'bingFreeSydney-fast', 'chatgptFree35'],
+    customApiModes: [
+      {
+        groupName: 'bingWebModelKeys',
+        itemName: 'bingFree4',
+        isCustom: true,
+        customName: 'fast',
+        customUrl: '',
+        apiKey: '',
+        providerId: '',
+        active: true,
+      },
+    ],
+  })
+
+  const config = await getUserConfig()
+
+  assert.equal(config.modelName, 'chatgptFree35')
+  assert.equal(
+    config.activeApiModes.some((modelName) => modelName.includes('bingFree')),
+    false,
+  )
+  assert.equal(
+    config.customApiModes.some((mode) => mode.groupName === 'bingWebModelKeys'),
+    false,
+  )
+  assert.equal(
+    config.customApiModes.some((mode) => mode.customName === 'fast'),
+    false,
+  )
+  assert.deepEqual(
+    [...new Set(getApiModesFromConfig(config, false).map(modeNameToModelName))],
+    ['chatgptFree35'],
+  )
+})
+
+test('getUserConfig remaps a custom mode stored under the retired Bing group', async () => {
+  globalThis.__TEST_BROWSER_SHIM__.replaceStorage({
+    configSchemaVersion: 2,
+    activeApiModes: [],
+    customApiModes: [
+      {
+        groupName: 'bingWebModelKeys',
+        itemName: 'custom',
+        isCustom: true,
+        customName: 'my-variant',
+        customUrl: 'https://proxy.example/v1/chat/completions',
+        apiKey: 'proxy-key',
+        providerId: 'proxy',
+        active: true,
+      },
+    ],
+  })
+
+  const config = await getUserConfig()
+
+  // The api key moves into providerSecrets, which is existing behavior for
+  // custom modes and not what this test is about.
+  assert.deepEqual(config.customApiModes, [
+    {
+      groupName: 'chatgptWebModelKeys',
+      itemName: 'chatgptFree35',
+      isCustom: false,
+      customName: '',
+      customUrl: 'https://proxy.example/v1/chat/completions',
+      apiKey: '',
+      providerId: '',
+      active: true,
+    },
+  ])
+  assert.deepEqual(getApiModesFromConfig(config, false).map(modeNameToModelName), ['chatgptFree35'])
 })

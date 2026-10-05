@@ -18,8 +18,6 @@ const stubs = new Map([
   ['uuid', 'test:conversation-uuid'],
   ['../../services/init-session.mjs', 'test:conversation-init-session'],
   ['lodash-es', 'test:conversation-lodash'],
-  ['../../services/apis/bing-web.mjs', 'test:conversation-bing'],
-  ['../../services/wrappers.mjs', 'test:conversation-wrappers'],
   ['../../popup/sections/api-modes-provider-utils.mjs', 'test:conversation-provider-utils'],
   ['../../utils/error-text.mjs', 'test:conversation-error-text'],
   ['webextension-polyfill', 'test:conversation-browser'],
@@ -49,7 +47,6 @@ const sources = {
     export const isFirefox = () => false
     export const isMobile = () => false
     export const isSafari = () => false
-    export const isUsingModelName = () => false
     export const modelNameToDesc = () => 'Test Model'
   `,
   'test:conversation-primer-icons': iconExports,
@@ -63,7 +60,6 @@ const sources = {
   'test:conversation-window-size': 'export const useClampWindowSize = () => [1000, 1000]',
   'test:conversation-config': `
     export const getUserConfig = () => globalThis.__CONVERSATION_LIFECYCLE_TEST__.getUserConfig()
-    export const isUsingBingWebModel = () => globalThis.__CONVERSATION_LIFECYCLE_TEST__.foreground
     export const Models = { customModel: { desc: 'Custom Model' } }
   `,
   'test:conversation-i18n': 'export const useTranslation = () => ({ t: (value) => value })',
@@ -89,11 +85,6 @@ const sources = {
       return -1
     }
   `,
-  'test:conversation-bing': `
-    export const generateAnswersWithBingWebApi = (...args) =>
-      globalThis.__CONVERSATION_LIFECYCLE_TEST__.generateAnswers(...args)
-  `,
-  'test:conversation-wrappers': 'export const handlePortError = () => {}',
   'test:conversation-provider-utils': `
     export const getApiModeDisplayLabel = () => ''
     export const getConversationAiName = () => 'Test AI'

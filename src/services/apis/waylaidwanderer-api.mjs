@@ -23,11 +23,13 @@ export async function generateAnswersWithWaylaidwandererApi(port, question, sess
     body: JSON.stringify({
       message: question,
       stream: true,
-      ...(session.bingWeb_encryptedConversationSignature && {
-        conversationId: session.bingWeb_conversationId,
-        encryptedConversationSignature: session.bingWeb_encryptedConversationSignature,
-        clientId: session.bingWeb_clientId,
-        invocationId: session.bingWeb_invocationId,
+      // This backend continues a conversation either through a signature it issued
+      // or through a message id, so both paths have to be echoed back.
+      ...(session.thirdPartySignature && {
+        conversationId: session.thirdPartyConversationId,
+        encryptedConversationSignature: session.thirdPartySignature,
+        clientId: session.thirdPartyClientId,
+        invocationId: session.thirdPartyInvocationId,
       }),
       ...(session.parentMessageId && {
         conversationId: session.conversationId,
@@ -52,10 +54,10 @@ export async function generateAnswersWithWaylaidwandererApi(port, question, sess
       if (data.conversationId) session.conversationId = data.conversationId
       if (data.parentMessageId) session.parentMessageId = data.parentMessageId
       if (data.encryptedConversationSignature)
-        session.bingWeb_encryptedConversationSignature = data.encryptedConversationSignature
-      if (data.conversationId) session.bingWeb_conversationId = data.conversationId
-      if (data.clientId) session.bingWeb_clientId = data.clientId
-      if (data.invocationId) session.bingWeb_invocationId = data.invocationId
+        session.thirdPartySignature = data.encryptedConversationSignature
+      if (data.conversationId) session.thirdPartyConversationId = data.conversationId
+      if (data.clientId) session.thirdPartyClientId = data.clientId
+      if (data.invocationId) session.thirdPartyInvocationId = data.invocationId
 
       if (typeof data === 'string') {
         answer += data

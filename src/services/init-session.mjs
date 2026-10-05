@@ -22,15 +22,12 @@ import { t } from 'i18next'
  * @property {string|null} messageId - chatGPT web mode
  * @property {string|null} parentMessageId - chatGPT web mode
  * @property {string|null} wsRequestId - chatGPT web mode
- * @property {string|null} bingWeb_encryptedConversationSignature
- * @property {string|null} bingWeb_conversationId
- * @property {string|null} bingWeb_clientId
- * @property {string|null} bingWeb_invocationId
- * @property {string|null} bingWeb_jailbreakConversationId
- * @property {string|null} bingWeb_parentMessageId
- * @property {Object|null} bingWeb_jailbreakConversationCache
  * @property {object|null} bard_conversationObj
  * @property {object|null} claude_conversation
+ * @property {string|null} thirdPartySignature - github third party API mode
+ * @property {string|null} thirdPartyConversationId - github third party API mode
+ * @property {string|null} thirdPartyClientId - github third party API mode
+ * @property {string|null} thirdPartyInvocationId - github third party API mode
  * @property {object|null} moonshot_conversation
  */
 /**
@@ -82,22 +79,17 @@ export function initSession({
     parentMessageId: null,
     wsRequestId: null,
 
-    // bing
-    bingWeb_encryptedConversationSignature: null,
-    bingWeb_conversationId: null,
-    bingWeb_clientId: null,
-    bingWeb_invocationId: null,
-
-    // bing sydney
-    bingWeb_jailbreakConversationId: null,
-    bingWeb_parentMessageId: null,
-    bingWeb_jailbreakConversationCache: null,
-
     // bard
     bard_conversationObj: null,
 
     // claude.ai
     claude_conversation: null,
+
+    // github third party API
+    thirdPartySignature: null,
+    thirdPartyConversationId: null,
+    thirdPartyClientId: null,
+    thirdPartyInvocationId: null,
     // kimi.com
     moonshot_conversation: null,
   }

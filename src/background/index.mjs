@@ -4,7 +4,6 @@ import {
   generateAnswersWithChatgptWebApi,
   sendMessageFeedback,
 } from '../services/apis/chatgpt-web'
-import { generateAnswersWithBingWebApi } from '../services/apis/bing-web.mjs'
 import { generateAnswersWithOpenAICompatibleApi } from '../services/apis/openai-api'
 import { generateAnswersWithAzureOpenaiApi } from '../services/apis/azure-openai-api.mjs'
 import { generateAnswersWithClaudeApi } from '../services/apis/claude-api.mjs'
@@ -14,7 +13,6 @@ import {
   getUserConfig,
   setUserConfig,
   isUsingChatgptWebModel,
-  isUsingBingWebModel,
   isUsingGptCompletionApiModel,
   isUsingChatgptApiModel,
   isUsingCustomModel,
@@ -39,7 +37,6 @@ import '../_locales/i18n'
 import { openUrl } from '../utils/open-url'
 import {
   getBardCookies,
-  getBingAccessToken,
   getChatGptAccessToken,
   getClaudeSessionKey,
   registerPortListener,
@@ -49,7 +46,6 @@ import { registerCommands } from './commands.mjs'
 import { generateAnswersWithBardWebApi } from '../services/apis/bard-web.mjs'
 import { generateAnswersWithClaudeWebApi } from '../services/apis/claude-web.mjs'
 import { generateAnswersWithMoonshotWebApi } from '../services/apis/moonshot-web.mjs'
-import { isUsingModelName } from '../utils/model-name-convert.mjs'
 import { redactSensitiveFields } from './redact.mjs'
 import {
   clearProxyReconnectErrorSuppression,
@@ -556,16 +552,6 @@ async function executeApi(
     } else if (isUsingMoonshotWebModel(session)) {
       console.debug('[background] Using Moonshot Web Model')
       await generateAnswersWithMoonshotWebApi(port, session.question, session, config)
-    } else if (isUsingBingWebModel(session)) {
-      console.debug('[background] Using Bing Web Model')
-      const accessToken = await getBingAccessToken()
-      if (!isLatestSessionRequest()) return
-      if (isUsingModelName('bingFreeSydney', session)) {
-        console.debug('[background] Using Bing Free Sydney model')
-        await generateAnswersWithBingWebApi(port, session.question, session, accessToken, true)
-      } else {
-        await generateAnswersWithBingWebApi(port, session.question, session, accessToken)
-      }
     } else if (isUsingGeminiWebModel(session)) {
       console.debug('[background] Using Gemini Web Model')
       const cookies = await getBardCookies()
@@ -724,11 +710,6 @@ Browser.runtime.onMessage.addListener(async (message, sender) => {
         }
 
         console.log('[background] Processing FETCH message for URL:', validatedUrl)
-        if (validatedUrl.includes('bing.com')) {
-          console.debug('[background] Fetching Bing access token for FETCH message.')
-          const accessToken = await getBingAccessToken()
-          await setUserConfig({ bingAccessToken: accessToken })
-        }
 
         try {
           const response = await fetch(validatedUrl, message.data?.init)

@@ -40,7 +40,6 @@ globalThis.chrome.cookies = {
 import {
   registerPortListener,
   getChatGptAccessToken,
-  getBingAccessToken,
   getBardCookies,
   getClaudeSessionKey,
 } from '../../../src/services/wrappers.mjs'
@@ -607,24 +606,6 @@ test('getChatGptAccessToken omits Cookie header when Browser.cookies is undefine
   assert.equal(token, 'token-no-cookies-api')
   assert.equal(observedHasCookieHeader, false)
   assert.equal(observedCredentials, 'include')
-})
-
-// ---------------------------------------------------------------------------
-// getBingAccessToken
-// ---------------------------------------------------------------------------
-
-test('getBingAccessToken returns _U cookie value', async () => {
-  cookieJar['https://bing.com/'] = [{ name: '_U', value: 'bing-token' }]
-
-  const token = await getBingAccessToken()
-  assert.equal(token, 'bing-token')
-})
-
-test('getBingAccessToken returns undefined when cookie missing', async () => {
-  cookieJar['https://bing.com/'] = []
-
-  const token = await getBingAccessToken()
-  assert.equal(token, undefined)
 })
 
 // ---------------------------------------------------------------------------
