@@ -1,0 +1,30 @@
+src/components/ConversationCard/index.jsx
+  h_91c03fe45fa613 28,312-319,366-368,556-560
+src/config/model-key-migrations.mjs
+  h_91c03fe45fa613 4-14,67,113-120,131-135,140
+src/services/wrappers.mjs
+  h_91c03fe45fa613 144
+src/utils/model-name-convert.mjs
+  h_91c03fe45fa613 1,40,442
+tests/unit/components/conversation-card-lifecycle.test.mjs
+  h_91c03fe45fa613 121,235,246,262,277,288,297
+tests/unit/config/migrate-user-config.test.mjs
+  h_91c03fe45fa613 6,2064-2103
+tests/unit/config/model-key-migrations.test.mjs
+  h_91c03fe45fa613 2-26,30-34,37-43,45-50,53-59,61-65,67-85,87-89,91-92
+tests/unit/services/handle-port-error.test.mjs
+  h_91c03fe45fa613 424
+tests/unit/utils/model-name-convert.test.mjs
+  h_91c03fe45fa613 20-38,41,44-45,67-68,77-78,107,111,116,779,783-784,791,825,831-832,888-889,899,905-906,913-914,919-920,927-928,932-933,953,958-959,967,1003,1252-1253,1266,1274-1275,1281-1282,1298-1300,1312,1316,1361-1362
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bd8962f62830de514547c5607298f3a921285351",
+  "prompts": {},
+  "humans": {
+    "h_91c03fe45fa613": {
+      "author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
