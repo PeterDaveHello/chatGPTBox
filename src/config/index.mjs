@@ -43,7 +43,6 @@ export const chatgptWebModelKeys = [
   'chatgptPlus4Browsing',
   'chatgptPlus4Mobile',
 ]
-export const bardWebModelKeys = ['bardWebFree']
 export const claudeWebModelKeys = ['claude2WebFree']
 export const moonshotWebModelKeys = [
   'moonshotWebFree',
@@ -217,11 +216,6 @@ export const ModelGroups = {
     value: moonshotWebModelKeys,
     desc: 'Kimi.Moonshot (Web)',
   },
-  bardWebModelKeys: {
-    value: bardWebModelKeys,
-    desc: 'Gemini (Web)',
-  },
-
   chatgptApiModelKeys: {
     value: chatgptApiModelKeys,
     desc: 'OpenAI (API)',
@@ -390,8 +384,6 @@ export const Models = {
     value: 'k1.5-thinking',
     desc: 'Kimi.Moonshot (Web k1.5 Thinking, 128k)',
   },
-
-  bardWebFree: { value: '', desc: 'Gemini (Web)' },
 
   chatglm52: { value: 'glm-5.2', desc: 'ChatGLM (GLM-5.2)' },
   chatglm51: { value: 'glm-5.1', desc: 'ChatGLM (GLM-5.1)' },
@@ -939,10 +931,6 @@ export function isUsingClaudeWebModel(configOrSession) {
 
 export function isUsingMoonshotWebModel(configOrSession) {
   return isInApiModeGroup(moonshotWebModelKeys, configOrSession)
-}
-
-export function isUsingGeminiWebModel(configOrSession) {
-  return isInApiModeGroup(bardWebModelKeys, configOrSession)
 }
 
 export function isUsingChatgptApiModel(configOrSession) {

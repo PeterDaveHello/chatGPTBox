@@ -52,12 +52,6 @@ export async function getChatGptAccessToken() {
   }
 }
 
-export async function getBardCookies() {
-  const token = (await Browser.cookies.get({ url: 'https://google.com/', name: '__Secure-1PSID' }))
-    ?.value
-  return '__Secure-1PSID=' + token
-}
-
 export async function getClaudeSessionKey() {
   return (await Browser.cookies.get({ url: 'https://claude.ai/', name: 'sessionKey' }))?.value
 }

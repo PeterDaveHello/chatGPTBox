@@ -78,9 +78,6 @@ test('all provider-specific fields default to null', () => {
   assert.equal(session.parentMessageId, null)
   assert.equal(session.wsRequestId, null)
 
-  // bard
-  assert.equal(session.bard_conversationObj, null)
-
   // claude.ai
   assert.equal(session.claude_conversation, null)
 

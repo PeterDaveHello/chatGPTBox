@@ -40,7 +40,6 @@ globalThis.chrome.cookies = {
 import {
   registerPortListener,
   getChatGptAccessToken,
-  getBardCookies,
   getClaudeSessionKey,
 } from '../../../src/services/wrappers.mjs'
 import Browser from 'webextension-polyfill'
@@ -606,24 +605,6 @@ test('getChatGptAccessToken omits Cookie header when Browser.cookies is undefine
   assert.equal(token, 'token-no-cookies-api')
   assert.equal(observedHasCookieHeader, false)
   assert.equal(observedCredentials, 'include')
-})
-
-// ---------------------------------------------------------------------------
-// getBardCookies
-// ---------------------------------------------------------------------------
-
-test('getBardCookies returns formatted cookie string', async () => {
-  cookieJar['https://google.com/'] = [{ name: '__Secure-1PSID', value: 'bard-sid' }]
-
-  const cookies = await getBardCookies()
-  assert.equal(cookies, '__Secure-1PSID=bard-sid')
-})
-
-test('getBardCookies returns __Secure-1PSID=undefined when cookie missing', async () => {
-  cookieJar['https://google.com/'] = []
-
-  const cookies = await getBardCookies()
-  assert.equal(cookies, '__Secure-1PSID=undefined')
 })
 
 // ---------------------------------------------------------------------------

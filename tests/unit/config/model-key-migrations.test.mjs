@@ -8,29 +8,34 @@ import {
   getCanonicalModelKeyGroupName,
 } from '../../../src/config/model-key-migrations.mjs'
 
-test('canonicalizeModelKey maps every retired Bing web key', () => {
+test('canonicalizeModelKey maps every retired web key', () => {
   const retiredKeys = [
-    'bingFree4',
-    'bingFree4-balanced',
-    'bingFree4-creative',
-    'bingFree4-precise',
-    'bingFree4-fast',
-    'bingFreeSydney',
-    'bingFreeSydney-balanced',
-    'bingFreeSydney-creative',
-    'bingFreeSydney-precise',
-    'bingFreeSydney-fast',
+    ['bingFree4', 'bingWebModelKeys'],
+    ['bingFree4-balanced', 'bingWebModelKeys'],
+    ['bingFree4-creative', 'bingWebModelKeys'],
+    ['bingFree4-precise', 'bingWebModelKeys'],
+    ['bingFree4-fast', 'bingWebModelKeys'],
+    ['bingFreeSydney', 'bingWebModelKeys'],
+    ['bingFreeSydney-balanced', 'bingWebModelKeys'],
+    ['bingFreeSydney-creative', 'bingWebModelKeys'],
+    ['bingFreeSydney-precise', 'bingWebModelKeys'],
+    ['bingFreeSydney-fast', 'bingWebModelKeys'],
+    ['bardWebFree', 'bardWebModelKeys'],
   ]
 
-  for (const modelKey of retiredKeys) {
+  for (const [modelKey, retiredGroupName] of retiredKeys) {
     assert.equal(canonicalizeModelKey(modelKey), 'chatgptFree35', modelKey)
-    assert.equal(getCanonicalModelKeyGroupName(modelKey, 'bingWebModelKeys'), 'chatgptWebModelKeys')
+    assert.equal(
+      getCanonicalModelKeyGroupName(modelKey, retiredGroupName),
+      'chatgptWebModelKeys',
+      modelKey,
+    )
   }
 })
 
-test('canonicalizeModelKeyArray collapses retired Bing keys and dedupes', () => {
+test('canonicalizeModelKeyArray collapses retired web keys and dedupes', () => {
   assert.deepEqual(
-    canonicalizeModelKeyArray(['bingFree4', 'bingFreeSydney-fast', 'chatgptFree35']),
+    canonicalizeModelKeyArray(['bingFree4', 'bingFreeSydney-fast', 'bardWebFree', 'chatgptFree35']),
     ['chatgptFree35'],
   )
 })
@@ -150,4 +155,54 @@ test('canonicalizeSessionModelFields keeps the current field when both are prese
 test('canonicalizeSessionModelFields leaves an untouched session identical', () => {
   const session = { modelName: 'chatgptFree35', conversationId: null }
   assert.equal(canonicalizeSessionModelFields(session), session)
+})
+
+test('canonicalizeApiMode rewrites a custom row parked under the retired Bard group', () => {
+  const migrated = canonicalizeApiMode({
+    groupName: 'bardWebModelKeys',
+    itemName: 'custom',
+    isCustom: true,
+    customName: 'my-variant',
+    customUrl: '',
+    apiKey: '',
+    providerId: '',
+  })
+
+  assert.deepEqual(migrated, {
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'chatgptFree35',
+    isCustom: false,
+    customName: '',
+    customUrl: '',
+    apiKey: '',
+    providerId: '',
+  })
+})
+
+test('canonicalizeApiMode rewrites a named Bard row and clears its custom name', () => {
+  const migrated = canonicalizeApiMode({
+    groupName: 'bardWebModelKeys',
+    itemName: 'bardWebFree',
+    isCustom: true,
+    customName: 'fast',
+  })
+
+  assert.equal(migrated.groupName, 'chatgptWebModelKeys')
+  assert.equal(migrated.itemName, 'chatgptFree35')
+  assert.equal(migrated.customName, '')
+  assert.equal(migrated.isCustom, false)
+})
+
+test('canonicalizeApiMode clears custom state when a retired key appears under a live group', () => {
+  const migrated = canonicalizeApiMode({
+    groupName: 'chatgptWebModelKeys',
+    itemName: 'bardWebFree',
+    isCustom: true,
+    customName: 'fast',
+  })
+
+  assert.equal(migrated.itemName, 'chatgptFree35')
+  assert.equal(migrated.groupName, 'chatgptWebModelKeys')
+  assert.equal(migrated.customName, '')
+  assert.equal(migrated.isCustom, false)
 })

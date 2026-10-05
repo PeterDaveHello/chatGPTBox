@@ -12,6 +12,8 @@ export const LEGACY_MODEL_KEY_MIGRATIONS = {
   'bingFreeSydney-precise': 'chatgptFree35',
   'bingFreeSydney-fast': 'chatgptFree35',
 
+  bardWebFree: 'chatgptFree35',
+
   gptApiDavinci: 'gptApiInstruct',
 
   chatgptApi35: 'chatgptApi4oMini',
@@ -110,13 +112,14 @@ export function getCanonicalModelKeyGroupName(modelKey, fallbackGroupName = '') 
   return MODEL_KEY_GROUP_OVERRIDES[canonicalModelKey] || normalizeLegacyGroupName(fallbackGroupName)
 }
 
-const RETIRED_MODEL_KEYS = new Set(['bingFree4', 'bingFreeSydney'])
+const RETIRED_MODEL_KEYS = new Set(['bingFree4', 'bingFreeSydney', 'bardWebFree'])
 
 // A custom row keeps its variant in customName and leaves itemName as 'custom',
 // so nothing about it matches the model-key table. The retired group is then the
 // only remaining signal that the row points at a provider that no longer exists.
 const RETIRED_GROUP_TARGETS = new Map([
   ['bingWebModelKeys', { groupName: 'chatgptWebModelKeys', itemName: 'chatgptFree35' }],
+  ['bardWebModelKeys', { groupName: 'chatgptWebModelKeys', itemName: 'chatgptFree35' }],
 ])
 
 function getRetiredModelKeyBase(modelKey) {

@@ -21,7 +21,6 @@ import {
   isUsingClaudeApiModel,
   isUsingChatGLMApiModel,
   isUsingGithubThirdPartyApiModel,
-  isUsingGeminiWebModel,
   isUsingClaudeWebModel,
   isUsingMoonshotApiModel,
   isUsingMistralApiModel,
@@ -36,14 +35,12 @@ import {
 import '../_locales/i18n'
 import { openUrl } from '../utils/open-url'
 import {
-  getBardCookies,
   getChatGptAccessToken,
   getClaudeSessionKey,
   registerPortListener,
 } from '../services/wrappers.mjs'
 import { refreshMenu } from './menus.mjs'
 import { registerCommands } from './commands.mjs'
-import { generateAnswersWithBardWebApi } from '../services/apis/bard-web.mjs'
 import { generateAnswersWithClaudeWebApi } from '../services/apis/claude-web.mjs'
 import { generateAnswersWithMoonshotWebApi } from '../services/apis/moonshot-web.mjs'
 import { redactSensitiveFields } from './redact.mjs'
@@ -552,17 +549,6 @@ async function executeApi(
     } else if (isUsingMoonshotWebModel(session)) {
       console.debug('[background] Using Moonshot Web Model')
       await generateAnswersWithMoonshotWebApi(port, session.question, session, config)
-    } else if (isUsingGeminiWebModel(session)) {
-      console.debug('[background] Using Gemini Web Model')
-      const cookies = await getBardCookies()
-      if (!isLatestSessionRequest()) return
-      await generateAnswersWithBardWebApi(
-        port,
-        session.question,
-        session,
-        cookies,
-        isLatestSessionRequest,
-      )
     } else if (isUsingOpenAICompatibleApiSession(session)) {
       console.debug('[background] Using OpenAI-compatible API provider')
       await generateAnswersWithOpenAICompatibleApi(port, session.question, session, config)

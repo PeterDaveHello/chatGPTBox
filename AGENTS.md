@@ -208,7 +208,8 @@ src/
 
 ## Localization
 
-- Source of truth: `src/_locales/en/main.json`; do not change existing keys (only add new ones)
+- Source of truth: `src/_locales/en/main.json`; do not change existing keys (only add new ones).
+  A key whose last producer is gone (removed provider, model, or UI string) may be deleted from every locale.
 - Add new source strings to `en/main.json` first and translate user-facing text in other locales as appropriate
 - Do not duplicate unchanged model or provider labels across non-English locales; rely on the English fallback unless the displayed text requires localization
 - Register new locales in `src/_locales/resources.mjs`
@@ -219,7 +220,7 @@ src/
 
 The extension supports multiple AI providers:
 
-- **Web (cookie-based)**: ChatGPT (Web), Claude (Web), Kimi.Moonshot (Web), Bing (Web), Bard (Web)
+- **Web (cookie-based)**: ChatGPT (Web), Claude (Web), Kimi.Moonshot (Web)
 - **APIs (key-based)**: OpenAI (API), Azure OpenAI (API), Anthropic (Claude API), OpenRouter (API), AI/ML (API), DeepSeek (API), Ollama (local), ChatGLM (API), Waylaidwanderer (API), Kimi.Moonshot (API)
 - **Custom/self-hosted**: Alternative endpoints and self-hosted backends
 

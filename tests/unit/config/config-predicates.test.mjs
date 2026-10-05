@@ -22,7 +22,6 @@ import {
   isUsingCustomModel,
   isUsingDeepSeekApiModel,
   isUsingNvidiaNimApiModel,
-  isUsingGeminiWebModel,
   isUsingGithubThirdPartyApiModel,
   isUsingMoonshotApiModel,
   isUsingMistralApiModel,
@@ -203,11 +202,6 @@ test('isUsingMoonshotWebModel detects moonshot web models', () => {
   assert.equal(isUsingMoonshotWebModel({ modelName: 'moonshotWebFree' }), true)
   assert.equal(isUsingMoonshotWebModel({ modelName: 'moonshotWebFreeK15' }), true)
   assert.equal(isUsingMoonshotWebModel({ modelName: 'chatgptFree35' }), false)
-})
-
-test('isUsingGeminiWebModel detects bard/gemini web models', () => {
-  assert.equal(isUsingGeminiWebModel({ modelName: 'bardWebFree' }), true)
-  assert.equal(isUsingGeminiWebModel({ modelName: 'chatgptFree35' }), false)
 })
 
 test('isUsingClaudeApiModel matches representative Claude API keys', () => {

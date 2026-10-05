@@ -2138,3 +2138,38 @@ test('getUserConfig remaps a custom mode stored under the retired Bing group', a
   ])
   assert.deepEqual(getApiModesFromConfig(config, false).map(modeNameToModelName), ['chatgptFree35'])
 })
+
+test('getUserConfig remaps a custom mode stored under the retired Bard group', async () => {
+  globalThis.__TEST_BROWSER_SHIM__.replaceStorage({
+    configSchemaVersion: 2,
+    activeApiModes: [],
+    customApiModes: [
+      {
+        groupName: 'bardWebModelKeys',
+        itemName: 'custom',
+        isCustom: true,
+        customName: 'my-variant',
+        customUrl: '',
+        apiKey: '',
+        providerId: '',
+        active: true,
+      },
+    ],
+  })
+
+  const config = await getUserConfig()
+
+  assert.deepEqual(config.customApiModes, [
+    {
+      groupName: 'chatgptWebModelKeys',
+      itemName: 'chatgptFree35',
+      isCustom: false,
+      customName: '',
+      customUrl: '',
+      apiKey: '',
+      providerId: '',
+      active: true,
+    },
+  ])
+  assert.deepEqual(getApiModesFromConfig(config, false).map(modeNameToModelName), ['chatgptFree35'])
+})

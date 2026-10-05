@@ -22,7 +22,6 @@ import { t } from 'i18next'
  * @property {string|null} messageId - chatGPT web mode
  * @property {string|null} parentMessageId - chatGPT web mode
  * @property {string|null} wsRequestId - chatGPT web mode
- * @property {object|null} bard_conversationObj
  * @property {object|null} claude_conversation
  * @property {string|null} thirdPartySignature - github third party API mode
  * @property {string|null} thirdPartyConversationId - github third party API mode
@@ -78,9 +77,6 @@ export function initSession({
     messageId: null,
     parentMessageId: null,
     wsRequestId: null,
-
-    // bard
-    bard_conversationObj: null,
 
     // claude.ai
     claude_conversation: null,
