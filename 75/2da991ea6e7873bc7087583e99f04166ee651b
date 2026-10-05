@@ -1,0 +1,25 @@
+src/config/model-key-migrations.mjs
+  s_8a48919439c588::t_23827f11df07f8 4-14,67,113-120,131-135,140
+src/services/wrappers.mjs
+  s_8a48919439c588::t_8402e7f9c7084f 144
+tests/unit/config/migrate-user-config.test.mjs
+  s_8a48919439c588::t_ed3b400fd73e76 6,2064-2103
+tests/unit/config/model-key-migrations.test.mjs
+  s_8a48919439c588::t_829c7b6376a811 2-26,30-34,37-43,45-50,53-59,61-65,67-85,87-89,91-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "752da991ea6e7873bc7087583e99f04166ee651b",
+  "prompts": {},
+  "sessions": {
+    "s_8a48919439c588": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a10c74-0953-7891-bc08-ca0b966f7f8c",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
