@@ -1,0 +1,20 @@
+AGENTS.md
+  h_91c03fe45fa613 211-212,223
+src/config/model-key-migrations.mjs
+  h_91c03fe45fa613 15-16,115,133-134
+tests/unit/config/migrate-user-config.test.mjs
+  h_91c03fe45fa613 2065-2107,2142
+tests/unit/config/model-key-migrations.test.mjs
+  h_91c03fe45fa613 10,12-22,25,27-31,35,37,92-107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7a4afab2b35d85fb622f2d1e830e0a6413286aa5",
+  "prompts": {},
+  "humans": {
+    "h_91c03fe45fa613": {
+      "author": "Peter Dave Hello <hsu@peterdavehello.org>"
+    }
+  }
+}
